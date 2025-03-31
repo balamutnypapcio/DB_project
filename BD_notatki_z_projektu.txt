@@ -1,0 +1,3 @@
+1. To o co Wilu pytał najpierw mamy zrobić triggerem. Nie słuchałem o co pytał ale o coś na pewno pytał bo to ciekawski chłopak.
+2. Coś tam mówił o UNIQUE i mailu że mamy coś zhaszować - ja nie wiem co to znaczy
+3. Ziom pyta gdzie są constrainy (zewnętrzne czy coś?) - foreign keys. Ręcznie dodać
