@@ -1,5 +1,7 @@
 USE trickount_DB;
 
+
+
 CREATE TABLE users (
     id INT AUTO_INCREMENT PRIMARY KEY,
     username VARCHAR(50) NOT NULL UNIQUE,
@@ -13,7 +15,8 @@ CREATE TABLE users (
     id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(100) NOT NULL,
     created_by INT NOT NULL,
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,
+    FOREIGN KEY (created_by) REFERENCES users(id)
 );
 
  
@@ -21,7 +24,9 @@ CREATE TABLE group_members (
     id INT AUTO_INCREMENT PRIMARY KEY,
     group_id INT NOT NULL,
     user_id INT NOT NULL,
-    joined_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL
+    joined_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,
+    FOREIGN KEY (user_id) REFERENCES users(id),
+    FOREIGN KEY (group_id) references group_table(id)
 );
 
 CREATE TABLE expenses (
@@ -30,20 +35,26 @@ CREATE TABLE expenses (
     paid_by INT NOT NULL,
     amount DECIMAL(10,2) NOT NULL,
     description VARCHAR(255) NOT NULL,
-    date TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL
+    date TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,
+    FOREIGN KEY (group_id) REFERENCES group_table(id),
+    FOREIGN KEY (paid_by) references users(id)
 );
 
 CREATE TABLE expense_participants (
     id INT AUTO_INCREMENT PRIMARY KEY,
     expense_id INT NOT NULL,
-    user_id INT NOT NULL
+    user_id INT NOT NULL,
+    FOREIGN KEY (expense_id) REFERENCES expenses(id),
+    FOREIGN KEY (user_id) REFERENCES users(id)
 );
 
 CREATE TABLE expense_shares (
     id INT AUTO_INCREMENT PRIMARY KEY,
     expense_id INT NOT NULL,
     user_id INT NOT NULL,
-    share DECIMAL(10,2) NOT NULL
+    share DECIMAL(10,2) NOT NULL,
+	FOREIGN KEY (expense_id) REFERENCES expenses(id),
+    FOREIGN KEY (user_id) REFERENCES users(id)
 );
 
 CREATE TABLE payments (
@@ -53,7 +64,10 @@ CREATE TABLE payments (
     to_user INT NOT NULL,
     amount DECIMAL(10,2) NOT NULL,
     status ENUM('pending', 'completed', 'failed') NOT NULL DEFAULT 'pending',
-    date TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL
+    date TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,
+    FOREIGN KEY (group_id) REFERENCES group_table(id),
+    FOREIGN KEY (from_user) REFERENCES users(id),
+    FOREIGN KEY (to_user) REFERENCES users(id)
 );
 
 
