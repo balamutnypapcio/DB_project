@@ -1,4 +1,4 @@
-USE trickount_DB;
+
 
 
 
