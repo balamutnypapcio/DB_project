@@ -3,5 +3,11 @@
   <component name="Black">
     <option name="sdkName" value="Python 3.10 (3.5)" />
   </component>
+  <component name="CMakePythonSetting">
+    <option name="pythonIntegrationState" value="YES" />
+  </component>
+  <component name="CMakeWorkspace" PROJECT_DIR="$PROJECT_DIR$/app_cpp">
+    <contentRoot DIR="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.10 (DB_project)" project-jdk-type="Python SDK" />
 </project>

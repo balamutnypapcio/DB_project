@@ -1,0 +1,5 @@
+/home/michal/Documents/studia/sem_6/DB_project/app_cpp/cmake-build-debug/CMakeFiles/SqlLoginApp.dir
+/home/michal/Documents/studia/sem_6/DB_project/app_cpp/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/michal/Documents/studia/sem_6/DB_project/app_cpp/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/michal/Documents/studia/sem_6/DB_project/app_cpp/cmake-build-debug/CMakeFiles/SqlLoginApp_autogen_timestamp_deps.dir
+/home/michal/Documents/studia/sem_6/DB_project/app_cpp/cmake-build-debug/CMakeFiles/SqlLoginApp_autogen.dir
