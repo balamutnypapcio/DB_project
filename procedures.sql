@@ -111,3 +111,44 @@ END;
 
 DELIMITER ;
 
+
+DELIMITER //
+
+CREATE PROCEDURE create_group (
+    IN p_group_name VARCHAR(100),
+    IN p_created_by INT,
+    IN p_user_ids TEXT -- np. '2,3,4'
+)
+BEGIN
+    DECLARE v_group_id INT;
+    DECLARE v_pos INT DEFAULT 1;
+    DECLARE v_user_id TEXT;
+
+    -- 1. Dodaj grupę
+    INSERT INTO group_table (name, created_by)
+    VALUES (p_group_name, p_created_by);
+
+    SET v_group_id = LAST_INSERT_ID();
+
+    -- 2. Dodaj użytkowników do grupy
+    SET temp_str = p_user_ids;
+    WHILE LENGTH(temp_str) > 0 DO
+        SET v_pos = LOCATE(',', temp_str);
+        IF v_pos > 0 THEN
+            SET v_user_id = SUBSTRING(temp_str, 1, v_pos - 1);
+            SET temp_str = SUBSTRING(temp_str, v_pos + 1);
+        ELSE
+            SET v_user_id = temp_str;
+            SET temp_str = '';
+        END IF;
+
+        -- Dodaj do tabeli group_members
+        INSERT INTO group_members (group_id, user_id)
+        VALUES (v_group_id, CAST(v_user_id AS UNSIGNED));
+    END WHILE;
+END;
+//
+
+DELIMITER ;
+
+
