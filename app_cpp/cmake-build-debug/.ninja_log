@@ -1,14 +1,10 @@
 # ninja log v6
-0	151	1744483209046328383	SqlLoginApp_autogen/timestamp	fe04a41947295364
-0	151	1744483209046328383	SqlLoginApp_autogen/mocs_compilation.cpp	fe04a41947295364
-0	151	1744483209046328383	/home/michal/Documents/studia/sem_6/DB_project/app_cpp/cmake-build-debug/SqlLoginApp_autogen/timestamp	fe04a41947295364
-0	151	1744483209046328383	/home/michal/Documents/studia/sem_6/DB_project/app_cpp/cmake-build-debug/SqlLoginApp_autogen/mocs_compilation.cpp	fe04a41947295364
-152	1089	1744483209051328369	CMakeFiles/SqlLoginApp.dir/src/GroupsWindow.cpp.o	8a4b794d7462816b
-152	1177	1744483209051328369	CMakeFiles/SqlLoginApp.dir/SqlLoginApp_autogen/mocs_compilation.cpp.o	df798c9d7f9890da
-153	2019	1744483209052328366	CMakeFiles/SqlLoginApp.dir/src/LoginWindow.cpp.o	a16b55162da23b0
 4	17	1744483304048174807	SqlLoginApp_autogen/timestamp	fe04a41947295364
 4	17	1744483304048174807	SqlLoginApp_autogen/mocs_compilation.cpp	fe04a41947295364
 4	17	1744483304048174807	/home/michal/Documents/studia/sem_6/DB_project/app_cpp/cmake-build-debug/SqlLoginApp_autogen/timestamp	fe04a41947295364
 4	17	1744483304048174807	/home/michal/Documents/studia/sem_6/DB_project/app_cpp/cmake-build-debug/SqlLoginApp_autogen/mocs_compilation.cpp	fe04a41947295364
 17	939	1744483304061174800	CMakeFiles/SqlLoginApp.dir/src/main.cpp.o	b418cf7e6705b687
+152	1089	1744483209051328369	CMakeFiles/SqlLoginApp.dir/src/GroupsWindow.cpp.o	8a4b794d7462816b
 939	1298	1744483304983174312	SqlLoginApp	86cb9a6ef2023122
+152	1177	1744483209051328369	CMakeFiles/SqlLoginApp.dir/SqlLoginApp_autogen/mocs_compilation.cpp.o	df798c9d7f9890da
+153	2019	1744483209052328366	CMakeFiles/SqlLoginApp.dir/src/LoginWindow.cpp.o	a16b55162da23b0
