@@ -123,6 +123,7 @@ BEGIN
     DECLARE v_group_id INT;
     DECLARE v_pos INT DEFAULT 1;
     DECLARE v_user_id TEXT;
+    DECLARE temp_str TEXT; -- Dodana deklaracja zmiennej temp_str
 
     -- 1. Dodaj grupę
     INSERT INTO group_table (name, created_by)
@@ -131,7 +132,7 @@ BEGIN
     SET v_group_id = LAST_INSERT_ID();
 
     -- 2. Dodaj użytkowników do grupy
-    SET temp_str = p_user_ids;
+    SET temp_str = p_user_ids; -- Teraz możemy użyć zadeklarowanej zmiennej
     WHILE LENGTH(temp_str) > 0 DO
         SET v_pos = LOCATE(',', temp_str);
         IF v_pos > 0 THEN
