@@ -1,0 +1,9 @@
+/home/michal/Documents/programing_projects/qt_tutorials/bazy_danych_v3/build/Desktop_Qt_6_10_0-Debug/CMakeFiles/bazy_danych_v3.dir
+/home/michal/Documents/programing_projects/qt_tutorials/bazy_danych_v3/build/Desktop_Qt_6_10_0-Debug/CMakeFiles/edit_cache.dir
+/home/michal/Documents/programing_projects/qt_tutorials/bazy_danych_v3/build/Desktop_Qt_6_10_0-Debug/CMakeFiles/rebuild_cache.dir
+/home/michal/Documents/programing_projects/qt_tutorials/bazy_danych_v3/build/Desktop_Qt_6_10_0-Debug/CMakeFiles/list_install_components.dir
+/home/michal/Documents/programing_projects/qt_tutorials/bazy_danych_v3/build/Desktop_Qt_6_10_0-Debug/CMakeFiles/install.dir
+/home/michal/Documents/programing_projects/qt_tutorials/bazy_danych_v3/build/Desktop_Qt_6_10_0-Debug/CMakeFiles/install/local.dir
+/home/michal/Documents/programing_projects/qt_tutorials/bazy_danych_v3/build/Desktop_Qt_6_10_0-Debug/CMakeFiles/install/strip.dir
+/home/michal/Documents/programing_projects/qt_tutorials/bazy_danych_v3/build/Desktop_Qt_6_10_0-Debug/CMakeFiles/bazy_danych_v3_autogen_timestamp_deps.dir
+/home/michal/Documents/programing_projects/qt_tutorials/bazy_danych_v3/build/Desktop_Qt_6_10_0-Debug/CMakeFiles/bazy_danych_v3_autogen.dir

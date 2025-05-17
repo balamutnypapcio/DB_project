@@ -1,0 +1,9 @@
+/home/jakub/Projekty/DB/bazy_danych_v3/build/Desktop_Qt_6_9_0-Debug/CMakeFiles/bazy_danych_v3.dir
+/home/jakub/Projekty/DB/bazy_danych_v3/build/Desktop_Qt_6_9_0-Debug/CMakeFiles/edit_cache.dir
+/home/jakub/Projekty/DB/bazy_danych_v3/build/Desktop_Qt_6_9_0-Debug/CMakeFiles/rebuild_cache.dir
+/home/jakub/Projekty/DB/bazy_danych_v3/build/Desktop_Qt_6_9_0-Debug/CMakeFiles/list_install_components.dir
+/home/jakub/Projekty/DB/bazy_danych_v3/build/Desktop_Qt_6_9_0-Debug/CMakeFiles/install.dir
+/home/jakub/Projekty/DB/bazy_danych_v3/build/Desktop_Qt_6_9_0-Debug/CMakeFiles/install/local.dir
+/home/jakub/Projekty/DB/bazy_danych_v3/build/Desktop_Qt_6_9_0-Debug/CMakeFiles/install/strip.dir
+/home/jakub/Projekty/DB/bazy_danych_v3/build/Desktop_Qt_6_9_0-Debug/CMakeFiles/bazy_danych_v3_autogen_timestamp_deps.dir
+/home/jakub/Projekty/DB/bazy_danych_v3/build/Desktop_Qt_6_9_0-Debug/CMakeFiles/bazy_danych_v3_autogen.dir

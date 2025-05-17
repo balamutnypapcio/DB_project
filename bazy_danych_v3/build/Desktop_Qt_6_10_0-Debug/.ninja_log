@@ -1,0 +1,21 @@
+# ninja log v5
+2111	2544	1746980713125155759	bazy_danych_v3	ae4a0bf9e0834dfe
+24	2111	1746980712695166623	CMakeFiles/bazy_danych_v3.dir/mainwindow.cpp.o	c2a5810d5aac9c
+345	2081	1746977318062961033	CMakeFiles/bazy_danych_v3.dir/main.cpp.o	c6c13d56dab81481
+345	1982	1746977317965961937	CMakeFiles/bazy_danych_v3.dir/bazy_danych_v3_autogen/mocs_compilation.cpp.o	5428f67279a80c13
+1	21	1746980710566220530	/home/michal/Documents/programing_projects/qt_tutorials/bazy_danych_v3/build/Desktop_Qt_6_10_0-Debug/bazy_danych_v3_autogen/mocs_compilation.cpp	a939754cd5ebfb62
+1	21	1746980710566220530	/home/michal/Documents/programing_projects/qt_tutorials/bazy_danych_v3/build/Desktop_Qt_6_10_0-Debug/bazy_danych_v3_autogen/timestamp	a939754cd5ebfb62
+1	21	1746980710566220530	bazy_danych_v3_autogen/mocs_compilation.cpp	a939754cd5ebfb62
+1	21	1746980710566220530	bazy_danych_v3_autogen/timestamp	a939754cd5ebfb62
+2	23	1746980725403849337	bazy_danych_v3_autogen/timestamp	a939754cd5ebfb62
+2	23	1746980725403849337	bazy_danych_v3_autogen/mocs_compilation.cpp	a939754cd5ebfb62
+2	23	1746980725403849337	/home/michal/Documents/programing_projects/qt_tutorials/bazy_danych_v3/build/Desktop_Qt_6_10_0-Debug/bazy_danych_v3_autogen/timestamp	a939754cd5ebfb62
+2	23	1746980725403849337	/home/michal/Documents/programing_projects/qt_tutorials/bazy_danych_v3/build/Desktop_Qt_6_10_0-Debug/bazy_danych_v3_autogen/mocs_compilation.cpp	a939754cd5ebfb62
+25	2113	1746980727533796908	CMakeFiles/bazy_danych_v3.dir/mainwindow.cpp.o	c2a5810d5aac9c
+2113	2544	1746980727962786369	bazy_danych_v3	ae4a0bf9e0834dfe
+2	24	1746980740162490375	bazy_danych_v3_autogen/timestamp	a939754cd5ebfb62
+2	24	1746980740162490375	bazy_danych_v3_autogen/mocs_compilation.cpp	a939754cd5ebfb62
+2	24	1746980740162490375	/home/michal/Documents/programing_projects/qt_tutorials/bazy_danych_v3/build/Desktop_Qt_6_10_0-Debug/bazy_danych_v3_autogen/timestamp	a939754cd5ebfb62
+2	24	1746980740162490375	/home/michal/Documents/programing_projects/qt_tutorials/bazy_danych_v3/build/Desktop_Qt_6_10_0-Debug/bazy_danych_v3_autogen/mocs_compilation.cpp	a939754cd5ebfb62
+26	2243	1746980742417436415	CMakeFiles/bazy_danych_v3.dir/mainwindow.cpp.o	c2a5810d5aac9c
+2243	2676	1746980742847426148	bazy_danych_v3	ae4a0bf9e0834dfe
