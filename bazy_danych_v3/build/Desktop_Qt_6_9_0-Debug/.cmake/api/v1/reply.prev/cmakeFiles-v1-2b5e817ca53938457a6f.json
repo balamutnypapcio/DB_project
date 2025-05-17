@@ -1876,21 +1876,6 @@
 		{
 			"isCMake" : true,
 			"isExternal" : true,
-			"path" : "/home/jakub/Qt/Tools/CMake/share/cmake-3.30/Modules/FindPkgConfig.cmake"
-		},
-		{
-			"isCMake" : true,
-			"isExternal" : true,
-			"path" : "/home/jakub/Qt/Tools/CMake/share/cmake-3.30/Modules/FindPackageHandleStandardArgs.cmake"
-		},
-		{
-			"isCMake" : true,
-			"isExternal" : true,
-			"path" : "/home/jakub/Qt/Tools/CMake/share/cmake-3.30/Modules/FindPackageMessage.cmake"
-		},
-		{
-			"isCMake" : true,
-			"isExternal" : true,
 			"path" : "/home/jakub/Qt/Tools/CMake/share/cmake-3.30/Modules/GNUInstallDirs.cmake"
 		}
 	],

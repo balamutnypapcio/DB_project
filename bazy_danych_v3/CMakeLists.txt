@@ -14,8 +14,9 @@ qt_add_executable(bazy_danych_v3
     mainwindow.ui
     group.h
     group.cpp
-    database.h
-    database.cpp
+    Database.h
+    Database.cpp
+    expensebutton.h
 )
 
 target_link_libraries(bazy_danych_v3

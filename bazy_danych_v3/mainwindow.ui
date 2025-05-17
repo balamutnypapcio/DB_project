@@ -109,7 +109,11 @@ color: #000000;</string>
          </widget>
         </item>
         <item>
-         <widget class="QLineEdit" name="usernameInsert"/>
+         <widget class="QLineEdit" name="usernameInsert">
+          <property name="styleSheet">
+           <string notr="true">color:rgb(0, 0, 0)</string>
+          </property>
+         </widget>
         </item>
         <item>
          <widget class="QLabel" name="passwordLabel">
@@ -147,6 +151,9 @@ color: #000000;</string>
             <horstretch>0</horstretch>
             <verstretch>0</verstretch>
            </sizepolicy>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">color:black;</string>
           </property>
          </widget>
         </item>
@@ -258,8 +265,8 @@ background-color: #FFFFFF;</string>
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>291</width>
-             <height>444</height>
+             <width>176</width>
+             <height>126</height>
             </rect>
            </property>
            <property name="layoutDirection">
@@ -474,12 +481,144 @@ color: #FFFFFF;</string>
          </widget>
         </item>
         <item>
-         <widget class="QStackedWidget" name="stackedWidget_2">
+         <widget class="QStackedWidget" name="StackedWidgetBalancesOrExpences">
           <property name="currentIndex">
            <number>1</number>
           </property>
-          <widget class="QWidget" name="page"/>
-          <widget class="QWidget" name="page_12"/>
+          <widget class="QWidget" name="balancesPage">
+           <layout class="QVBoxLayout" name="verticalLayout">
+            <item>
+             <widget class="QScrollArea" name="scrollArea_2">
+              <property name="widgetResizable">
+               <bool>true</bool>
+              </property>
+              <widget class="QWidget" name="scrollAreaWidgetContents_2">
+               <property name="geometry">
+                <rect>
+                 <x>0</x>
+                 <y>0</y>
+                 <width>273</width>
+                 <height>409</height>
+                </rect>
+               </property>
+               <layout class="QVBoxLayout" name="verticalLayout_8">
+                <item>
+                 <widget class="QLabel" name="dataBalance1">
+                  <property name="text">
+                   <string>01.01.2001</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QPushButton" name="balance1">
+                  <property name="text">
+                   <string>PushButton</string>
+                  </property>
+                  <property name="flat">
+                   <bool>true</bool>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QLabel" name="dateBalance2">
+                  <property name="text">
+                   <string>02.02.2002</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QPushButton" name="balance2">
+                  <property name="text">
+                   <string>PushButton</string>
+                  </property>
+                  <property name="flat">
+                   <bool>true</bool>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <spacer name="verticalSpacer_5">
+                  <property name="orientation">
+                   <enum>Qt::Orientation::Vertical</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>20</width>
+                    <height>40</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
+               </layout>
+              </widget>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+          <widget class="QWidget" name="expencesPage">
+           <layout class="QVBoxLayout" name="verticalLayout_5">
+            <item>
+             <widget class="QScrollArea" name="scrollArea_3">
+              <property name="widgetResizable">
+               <bool>true</bool>
+              </property>
+              <widget class="QWidget" name="scrollAreaWidgetContents_3">
+               <property name="geometry">
+                <rect>
+                 <x>0</x>
+                 <y>0</y>
+                 <width>273</width>
+                 <height>409</height>
+                </rect>
+               </property>
+               <layout class="QVBoxLayout" name="verticalLayout_9">
+                <item>
+                 <widget class="QLabel" name="dataExpense1">
+                  <property name="text">
+                   <string>TextLabel</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QPushButton" name="expense1">
+                  <property name="text">
+                   <string>PushButton</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QLabel" name="dataExpense2">
+                  <property name="text">
+                   <string>TextLabel</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QPushButton" name="expense2">
+                  <property name="text">
+                   <string>PushButton</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <spacer name="verticalSpacer_6">
+                  <property name="orientation">
+                   <enum>Qt::Orientation::Vertical</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>20</width>
+                    <height>40</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
+               </layout>
+              </widget>
+             </widget>
+            </item>
+           </layout>
+          </widget>
          </widget>
         </item>
        </layout>

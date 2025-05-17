@@ -1,7 +1,7 @@
 #include <QApplication>
 #include <QMessageBox>
 #include "mainwindow.h"
-#include "database.h"
+#include "Database.h"
 
 int main(int argc, char *argv[])
 {
@@ -14,8 +14,9 @@ int main(int argc, char *argv[])
         return 1;
     }
 
-    // Połącz z bazą danych
-    if (!Database::getInstance().connectToDatabase()) {
+    // Inicjalizacja połączenia z bazą danych
+    Database& db = Database::getInstance();
+    if (!db.isConnected()) {
         QMessageBox::critical(nullptr, "Database Error",
                               "Could not connect to database!");
         return 1;

@@ -1,9 +1,11 @@
 /home/jakub/Projekty/DB/bazy_danych_v3/build/Desktop_Qt_6_9_0-Debug/bazy_danych_v3_autogen/EWIEGA46WW/moc_mainwindow.cpp: /home/jakub/Projekty/DB/bazy_danych_v3/mainwindow.h \
   /home/jakub/Projekty/DB/bazy_danych_v3/build/Desktop_Qt_6_9_0-Debug/bazy_danych_v3_autogen/moc_predefs.h \
-  /home/jakub/Projekty/DB/bazy_danych_v3/database.h \
+  /home/jakub/Projekty/DB/bazy_danych_v3/Database.h \
+  /home/jakub/Projekty/DB/bazy_danych_v3/expensebutton.h \
   /home/jakub/Qt/6.9.0/gcc_64/include/QtCore/QDateTime \
   /home/jakub/Qt/6.9.0/gcc_64/include/QtCore/QDebug \
-  /home/jakub/Qt/6.9.0/gcc_64/include/QtCore/QObject \
+  /home/jakub/Qt/6.9.0/gcc_64/include/QtCore/QString \
+  /home/jakub/Qt/6.9.0/gcc_64/include/QtCore/QTimer \
   /home/jakub/Qt/6.9.0/gcc_64/include/QtCore/q17memory.h \
   /home/jakub/Qt/6.9.0/gcc_64/include/QtCore/q20functional.h \
   /home/jakub/Qt/6.9.0/gcc_64/include/QtCore/q20iterator.h \
@@ -11,6 +13,7 @@
   /home/jakub/Qt/6.9.0/gcc_64/include/QtCore/q20type_traits.h \
   /home/jakub/Qt/6.9.0/gcc_64/include/QtCore/q20utility.h \
   /home/jakub/Qt/6.9.0/gcc_64/include/QtCore/q23utility.h \
+  /home/jakub/Qt/6.9.0/gcc_64/include/QtCore/qabstracteventdispatcher.h \
   /home/jakub/Qt/6.9.0/gcc_64/include/QtCore/qalgorithms.h \
   /home/jakub/Qt/6.9.0/gcc_64/include/QtCore/qanystringview.h \
   /home/jakub/Qt/6.9.0/gcc_64/include/QtCore/qarraydata.h \
@@ -20,6 +23,7 @@
   /home/jakub/Qt/6.9.0/gcc_64/include/QtCore/qatomic.h \
   /home/jakub/Qt/6.9.0/gcc_64/include/QtCore/qatomic_cxx11.h \
   /home/jakub/Qt/6.9.0/gcc_64/include/QtCore/qbasicatomic.h \
+  /home/jakub/Qt/6.9.0/gcc_64/include/QtCore/qbasictimer.h \
   /home/jakub/Qt/6.9.0/gcc_64/include/QtCore/qbindingstorage.h \
   /home/jakub/Qt/6.9.0/gcc_64/include/QtCore/qbytearray.h \
   /home/jakub/Qt/6.9.0/gcc_64/include/QtCore/qbytearrayalgorithms.h \
@@ -40,8 +44,11 @@
   /home/jakub/Qt/6.9.0/gcc_64/include/QtCore/qdarwinhelpers.h \
   /home/jakub/Qt/6.9.0/gcc_64/include/QtCore/qdatastream.h \
   /home/jakub/Qt/6.9.0/gcc_64/include/QtCore/qdatetime.h \
+  /home/jakub/Qt/6.9.0/gcc_64/include/QtCore/qdeadlinetimer.h \
   /home/jakub/Qt/6.9.0/gcc_64/include/QtCore/qdebug.h \
+  /home/jakub/Qt/6.9.0/gcc_64/include/QtCore/qelapsedtimer.h \
   /home/jakub/Qt/6.9.0/gcc_64/include/QtCore/qendian.h \
+  /home/jakub/Qt/6.9.0/gcc_64/include/QtCore/qeventloop.h \
   /home/jakub/Qt/6.9.0/gcc_64/include/QtCore/qexceptionhandling.h \
   /home/jakub/Qt/6.9.0/gcc_64/include/QtCore/qflags.h \
   /home/jakub/Qt/6.9.0/gcc_64/include/QtCore/qfloat16.h \
@@ -53,6 +60,7 @@
   /home/jakub/Qt/6.9.0/gcc_64/include/QtCore/qglobalstatic.h \
   /home/jakub/Qt/6.9.0/gcc_64/include/QtCore/qhash.h \
   /home/jakub/Qt/6.9.0/gcc_64/include/QtCore/qhashfunctions.h \
+  /home/jakub/Qt/6.9.0/gcc_64/include/QtCore/qiodevice.h \
   /home/jakub/Qt/6.9.0/gcc_64/include/QtCore/qiodevicebase.h \
   /home/jakub/Qt/6.9.0/gcc_64/include/QtCore/qiterable.h \
   /home/jakub/Qt/6.9.0/gcc_64/include/QtCore/qiterator.h \
@@ -117,6 +125,7 @@
   /home/jakub/Qt/6.9.0/gcc_64/include/QtCore/qtenvironmentvariables.h \
   /home/jakub/Qt/6.9.0/gcc_64/include/QtCore/qtextstream.h \
   /home/jakub/Qt/6.9.0/gcc_64/include/QtCore/qtformat_impl.h \
+  /home/jakub/Qt/6.9.0/gcc_64/include/QtCore/qtimer.h \
   /home/jakub/Qt/6.9.0/gcc_64/include/QtCore/qtmetamacros.h \
   /home/jakub/Qt/6.9.0/gcc_64/include/QtCore/qtnoop.h \
   /home/jakub/Qt/6.9.0/gcc_64/include/QtCore/qtpreprocessorsupport.h \
@@ -127,6 +136,7 @@
   /home/jakub/Qt/6.9.0/gcc_64/include/QtCore/qtversionchecks.h \
   /home/jakub/Qt/6.9.0/gcc_64/include/QtCore/qtypeinfo.h \
   /home/jakub/Qt/6.9.0/gcc_64/include/QtCore/qtypes.h \
+  /home/jakub/Qt/6.9.0/gcc_64/include/QtCore/qurl.h \
   /home/jakub/Qt/6.9.0/gcc_64/include/QtCore/qutf8stringview.h \
   /home/jakub/Qt/6.9.0/gcc_64/include/QtCore/qvariant.h \
   /home/jakub/Qt/6.9.0/gcc_64/include/QtCore/qvarlengtharray.h \
@@ -147,12 +157,14 @@
   /home/jakub/Qt/6.9.0/gcc_64/include/QtGui/qkeysequence.h \
   /home/jakub/Qt/6.9.0/gcc_64/include/QtGui/qpaintdevice.h \
   /home/jakub/Qt/6.9.0/gcc_64/include/QtGui/qpalette.h \
+  /home/jakub/Qt/6.9.0/gcc_64/include/QtGui/qpicture.h \
   /home/jakub/Qt/6.9.0/gcc_64/include/QtGui/qpixelformat.h \
   /home/jakub/Qt/6.9.0/gcc_64/include/QtGui/qpixmap.h \
   /home/jakub/Qt/6.9.0/gcc_64/include/QtGui/qpolygon.h \
   /home/jakub/Qt/6.9.0/gcc_64/include/QtGui/qregion.h \
   /home/jakub/Qt/6.9.0/gcc_64/include/QtGui/qrgb.h \
   /home/jakub/Qt/6.9.0/gcc_64/include/QtGui/qrgba64.h \
+  /home/jakub/Qt/6.9.0/gcc_64/include/QtGui/qtextdocument.h \
   /home/jakub/Qt/6.9.0/gcc_64/include/QtGui/qtgui-config.h \
   /home/jakub/Qt/6.9.0/gcc_64/include/QtGui/qtguiexports.h \
   /home/jakub/Qt/6.9.0/gcc_64/include/QtGui/qtguiglobal.h \
@@ -167,8 +179,20 @@
   /home/jakub/Qt/6.9.0/gcc_64/include/QtSql/qtsql-config.h \
   /home/jakub/Qt/6.9.0/gcc_64/include/QtSql/qtsqlexports.h \
   /home/jakub/Qt/6.9.0/gcc_64/include/QtSql/qtsqlglobal.h \
+  /home/jakub/Qt/6.9.0/gcc_64/include/QtWidgets/QHBoxLayout \
+  /home/jakub/Qt/6.9.0/gcc_64/include/QtWidgets/QLabel \
   /home/jakub/Qt/6.9.0/gcc_64/include/QtWidgets/QMainWindow \
+  /home/jakub/Qt/6.9.0/gcc_64/include/QtWidgets/QPushButton \
+  /home/jakub/Qt/6.9.0/gcc_64/include/QtWidgets/QVBoxLayout \
+  /home/jakub/Qt/6.9.0/gcc_64/include/QtWidgets/qabstractbutton.h \
+  /home/jakub/Qt/6.9.0/gcc_64/include/QtWidgets/qboxlayout.h \
+  /home/jakub/Qt/6.9.0/gcc_64/include/QtWidgets/qframe.h \
+  /home/jakub/Qt/6.9.0/gcc_64/include/QtWidgets/qgridlayout.h \
+  /home/jakub/Qt/6.9.0/gcc_64/include/QtWidgets/qlabel.h \
+  /home/jakub/Qt/6.9.0/gcc_64/include/QtWidgets/qlayout.h \
+  /home/jakub/Qt/6.9.0/gcc_64/include/QtWidgets/qlayoutitem.h \
   /home/jakub/Qt/6.9.0/gcc_64/include/QtWidgets/qmainwindow.h \
+  /home/jakub/Qt/6.9.0/gcc_64/include/QtWidgets/qpushbutton.h \
   /home/jakub/Qt/6.9.0/gcc_64/include/QtWidgets/qsizepolicy.h \
   /home/jakub/Qt/6.9.0/gcc_64/include/QtWidgets/qtabwidget.h \
   /home/jakub/Qt/6.9.0/gcc_64/include/QtWidgets/qtwidgets-config.h \

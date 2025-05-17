@@ -63,9 +63,27 @@ public:
     QHBoxLayout *horizontalLayout_2;
     QPushButton *buttonBalances;
     QPushButton *buttonExpences;
-    QStackedWidget *stackedWidget_2;
-    QWidget *page;
-    QWidget *page_12;
+    QStackedWidget *StackedWidgetBalancesOrExpences;
+    QWidget *balancesPage;
+    QVBoxLayout *verticalLayout;
+    QScrollArea *scrollArea_2;
+    QWidget *scrollAreaWidgetContents_2;
+    QVBoxLayout *verticalLayout_8;
+    QLabel *dataBalance1;
+    QPushButton *balance1;
+    QLabel *dateBalance2;
+    QPushButton *balance2;
+    QSpacerItem *verticalSpacer_5;
+    QWidget *expencesPage;
+    QVBoxLayout *verticalLayout_5;
+    QScrollArea *scrollArea_3;
+    QWidget *scrollAreaWidgetContents_3;
+    QVBoxLayout *verticalLayout_9;
+    QLabel *dataExpense1;
+    QPushButton *expense1;
+    QLabel *dataExpense2;
+    QPushButton *expense2;
+    QSpacerItem *verticalSpacer_6;
     QStatusBar *statusbar;
 
     void setupUi(QMainWindow *MainWindow)
@@ -121,6 +139,7 @@ public:
 
         usernameInsert = new QLineEdit(welcomePage);
         usernameInsert->setObjectName("usernameInsert");
+        usernameInsert->setStyleSheet(QString::fromUtf8("color:rgb(0, 0, 0)"));
 
         verticalLayout_3->addWidget(usernameInsert);
 
@@ -142,6 +161,7 @@ public:
         sizePolicy.setVerticalStretch(0);
         sizePolicy.setHeightForWidth(passwordInsert->sizePolicy().hasHeightForWidth());
         passwordInsert->setSizePolicy(sizePolicy);
+        passwordInsert->setStyleSheet(QString::fromUtf8("color:black;"));
 
         verticalLayout_3->addWidget(passwordInsert);
 
@@ -193,7 +213,7 @@ public:
         scrollArea->setAlignment(Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignTop);
         scrollAreaWidgetContents = new QWidget();
         scrollAreaWidgetContents->setObjectName("scrollAreaWidgetContents");
-        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 291, 444));
+        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 176, 126));
         scrollAreaWidgetContents->setLayoutDirection(Qt::LayoutDirection::LeftToRight);
         verticalLayout_6 = new QVBoxLayout(scrollAreaWidgetContents);
         verticalLayout_6->setObjectName("verticalLayout_6");
@@ -310,16 +330,94 @@ public:
 
         verticalLayout_7->addWidget(WidgetExpenceBalances);
 
-        stackedWidget_2 = new QStackedWidget(expensePage);
-        stackedWidget_2->setObjectName("stackedWidget_2");
-        page = new QWidget();
-        page->setObjectName("page");
-        stackedWidget_2->addWidget(page);
-        page_12 = new QWidget();
-        page_12->setObjectName("page_12");
-        stackedWidget_2->addWidget(page_12);
+        StackedWidgetBalancesOrExpences = new QStackedWidget(expensePage);
+        StackedWidgetBalancesOrExpences->setObjectName("StackedWidgetBalancesOrExpences");
+        balancesPage = new QWidget();
+        balancesPage->setObjectName("balancesPage");
+        verticalLayout = new QVBoxLayout(balancesPage);
+        verticalLayout->setObjectName("verticalLayout");
+        scrollArea_2 = new QScrollArea(balancesPage);
+        scrollArea_2->setObjectName("scrollArea_2");
+        scrollArea_2->setWidgetResizable(true);
+        scrollAreaWidgetContents_2 = new QWidget();
+        scrollAreaWidgetContents_2->setObjectName("scrollAreaWidgetContents_2");
+        scrollAreaWidgetContents_2->setGeometry(QRect(0, 0, 273, 409));
+        verticalLayout_8 = new QVBoxLayout(scrollAreaWidgetContents_2);
+        verticalLayout_8->setObjectName("verticalLayout_8");
+        dataBalance1 = new QLabel(scrollAreaWidgetContents_2);
+        dataBalance1->setObjectName("dataBalance1");
 
-        verticalLayout_7->addWidget(stackedWidget_2);
+        verticalLayout_8->addWidget(dataBalance1);
+
+        balance1 = new QPushButton(scrollAreaWidgetContents_2);
+        balance1->setObjectName("balance1");
+        balance1->setFlat(true);
+
+        verticalLayout_8->addWidget(balance1);
+
+        dateBalance2 = new QLabel(scrollAreaWidgetContents_2);
+        dateBalance2->setObjectName("dateBalance2");
+
+        verticalLayout_8->addWidget(dateBalance2);
+
+        balance2 = new QPushButton(scrollAreaWidgetContents_2);
+        balance2->setObjectName("balance2");
+        balance2->setFlat(true);
+
+        verticalLayout_8->addWidget(balance2);
+
+        verticalSpacer_5 = new QSpacerItem(20, 40, QSizePolicy::Policy::Minimum, QSizePolicy::Policy::Expanding);
+
+        verticalLayout_8->addItem(verticalSpacer_5);
+
+        scrollArea_2->setWidget(scrollAreaWidgetContents_2);
+
+        verticalLayout->addWidget(scrollArea_2);
+
+        StackedWidgetBalancesOrExpences->addWidget(balancesPage);
+        expencesPage = new QWidget();
+        expencesPage->setObjectName("expencesPage");
+        verticalLayout_5 = new QVBoxLayout(expencesPage);
+        verticalLayout_5->setObjectName("verticalLayout_5");
+        scrollArea_3 = new QScrollArea(expencesPage);
+        scrollArea_3->setObjectName("scrollArea_3");
+        scrollArea_3->setWidgetResizable(true);
+        scrollAreaWidgetContents_3 = new QWidget();
+        scrollAreaWidgetContents_3->setObjectName("scrollAreaWidgetContents_3");
+        scrollAreaWidgetContents_3->setGeometry(QRect(0, 0, 273, 409));
+        verticalLayout_9 = new QVBoxLayout(scrollAreaWidgetContents_3);
+        verticalLayout_9->setObjectName("verticalLayout_9");
+        dataExpense1 = new QLabel(scrollAreaWidgetContents_3);
+        dataExpense1->setObjectName("dataExpense1");
+
+        verticalLayout_9->addWidget(dataExpense1);
+
+        expense1 = new QPushButton(scrollAreaWidgetContents_3);
+        expense1->setObjectName("expense1");
+
+        verticalLayout_9->addWidget(expense1);
+
+        dataExpense2 = new QLabel(scrollAreaWidgetContents_3);
+        dataExpense2->setObjectName("dataExpense2");
+
+        verticalLayout_9->addWidget(dataExpense2);
+
+        expense2 = new QPushButton(scrollAreaWidgetContents_3);
+        expense2->setObjectName("expense2");
+
+        verticalLayout_9->addWidget(expense2);
+
+        verticalSpacer_6 = new QSpacerItem(20, 40, QSizePolicy::Policy::Minimum, QSizePolicy::Policy::Expanding);
+
+        verticalLayout_9->addItem(verticalSpacer_6);
+
+        scrollArea_3->setWidget(scrollAreaWidgetContents_3);
+
+        verticalLayout_5->addWidget(scrollArea_3);
+
+        StackedWidgetBalancesOrExpences->addWidget(expencesPage);
+
+        verticalLayout_7->addWidget(StackedWidgetBalancesOrExpences);
 
         stackedWidget->addWidget(expensePage);
 
@@ -334,7 +432,7 @@ public:
 
         stackedWidget->setCurrentIndex(2);
         createButton->setDefault(false);
-        stackedWidget_2->setCurrentIndex(1);
+        StackedWidgetBalancesOrExpences->setCurrentIndex(1);
 
 
         QMetaObject::connectSlotsByName(MainWindow);
@@ -356,6 +454,14 @@ public:
         buttonReturn->setText(QCoreApplication::translate("MainWindow", "PushButton", nullptr));
         buttonBalances->setText(QCoreApplication::translate("MainWindow", "Balances", nullptr));
         buttonExpences->setText(QCoreApplication::translate("MainWindow", "Expenses", nullptr));
+        dataBalance1->setText(QCoreApplication::translate("MainWindow", "01.01.2001", nullptr));
+        balance1->setText(QCoreApplication::translate("MainWindow", "PushButton", nullptr));
+        dateBalance2->setText(QCoreApplication::translate("MainWindow", "02.02.2002", nullptr));
+        balance2->setText(QCoreApplication::translate("MainWindow", "PushButton", nullptr));
+        dataExpense1->setText(QCoreApplication::translate("MainWindow", "TextLabel", nullptr));
+        expense1->setText(QCoreApplication::translate("MainWindow", "PushButton", nullptr));
+        dataExpense2->setText(QCoreApplication::translate("MainWindow", "TextLabel", nullptr));
+        expense2->setText(QCoreApplication::translate("MainWindow", "PushButton", nullptr));
     } // retranslateUi
 
 };

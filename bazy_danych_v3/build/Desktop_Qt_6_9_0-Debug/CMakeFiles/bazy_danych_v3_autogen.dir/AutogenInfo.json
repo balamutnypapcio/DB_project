@@ -457,9 +457,15 @@
 	"HEADERS" : 
 	[
 		[
-			"/home/jakub/Projekty/DB/bazy_danych_v3/database.h",
+			"/home/jakub/Projekty/DB/bazy_danych_v3/Database.h",
 			"MU",
-			"EWIEGA46WW/moc_database.cpp",
+			"EWIEGA46WW/moc_Database.cpp",
+			null
+		],
+		[
+			"/home/jakub/Projekty/DB/bazy_danych_v3/expensebutton.h",
+			"MU",
+			"EWIEGA46WW/moc_expensebutton.cpp",
 			null
 		],
 		[
@@ -534,7 +540,7 @@
 	"SETTINGS_FILE" : "/home/jakub/Projekty/DB/bazy_danych_v3/build/Desktop_Qt_6_9_0-Debug/CMakeFiles/bazy_danych_v3_autogen.dir/AutogenUsed.txt",
 	"SOURCES" : 
 	[
-		[ "/home/jakub/Projekty/DB/bazy_danych_v3/database.cpp", "MU", null ],
+		[ "/home/jakub/Projekty/DB/bazy_danych_v3/Database.cpp", "MU", null ],
 		[ "/home/jakub/Projekty/DB/bazy_danych_v3/group.cpp", "MU", null ],
 		[ "/home/jakub/Projekty/DB/bazy_danych_v3/main.cpp", "MU", null ],
 		[ "/home/jakub/Projekty/DB/bazy_danych_v3/mainwindow.cpp", "MU", null ]

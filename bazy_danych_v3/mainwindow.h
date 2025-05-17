@@ -2,7 +2,10 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-#include "database.h"
+#include <QTimer>
+#include "Database.h"
+#include "expensebutton.h"
+
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -18,16 +21,22 @@ public:
 
 private slots:
     void handleSignInButton();
-    void handleGroupSelection(const QString& groupName);
+    void handleGroupSelection(int groupId, const QString& groupName);
     void handleAddGroupButton();
     void handleReturnButton();
-    void updateDateTime();
+    void loadUserGroups();
+    void loadExpenses();
+    void handleExpenseClick(int expenseId);
 
 private:
     Ui::MainWindow *ui;
     QString currentUser;
-    void setupConnections();
+    int currentUserId;
+    int currentGroupId;  // Do przechowywania ID aktualnej grupy
     QTimer* dateTimeTimer;
+    void setupConnections();
+    void updateDateTime();
+    QVector<QPair<int, QString>> userGroups;  // first: groupId, second: groupName
 };
 
 #endif // MAINWINDOW_H

@@ -81,9 +81,9 @@ build CMakeFiles/bazy_danych_v3.dir/group.cpp.o: CXX_COMPILER__bazy_danych_v3_un
   OBJECT_DIR = CMakeFiles/bazy_danych_v3.dir
   OBJECT_FILE_DIR = CMakeFiles/bazy_danych_v3.dir
 
-build CMakeFiles/bazy_danych_v3.dir/database.cpp.o: CXX_COMPILER__bazy_danych_v3_unscanned_Debug /home/jakub/Projekty/DB/bazy_danych_v3/database.cpp || cmake_object_order_depends_target_bazy_danych_v3
+build CMakeFiles/bazy_danych_v3.dir/Database.cpp.o: CXX_COMPILER__bazy_danych_v3_unscanned_Debug /home/jakub/Projekty/DB/bazy_danych_v3/Database.cpp || cmake_object_order_depends_target_bazy_danych_v3
   DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_SQL_LIB -DQT_WIDGETS_LIB
-  DEP_FILE = CMakeFiles/bazy_danych_v3.dir/database.cpp.o.d
+  DEP_FILE = CMakeFiles/bazy_danych_v3.dir/Database.cpp.o.d
   FLAGS = -DQT_QML_DEBUG -g -fdiagnostics-color=always -fPIC
   INCLUDES = -I/home/jakub/Projekty/DB/bazy_danych_v3/build/Desktop_Qt_6_9_0-Debug/bazy_danych_v3_autogen/include -isystem /home/jakub/Qt/6.9.0/gcc_64/include/QtCore -isystem /home/jakub/Qt/6.9.0/gcc_64/include -isystem /home/jakub/Qt/6.9.0/gcc_64/mkspecs/linux-g++ -isystem /home/jakub/Qt/6.9.0/gcc_64/include/QtWidgets -isystem /home/jakub/Qt/6.9.0/gcc_64/include/QtGui -isystem /home/jakub/Qt/6.9.0/gcc_64/include/QtSql
   OBJECT_DIR = CMakeFiles/bazy_danych_v3.dir
@@ -97,7 +97,7 @@ build CMakeFiles/bazy_danych_v3.dir/database.cpp.o: CXX_COMPILER__bazy_danych_v3
 #############################################
 # Link the executable bazy_danych_v3
 
-build bazy_danych_v3: CXX_EXECUTABLE_LINKER__bazy_danych_v3_Debug CMakeFiles/bazy_danych_v3.dir/bazy_danych_v3_autogen/mocs_compilation.cpp.o CMakeFiles/bazy_danych_v3.dir/main.cpp.o CMakeFiles/bazy_danych_v3.dir/mainwindow.cpp.o CMakeFiles/bazy_danych_v3.dir/group.cpp.o CMakeFiles/bazy_danych_v3.dir/database.cpp.o | /home/jakub/Qt/6.9.0/gcc_64/lib/libQt6Widgets.so.6.9.0 /home/jakub/Qt/6.9.0/gcc_64/lib/libQt6Sql.so.6.9.0 /home/jakub/Qt/6.9.0/gcc_64/lib/libQt6Gui.so.6.9.0 /usr/lib/x86_64-linux-gnu/libGLX.so /usr/lib/x86_64-linux-gnu/libOpenGL.so /home/jakub/Qt/6.9.0/gcc_64/lib/libQt6Core.so.6.9.0 || bazy_danych_v3_autogen bazy_danych_v3_autogen_timestamp_deps
+build bazy_danych_v3: CXX_EXECUTABLE_LINKER__bazy_danych_v3_Debug CMakeFiles/bazy_danych_v3.dir/bazy_danych_v3_autogen/mocs_compilation.cpp.o CMakeFiles/bazy_danych_v3.dir/main.cpp.o CMakeFiles/bazy_danych_v3.dir/mainwindow.cpp.o CMakeFiles/bazy_danych_v3.dir/group.cpp.o CMakeFiles/bazy_danych_v3.dir/Database.cpp.o | /home/jakub/Qt/6.9.0/gcc_64/lib/libQt6Widgets.so.6.9.0 /home/jakub/Qt/6.9.0/gcc_64/lib/libQt6Sql.so.6.9.0 /home/jakub/Qt/6.9.0/gcc_64/lib/libQt6Gui.so.6.9.0 /usr/lib/x86_64-linux-gnu/libGLX.so /usr/lib/x86_64-linux-gnu/libOpenGL.so /home/jakub/Qt/6.9.0/gcc_64/lib/libQt6Core.so.6.9.0 || bazy_danych_v3_autogen bazy_danych_v3_autogen_timestamp_deps
   FLAGS = -DQT_QML_DEBUG -g
   LINK_LIBRARIES = -Wl,-rpath,/home/jakub/Qt/6.9.0/gcc_64/lib:  /home/jakub/Qt/6.9.0/gcc_64/lib/libQt6Widgets.so.6.9.0  /home/jakub/Qt/6.9.0/gcc_64/lib/libQt6Sql.so.6.9.0  /home/jakub/Qt/6.9.0/gcc_64/lib/libQt6Gui.so.6.9.0  /usr/lib/x86_64-linux-gnu/libGLX.so  /usr/lib/x86_64-linux-gnu/libOpenGL.so  /home/jakub/Qt/6.9.0/gcc_64/lib/libQt6Core.so.6.9.0  -Wl,-rpath-link,/home/jakub/Qt/6.9.0/gcc_64/lib
   OBJECT_DIR = CMakeFiles/bazy_danych_v3.dir
