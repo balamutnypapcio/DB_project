@@ -30,3 +30,24 @@ BEGIN
 END;
 //
 DELIMITER ;
+
+DELIMITER //
+
+CREATE TRIGGER anonimize_user_data_after_delete
+AFTER UPDATE ON users
+FOR EACH ROW
+BEGIN
+    IF NEW.is_deleted = TRUE AND OLD.is_deleted = FALSE THEN
+        -- Anonimizuj dane użytkownika
+        UPDATE users
+        SET 
+            username = CONCAT('anon_user_', NEW.id),
+            email = CONCAT('anon', NEW.id, '@example.com'),
+            hashed_password = 'deleted_user',
+            created_at = OLD.created_at -- zachowaj datę rejestracji
+        WHERE id = NEW.id;
+    END IF;
+END;
+//
+
+DELIMITER ;

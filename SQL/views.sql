@@ -28,3 +28,16 @@ FROM expenses e
          JOIN expense_participants ep ON ep.expense_id = e.id
          JOIN users u2 ON ep.user_id = u2.id
          JOIN expense_shares es ON es.expense_id = e.id AND es.user_id = ep.user_id;
+
+# grupy usera
+CREATE OR REPLACE VIEW view_user_groups AS
+SELECT 
+    gm.user_id,
+    u.username,
+    g.id AS group_id,
+    g.name AS group_name,
+    g.created_at AS group_created_at,
+    g.created_by
+FROM group_members gm
+JOIN group_table g ON gm.group_id = g.id
+JOIN users u ON gm.user_id = u.id;
