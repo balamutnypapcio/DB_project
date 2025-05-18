@@ -28,7 +28,18 @@ private slots:
     void loadExpenses();
     void handleExpenseClick(int expenseId);
 
+private slots:
+    /**
+     * @name Sloty obsługi przycisków nawigacji
+     * @{
+     */
+    void backButton1_clicked();
+    void backButton2_clicked();
+    void backButton3_clicked();
+    void createButton_clicked();
+
 private:
+
     Ui::MainWindow *ui;
     QString currentUser;
     int currentUserId;
@@ -37,6 +48,12 @@ private:
     void setupConnections();
     void updateDateTime();
     QVector<QPair<int, QString>> userGroups;  // first: groupId, second: groupName
+
+    struct ParticipantData {
+        QString username;
+        double share;
+        bool isPaid;
+    };
 };
 
 #endif // MAINWINDOW_H

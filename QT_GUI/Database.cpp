@@ -142,3 +142,67 @@ QVector<Database::ExpenseData> Database::getExpensesForGroup(int groupId)
 
     return expenses;
 }
+
+/**
+ * @brief Pobiera szczegółowe dane wydatku na podstawie jego identyfikatora
+ * @param expenseId Identyfikator wydatku
+ * @return Struktura z danymi wydatku
+ */
+Database::ExpenseData Database::getExpenseDetails(int expenseId)
+{
+    ExpenseData expenseData;
+    expenseData.id = expenseId;
+
+    QString queryStr = "SELECT e.date, e.description, u.username, e.amount "
+                       "FROM expenses e "
+                       "JOIN users u ON e.paid_by = u.id "
+                       "WHERE e.id = :expenseId";
+
+    QSqlQuery query(db);
+    query.prepare(queryStr);
+    query.bindValue(":expenseId", expenseId);
+
+    if (query.exec() && query.next()) {
+        expenseData.date = query.value(0).toDateTime();
+        expenseData.description = query.value(1).toString();
+        expenseData.paidByUsername = query.value(2).toString();
+        expenseData.amount = query.value(3).toDouble();
+    } else {
+        qDebug() << "Failed to get expense details:" << query.lastError().text();
+    }
+
+    return expenseData;
+}
+
+/**
+ * @brief Pobiera listę uczestników dla danego wydatku
+ * @param expenseId Identyfikator wydatku
+ * @return Wektor struktur z danymi uczestników
+ */
+QVector<Database::ParticipantData> Database::getExpenseParticipants(int expenseId)
+{
+    QVector<ParticipantData> participants;
+
+    QString queryStr = "SELECT u.username, ep.share, ep.is_paid "
+                       "FROM expense_participants ep "
+                       "JOIN users u ON ep.user_id = u.id "
+                       "WHERE ep.expense_id = :expenseId";
+
+    QSqlQuery query(db);
+    query.prepare(queryStr);
+    query.bindValue(":expenseId", expenseId);
+
+    if (query.exec()) {
+        while (query.next()) {
+            ParticipantData participant;
+            participant.username = query.value(0).toString();
+            participant.share = query.value(1).toDouble();
+            participant.isPaid = query.value(2).toBool();
+            participants.append(participant);
+        }
+    } else {
+        qDebug() << "Failed to get expense participants:" << query.lastError().text();
+    }
+
+    return participants;
+}

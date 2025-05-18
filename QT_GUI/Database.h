@@ -1,6 +1,5 @@
 #ifndef DATABASE_H
 #define DATABASE_H
-
 #include <QSqlDatabase>
 #include <QSqlError>
 #include <QSqlQuery>
@@ -14,12 +13,12 @@ public:
     static Database& getInstance();
     bool isConnected() const;
     QSqlDatabase getDatabase() const;
-
     // Metoda do wykonywania zapytań
     QSqlQuery executeQuery(const QString& queryStr);
     QVector<QPair<int, QString>> getUserGroups(int userId);
     bool validateUser(const QString& username);
     int getUserId(const QString& username);
+
     struct ExpenseData {
         int id;
         QDateTime date;
@@ -28,25 +27,29 @@ public:
         double amount;
     };
 
+    struct ParticipantData {
+        QString username;
+        double share;
+        bool isPaid;
+    };
+
     QVector<ExpenseData> getExpensesForGroup(int groupId);
+    ExpenseData getExpenseDetails(int expenseId);
+    QVector<ParticipantData> getExpenseParticipants(int expenseId);
 
 private:
     Database(); // Konstruktor prywatny (Singleton)
     ~Database();
-
     // Zabraniamy kopiowania i przypisania
     Database(const Database&) = delete;
     Database& operator=(const Database&) = delete;
-
     bool connectToDatabase();
     QSqlDatabase db;
     bool connected;
-
     // Stałe konfiguracyjne
     const QString DATABASE_NAME = "DB_tricount";
     const QString DATABASE_HOST = "localhost";
     const QString DATABASE_USER = "admin";
     const QString DATABASE_PASSWORD = "123";
 };
-
 #endif // DATABASE_H
