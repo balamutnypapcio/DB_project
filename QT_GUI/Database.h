@@ -29,6 +29,14 @@ public:
     bool validateUser(const QString& username);
     int getUserId(const QString& username);
 
+    // Metody do zarządzania członkami grupy
+    bool addGroupMember(int groupId, const QString& username);
+    bool removeGroupMember(int groupId, const QString& username);
+    QVector<QString> getGroupMembers(int groupId);
+    bool userExists(const QString& username);
+    int getLastInsertedGroupId();
+
+
     // Nowe metody do wywoływania przy zmianach
     bool addGroup(const QString& name);
     bool addExpense(int groupId, const QString& description, double amount);

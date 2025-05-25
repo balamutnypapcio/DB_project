@@ -34,6 +34,8 @@ private slots:
     void onGroupsChanged();
     void onExpensesChanged(int groupId);
     void onExpenseDetailsChanged(int expenseId);
+    void handleAddMemberButton();
+    void handleRemoveMember(const QString& username);
 
 private slots:
     /**
@@ -54,7 +56,7 @@ private:
     Ui::MainWindow *ui;
     QString currentUser;
     int currentUserId;
-    int currentGroupId;  // Do przechowywania ID aktualnej grupy
+    int currentGroupId = -1; // Dodaj jeśli nie istnieje
     QTimer* dateTimeTimer;
     void setupConnections();
     void updateDateTime();
@@ -63,6 +65,8 @@ private:
                                         const QString& title,
                                         const QString& text);
 
+    void updateGroupMembersList();
+    QVector<QString> currentGroupMembers;
     struct ParticipantData {
         QString username;
         double share;

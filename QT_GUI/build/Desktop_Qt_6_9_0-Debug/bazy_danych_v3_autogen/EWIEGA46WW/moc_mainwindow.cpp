@@ -53,6 +53,9 @@ template <> constexpr inline auto MainWindow::qt_create_metaobjectdata<qt_meta_t
         "onExpensesChanged",
         "onExpenseDetailsChanged",
         "expenseId",
+        "handleAddMemberButton",
+        "handleRemoveMember",
+        "username",
         "backButton1_clicked",
         "backButton2_clicked",
         "backButton3_clicked",
@@ -88,26 +91,32 @@ template <> constexpr inline auto MainWindow::qt_create_metaobjectdata<qt_meta_t
         QtMocHelpers::SlotData<void(int)>(12, 2, QMC::AccessPrivate, QMetaType::Void, {{
             { QMetaType::Int, 13 },
         }}),
-        // Slot 'backButton1_clicked'
+        // Slot 'handleAddMemberButton'
         QtMocHelpers::SlotData<void()>(14, 2, QMC::AccessPrivate, QMetaType::Void),
-        // Slot 'backButton2_clicked'
-        QtMocHelpers::SlotData<void()>(15, 2, QMC::AccessPrivate, QMetaType::Void),
-        // Slot 'backButton3_clicked'
-        QtMocHelpers::SlotData<void()>(16, 2, QMC::AccessPrivate, QMetaType::Void),
-        // Slot 'createButton_clicked'
+        // Slot 'handleRemoveMember'
+        QtMocHelpers::SlotData<void(const QString &)>(15, 2, QMC::AccessPrivate, QMetaType::Void, {{
+            { QMetaType::QString, 16 },
+        }}),
+        // Slot 'backButton1_clicked'
         QtMocHelpers::SlotData<void()>(17, 2, QMC::AccessPrivate, QMetaType::Void),
-        // Slot 'handleAddExpenseButton'
+        // Slot 'backButton2_clicked'
         QtMocHelpers::SlotData<void()>(18, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'backButton3_clicked'
+        QtMocHelpers::SlotData<void()>(19, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'createButton_clicked'
+        QtMocHelpers::SlotData<void()>(20, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'handleAddExpenseButton'
+        QtMocHelpers::SlotData<void()>(21, 2, QMC::AccessPrivate, QMetaType::Void),
         // Slot 'loadExpenseDetails'
-        QtMocHelpers::SlotData<void(int)>(19, 2, QMC::AccessPrivate, QMetaType::Void, {{
+        QtMocHelpers::SlotData<void(int)>(22, 2, QMC::AccessPrivate, QMetaType::Void, {{
             { QMetaType::Int, 13 },
         }}),
         // Slot 'handleExpenseClick'
-        QtMocHelpers::SlotData<void(int)>(20, 2, QMC::AccessPrivate, QMetaType::Void, {{
+        QtMocHelpers::SlotData<void(int)>(23, 2, QMC::AccessPrivate, QMetaType::Void, {{
             { QMetaType::Int, 13 },
         }}),
         // Slot 'handleBackFromDetails'
-        QtMocHelpers::SlotData<void()>(21, 2, QMC::AccessPrivate, QMetaType::Void),
+        QtMocHelpers::SlotData<void()>(24, 2, QMC::AccessPrivate, QMetaType::Void),
     };
     QtMocHelpers::UintData qt_properties {
     };
@@ -140,14 +149,16 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 6: _t->onGroupsChanged(); break;
         case 7: _t->onExpensesChanged((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
         case 8: _t->onExpenseDetailsChanged((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
-        case 9: _t->backButton1_clicked(); break;
-        case 10: _t->backButton2_clicked(); break;
-        case 11: _t->backButton3_clicked(); break;
-        case 12: _t->createButton_clicked(); break;
-        case 13: _t->handleAddExpenseButton(); break;
-        case 14: _t->loadExpenseDetails((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
-        case 15: _t->handleExpenseClick((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
-        case 16: _t->handleBackFromDetails(); break;
+        case 9: _t->handleAddMemberButton(); break;
+        case 10: _t->handleRemoveMember((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1]))); break;
+        case 11: _t->backButton1_clicked(); break;
+        case 12: _t->backButton2_clicked(); break;
+        case 13: _t->backButton3_clicked(); break;
+        case 14: _t->createButton_clicked(); break;
+        case 15: _t->handleAddExpenseButton(); break;
+        case 16: _t->loadExpenseDetails((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
+        case 17: _t->handleExpenseClick((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
+        case 18: _t->handleBackFromDetails(); break;
         default: ;
         }
     }
@@ -172,14 +183,14 @@ int MainWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 17)
+        if (_id < 19)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 17;
+        _id -= 19;
     }
     if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 17)
+        if (_id < 19)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 17;
+        _id -= 19;
     }
     return _id;
 }

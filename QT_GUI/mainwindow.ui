@@ -38,7 +38,7 @@ background-color: #FFFFFF;</string>
        <enum>Qt::LayoutDirection::LeftToRight</enum>
       </property>
       <property name="currentIndex">
-       <number>5</number>
+       <number>2</number>
       </property>
       <widget class="QWidget" name="welcomePage">
        <property name="styleSheet">
@@ -612,7 +612,7 @@ QPushButton:pressed {
          </widget>
         </item>
         <item>
-         <widget class="QWidget" name="widget_2" native="true">
+         <widget class="QWidget" name="group_add_input_board_widget" native="true">
           <layout class="QVBoxLayout" name="verticalLayout_11">
            <item>
             <widget class="QLabel" name="groupNameLabel">
@@ -628,7 +628,8 @@ color: #000000;font-size: 15pt;</string>
            <item>
             <widget class="QLineEdit" name="groupNameInput">
              <property name="styleSheet">
-              <string notr="true">height: 30px;
+              <string notr="true">
+color: #000000; height: 30px;
   max-height: 30px;
   line-height: 30px;
   padding: 0 8px;
@@ -2021,8 +2022,8 @@ QPushButton:pressed {
                 <rect>
                  <x>0</x>
                  <y>0</y>
-                 <width>278</width>
-                 <height>413</height>
+                 <width>107</width>
+                 <height>126</height>
                 </rect>
                </property>
                <layout class="QVBoxLayout" name="verticalLayout_9">

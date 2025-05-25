@@ -261,3 +261,87 @@ void Database::notifyExpenseDetailsChanged(int expenseId)
 {
     emit expenseDetailsChanged(expenseId);
 }
+
+
+bool Database::userExists(const QString& username)
+{
+    QSqlQuery query(db);
+    query.prepare("SELECT id FROM users WHERE username = :username AND is_deleted = FALSE");
+    query.bindValue(":username", username);
+
+    if (!query.exec()) {
+        qDebug() << "Query Error:" << query.lastError().text();
+        return false;
+    }
+
+    return query.next();
+}
+
+bool Database::addGroupMember(int groupId, const QString& username)
+{
+    if (!userExists(username)) {
+        return false;
+    }
+
+    QSqlQuery query(db);
+    query.prepare("CALL add_group_member(:groupId, (SELECT id FROM users WHERE username = :username))");
+    query.bindValue(":groupId", groupId);
+    query.bindValue(":username", username);
+
+    bool success = query.exec();
+    if (success) {
+        notifyGroupsChanged();
+    } else {
+        qDebug() << "Failed to add group member:" << query.lastError().text();
+    }
+    return success;
+}
+
+bool Database::removeGroupMember(int groupId, const QString& username)
+{
+    QSqlQuery query(db);
+    query.prepare("DELETE FROM group_members WHERE group_id = :groupId AND user_id = (SELECT id FROM users WHERE username = :username)");
+    query.bindValue(":groupId", groupId);
+    query.bindValue(":username", username);
+
+    bool success = query.exec();
+    if (success) {
+        notifyGroupsChanged();
+    } else {
+        qDebug() << "Failed to remove group member:" << query.lastError().text();
+    }
+    return success;
+}
+
+QVector<QString> Database::getGroupMembers(int groupId)
+{
+    QVector<QString> members;
+    QSqlQuery query(db);
+    query.prepare(
+        "SELECT u.username "
+        "FROM users u "
+        "INNER JOIN group_members gm ON u.id = gm.user_id "
+        "WHERE gm.group_id = :groupId"
+        );
+    query.bindValue(":groupId", groupId);
+
+    if (query.exec()) {
+        while (query.next()) {
+            members.append(query.value("username").toString());
+        }
+    } else {
+        qDebug() << "Failed to get group members:" << query.lastError().text();
+    }
+
+    return members;
+}
+
+
+int Database::getLastInsertedGroupId()
+{
+    QSqlQuery query(db);
+    if (query.exec("SELECT LAST_INSERT_ID()") && query.next()) {
+        return query.value(0).toInt();
+    }
+    return -1;
+}

@@ -60,7 +60,7 @@ public:
     QHBoxLayout *horizontalLayout_3;
     QLabel *pageTitle;
     QPushButton *backButton;
-    QWidget *widget_2;
+    QWidget *group_add_input_board_widget;
     QVBoxLayout *verticalLayout_11;
     QLabel *groupNameLabel;
     QLineEdit *groupNameInput;
@@ -573,20 +573,21 @@ public:
 
         verticalLayout_10->addWidget(widget);
 
-        widget_2 = new QWidget(createGroupPage);
-        widget_2->setObjectName("widget_2");
-        verticalLayout_11 = new QVBoxLayout(widget_2);
+        group_add_input_board_widget = new QWidget(createGroupPage);
+        group_add_input_board_widget->setObjectName("group_add_input_board_widget");
+        verticalLayout_11 = new QVBoxLayout(group_add_input_board_widget);
         verticalLayout_11->setObjectName("verticalLayout_11");
-        groupNameLabel = new QLabel(widget_2);
+        groupNameLabel = new QLabel(group_add_input_board_widget);
         groupNameLabel->setObjectName("groupNameLabel");
         groupNameLabel->setStyleSheet(QString::fromUtf8("\n"
 "color: #000000;font-size: 15pt;"));
 
         verticalLayout_11->addWidget(groupNameLabel);
 
-        groupNameInput = new QLineEdit(widget_2);
+        groupNameInput = new QLineEdit(group_add_input_board_widget);
         groupNameInput->setObjectName("groupNameInput");
-        groupNameInput->setStyleSheet(QString::fromUtf8("height: 30px;\n"
+        groupNameInput->setStyleSheet(QString::fromUtf8("\n"
+"color: #000000; height: 30px;\n"
 "  max-height: 30px;\n"
 "  line-height: 30px;\n"
 "  padding: 0 8px;\n"
@@ -599,14 +600,14 @@ public:
 
         verticalLayout_11->addWidget(groupNameInput);
 
-        participantsLabel = new QLabel(widget_2);
+        participantsLabel = new QLabel(group_add_input_board_widget);
         participantsLabel->setObjectName("participantsLabel");
         participantsLabel->setStyleSheet(QString::fromUtf8("\n"
 "color: #000000;font-size: 15pt;"));
 
         verticalLayout_11->addWidget(participantsLabel);
 
-        scrollArea_4 = new QScrollArea(widget_2);
+        scrollArea_4 = new QScrollArea(group_add_input_board_widget);
         scrollArea_4->setObjectName("scrollArea_4");
         scrollArea_4->setStyleSheet(QString::fromUtf8("background-color: white;"));
         scrollArea_4->setWidgetResizable(true);
@@ -785,7 +786,7 @@ public:
         verticalLayout_11->addWidget(scrollArea_4);
 
 
-        verticalLayout_10->addWidget(widget_2);
+        verticalLayout_10->addWidget(group_add_input_board_widget);
 
         stackedWidget->addWidget(createGroupPage);
         createExpensePage = new QWidget();
@@ -1612,7 +1613,7 @@ public:
         scrollArea_3->setWidgetResizable(true);
         scrollAreaWidgetContents_3 = new QWidget();
         scrollAreaWidgetContents_3->setObjectName("scrollAreaWidgetContents_3");
-        scrollAreaWidgetContents_3->setGeometry(QRect(0, 0, 278, 413));
+        scrollAreaWidgetContents_3->setGeometry(QRect(0, 0, 107, 126));
         verticalLayout_9 = new QVBoxLayout(scrollAreaWidgetContents_3);
         verticalLayout_9->setObjectName("verticalLayout_9");
         dataExpense1 = new QLabel(scrollAreaWidgetContents_3);
@@ -1658,7 +1659,7 @@ public:
 
         retranslateUi(MainWindow);
 
-        stackedWidget->setCurrentIndex(5);
+        stackedWidget->setCurrentIndex(2);
         createButton->setDefault(false);
         StackedWidgetBalancesOrExpences->setCurrentIndex(0);
 
