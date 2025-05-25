@@ -5,6 +5,7 @@
 #include <QDateTime>
 #include <QTimer>
 #include <QInputDialog>
+#include "addgroupdialog.h"
 
 
                                                                                            /**
@@ -54,9 +55,13 @@ MainWindow::~MainWindow()
  * Łączy sygnały kliknięć przycisków z odpowiednimi slotami, które realizują
  * funkcjonalności aplikacji, takie jak logowanie, nawigacja między widokami itp.
  */
+
+
 void MainWindow::setupConnections()
 {
+    // Zmiana z InButton na handleSignInButton
     connect(ui->pushButton, &QPushButton::clicked, this, &MainWindow::handleSignInButton);
+
     connect(ui->buttonReturn, &QPushButton::clicked, this, [this]() {
         ui->stackedWidget->setCurrentIndex(1);  // Powrót do listy grup
     });
@@ -70,7 +75,7 @@ void MainWindow::setupConnections()
         ui->StackedWidgetBalancesOrExpences->setCurrentIndex(0);
     });
 
-    // Zmiana: używamy createButton do dodawania grup
+    // Połącz przycisk tworzenia grupy
     connect(ui->createButton, &QPushButton::clicked, this, &MainWindow::handleAddGroupButton);
 
     Database& db = Database::getInstance();
@@ -79,8 +84,10 @@ void MainWindow::setupConnections()
     connect(&db, &Database::expenseDetailsChanged, this, &MainWindow::onExpenseDetailsChanged);
 
     connect(ui->backButton_3, &QPushButton::clicked, this, &MainWindow::handleBackFromDetails);
-
 }
+
+
+
 /**
  * @brief Slot obsługujący powrót do strony z grupami
  */
@@ -222,6 +229,7 @@ void MainWindow::handleSignInButton()
     if (db.validateUser(username)) {
         currentUser = username;
         currentUserId = db.getUserId(username);
+        qDebug() << "Login successful. Username:" << username << "UserID:" << currentUserId; // dodane logowanie
 
         if (currentUserId == -1) {
             QMessageBox* msgBox = createStyledMessageBox(QMessageBox::Warning,
@@ -230,7 +238,7 @@ void MainWindow::handleSignInButton()
             delete msgBox;
         } else {
             loadUserGroups();
-            ui->stackedWidget->setCurrentIndex(1);  // Dodane: przejście do widoku grup
+            ui->stackedWidget->setCurrentIndex(1);  // przejście do widoku grup
         }
     } else {
         QMessageBox* msgBox = createStyledMessageBox(QMessageBox::Warning,
@@ -241,7 +249,6 @@ void MainWindow::handleSignInButton()
         ui->passwordInsert->clear();
     }
 }
-
 /**
  * @brief Obsługuje dodawanie nowej grupy
  *
@@ -249,15 +256,17 @@ void MainWindow::handleSignInButton()
  */
 void MainWindow::handleAddGroupButton()
 {
-    bool ok;
-    QString name = QInputDialog::getText(this, "Dodaj grupę",
-                                         "Wprowadź nazwę grupy:", QLineEdit::Normal,
-                                         "", &ok);
-    if (ok && !name.isEmpty()) {
+    AddGroupDialog dialog(this);
+    if (dialog.exec() == QDialog::Accepted) {
         Database& db = Database::getInstance();
-        if (!db.addGroup(name)) {
-            QMessageBox* errorBox = createStyledMessageBox(QMessageBox::Warning,
-                                                           "Błąd", "Nie udało się utworzyć grupy");
+        QString groupName = dialog.getGroupName();
+
+        if (!db.addGroup(groupName)) {
+            QMessageBox* errorBox = createStyledMessageBox(
+                QMessageBox::Warning,
+                "Błąd",
+                "Nie udało się utworzyć grupy. Sprawdź połączenie z bazą danych."
+                );
             errorBox->exec();
             delete errorBox;
         }

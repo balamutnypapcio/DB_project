@@ -209,16 +209,23 @@ QVector<Database::ParticipantData> Database::getExpenseParticipants(int expenseI
 
     return participants;
 }
-
 bool Database::addGroup(const QString& name)
 {
+    if (currentUserId == -1) {
+        qDebug() << "Error: No user is currently logged in";
+        return false;
+    }
+
     QSqlQuery query(db);
     query.prepare("CALL create_group(:name, :userId)");
     query.bindValue(":name", name);
     query.bindValue(":userId", currentUserId);
 
     bool success = query.exec();
-    if (success) {
+    if (!success) {
+        qDebug() << "SQL Error in addGroup:" << query.lastError().text();
+        qDebug() << "Parameters - name:" << name << "userId:" << currentUserId;
+    } else {
         notifyGroupsChanged();
     }
     return success;

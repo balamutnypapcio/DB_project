@@ -514,6 +514,12 @@
 			null
 		],
 		[
+			"/home/maks/semestr_6/BD/DB_project/QT_GUI/addgroupdialog.h",
+			"MU",
+			"EWIEGA46WW/moc_addgroupdialog.cpp",
+			null
+		],
+		[
 			"/home/maks/semestr_6/BD/DB_project/QT_GUI/expensebutton.h",
 			"MU",
 			"EWIEGA46WW/moc_expensebutton.cpp",
@@ -594,6 +600,11 @@
 		[ "/home/maks/semestr_6/BD/DB_project/QT_GUI/Database.cpp", "MU", null ],
 		[
 			"/home/maks/semestr_6/BD/DB_project/QT_GUI/addexpensedialog.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/maks/semestr_6/BD/DB_project/QT_GUI/addgroupdialog.cpp",
 			"MU",
 			null
 		],

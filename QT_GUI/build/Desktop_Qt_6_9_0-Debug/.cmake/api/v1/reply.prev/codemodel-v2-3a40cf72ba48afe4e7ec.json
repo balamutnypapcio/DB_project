@@ -7,7 +7,7 @@
 				{
 					"build" : ".",
 					"hasInstallRule" : true,
-					"jsonFile" : "directory-.-Debug-b499a210bdc45730570b.json",
+					"jsonFile" : "directory-.-Debug-9b23d36f0560f3589149.json",
 					"minimumCMakeVersion" : 
 					{
 						"string" : "3.16"
@@ -44,7 +44,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "bazy_danych_v3::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-bazy_danych_v3-Debug-d12e69d80a077207bf34.json",
+					"jsonFile" : "target-bazy_danych_v3-Debug-401e535ed0028313be98.json",
 					"name" : "bazy_danych_v3",
 					"projectIndex" : 0
 				},

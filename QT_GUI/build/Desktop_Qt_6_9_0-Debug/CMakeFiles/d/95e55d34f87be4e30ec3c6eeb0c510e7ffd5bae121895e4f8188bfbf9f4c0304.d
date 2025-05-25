@@ -515,6 +515,8 @@ bazy_danych_v3_autogen/timestamp: \
   ../../Database.h \
   ../../addexpensedialog.cpp \
   ../../addexpensedialog.h \
+  ../../addgroupdialog.cpp \
+  ../../addgroupdialog.h \
   .qtc/package-manager/auto-setup.cmake \
   CMakeFiles/3.22.1/CMakeCXXCompiler.cmake \
   CMakeFiles/3.22.1/CMakeSystem.cmake \

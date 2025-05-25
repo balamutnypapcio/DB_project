@@ -515,6 +515,8 @@ bazy_danych_v3_autogen/timestamp: \
 	/home/maks/semestr_6/BD/DB_project/QT_GUI/Database.h \
 	/home/maks/semestr_6/BD/DB_project/QT_GUI/addexpensedialog.cpp \
 	/home/maks/semestr_6/BD/DB_project/QT_GUI/addexpensedialog.h \
+	/home/maks/semestr_6/BD/DB_project/QT_GUI/addgroupdialog.cpp \
+	/home/maks/semestr_6/BD/DB_project/QT_GUI/addgroupdialog.h \
 	/home/maks/semestr_6/BD/DB_project/QT_GUI/build/Desktop_Qt_6_9_0-Debug/.qtc/package-manager/auto-setup.cmake \
 	/home/maks/semestr_6/BD/DB_project/QT_GUI/build/Desktop_Qt_6_9_0-Debug/CMakeFiles/3.22.1/CMakeCXXCompiler.cmake \
 	/home/maks/semestr_6/BD/DB_project/QT_GUI/build/Desktop_Qt_6_9_0-Debug/CMakeFiles/3.22.1/CMakeSystem.cmake \

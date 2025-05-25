@@ -20,6 +20,8 @@ qt_add_executable(bazy_danych_v3
     expensebutton.h
     addexpensedialog.h
     addexpensedialog.cpp
+    addgroupdialog.cpp
+    addgroupdialog.h
 )
 
 target_link_libraries(bazy_danych_v3
