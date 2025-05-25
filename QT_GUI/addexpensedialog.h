@@ -8,6 +8,7 @@
 #include <QVBoxLayout>
 #include <QLabel>
 #include <QMessageBox>
+#include <QPushButton>
 
 class AddExpenseDialog : public QDialog
 {

@@ -59,6 +59,9 @@ private:
     void setupConnections();
     void updateDateTime();
     QVector<QPair<int, QString>> userGroups;  // first: groupId, second: groupName
+    QMessageBox* createStyledMessageBox(QMessageBox::Icon icon,
+                                        const QString& title,
+                                        const QString& text);
 
     struct ParticipantData {
         QString username;

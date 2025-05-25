@@ -248,65 +248,12 @@ void MainWindow::handleSignInButton()
 void MainWindow::handleAddGroupButton()
 {
     bool ok;
-    QInputDialog* dialog = new QInputDialog(this);
-    dialog->setWindowTitle("Dodaj grupę");
-    dialog->setLabelText("Wprowadź nazwę grupy:");
-    dialog->setStyleSheet(
-        "QInputDialog {"
-        "    background-color: #FFFFFF;"
-        "}"
-        "QInputDialog QLabel {"
-        "    color: #000000;"
-        "    font-size: 12pt;"
-        "}"
-        "QInputDialog QLineEdit {"
-        "    color: #000000;"
-        "    font-size: 12pt;"
-        "    padding: 5px;"
-        "    border: 1px solid #ccc;"
-        "    border-radius: 6px;"
-        "}"
-        "QPushButton {"
-        "    min-width: 100px;"
-        "    min-height: 30px;"
-        "    background-color: #4169E1;"
-        "    border-radius: 10px;"
-        "    color: white;"
-        "    font-size: 12pt;"
-        "    font-weight: bold;"
-        "    padding: 5px;"
-        "}"
-        "QPushButton:hover {"
-        "    background-color: #5a7ee5;"
-        "}"
-        );
-
-    QString name;
-    if (dialog->exec() == QDialog::Accepted) {
-        name = dialog->textValue();
-        if (!name.isEmpty()) {
-            Database& db = Database::getInstance();
-            if (!db.addGroup(name)) {
-                QMessageBox* errorBox = createStyledMessageBox(QMessageBox::Warning,
-                                                               "Błąd", "Nie udało się utworzyć grupy");
-                errorBox->exec();
-                delete errorBox;
-            }
-        }
-    }
-    delete dialog;
-    QMessageBox* msgBox = createStyledMessageBox(QMessageBox::Information,
-                                                 "Dodawanie grupy", QString("Dodawanie nowej grupy dla użytkownika: %1").arg(currentUser));
-    msgBox->exec();
-    delete msgBox;
-    QString name = QInputDialog::getText(this, "Add Group",
-                                         "Enter group name:", QLineEdit::Normal,
+    QString name = QInputDialog::getText(this, "Dodaj grupę",
+                                         "Wprowadź nazwę grupy:", QLineEdit::Normal,
                                          "", &ok);
     if (ok && !name.isEmpty()) {
         Database& db = Database::getInstance();
-        if (db.addGroup(name)) {
-            // Nie musimy ręcznie odświeżać - sygnał groupsChanged zrobi to za nas
-        } else {
+        if (!db.addGroup(name)) {
             QMessageBox* errorBox = createStyledMessageBox(QMessageBox::Warning,
                                                            "Błąd", "Nie udało się utworzyć grupy");
             errorBox->exec();
@@ -433,7 +380,6 @@ void MainWindow::onExpenseDetailsChanged(int expenseId)
     }
 }
 
-
 void MainWindow::handleAddExpenseButton()
 {
     AddExpenseDialog dialog(this);
@@ -441,7 +387,6 @@ void MainWindow::handleAddExpenseButton()
         Database& db = Database::getInstance();
         bool success = false;
 
-        // Pobierz ID aktualnie zalogowanego użytkownika
         int currentUserId = db.getCurrentUserId();
 
         if (currentUserId > 0) {
@@ -455,18 +400,15 @@ void MainWindow::handleAddExpenseButton()
             success = query.exec();
         }
 
-        if (success) {
-            loadExpenses(); // Odśwież listę wydatków
-        } else {
+        if (!success) {
             QMessageBox* errorBox = createStyledMessageBox(QMessageBox::Warning,
-             "Błąd", "Nie udało się dodać wydatku. Sprawdź połączenie z bazą danych.");
+                                                           "Błąd",
+                                                           "Nie udało się dodać wydatku. Sprawdź połączenie z bazą danych.");
             errorBox->exec();
             delete errorBox;
-                );
         }
     }
 }
-
 
 
 void MainWindow::loadExpenseDetails(int expenseId)
@@ -549,4 +491,40 @@ void MainWindow::loadGroups() {
     } else {
         qDebug() << "Błąd podczas ładowania grup:" << query.lastError().text();
     }
+}
+QMessageBox* MainWindow::createStyledMessageBox(QMessageBox::Icon icon,
+                                                const QString& title,
+                                                const QString& text)
+{
+    QMessageBox* msgBox = new QMessageBox(this);
+    msgBox->setIcon(icon);
+    msgBox->setWindowTitle(title);
+    msgBox->setText(text);
+    msgBox->setStyleSheet(
+        "QMessageBox {"
+        "    background-color: #FFFFFF;"
+        "}"
+        "QMessageBox QLabel {"
+        "    color: #000000;"
+        "    font-size: 12pt;"
+        "    min-width: 200px;"
+        "}"
+        "QPushButton {"
+        "    min-width: 100px;"
+        "    min-height: 30px;"
+        "    background-color: #4169E1;"
+        "    border-radius: 10px;"
+        "    color: white;"
+        "    font-size: 12pt;"
+        "    font-weight: bold;"
+        "    padding: 5px;"
+        "}"
+        "QPushButton:hover {"
+        "    background-color: #5a7ee5;"
+        "}"
+        "QPushButton:pressed {"
+        "    background-color: #0d1b3f;"
+        "}"
+        );
+    return msgBox;
 }
