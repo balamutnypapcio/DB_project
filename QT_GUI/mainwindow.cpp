@@ -14,26 +14,28 @@
  * Inicjalizuje interfejs użytkownika, konfiguruje połączenia sygnałów i slotów,
  * ustawia początkowy widok na ekran logowania oraz inicjalizuje timer do aktualizacji czasu.
  */
-                                                                                           MainWindow::MainWindow(QWidget *parent)
+MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
-                                        , ui(new Ui::MainWindow)
-                                        , dateTimeTimer(new QTimer(this))
+    , ui(new Ui::MainWindow)
+    , dateTimeTimer(new QTimer(this))
 {
-    ui->setupUi(this);
-    setupConnections();
+{
+ui->setupUi(this);
+setupConnections();
 
-    // Rozpocznij od strony logowania
-    ui->stackedWidget->setCurrentIndex(0);
+// Rozpocznij od strony logowania
+ui->stackedWidget->setCurrentIndex(0);
 
-    // Konfiguracja timera dla aktualizacji daty/czasu
-    connect(dateTimeTimer, &QTimer::timeout, this, &MainWindow::updateDateTime);
-    dateTimeTimer->start(1000); // Aktualizuj co sekundę
-    updateDateTime(); // Początkowa aktualizacja
-
-    connect(ui->backButton, &QPushButton::clicked, this, &MainWindow::backButton1_clicked);
-    connect(ui->backButton_2, &QPushButton::clicked, this, &MainWindow::backButton2_clicked);
-    connect(ui->backButton_3, &QPushButton::clicked, this, &MainWindow::backButton3_clicked);
-    connect(ui->createButton, &QPushButton::clicked, this, &MainWindow::createButton_clicked);
+// Konfiguracja timera dla aktualizacji daty/czasu
+connect(dateTimeTimer, &QTimer::timeout, this, &MainWindow::updateDateTime);
+dateTimeTimer->start(1000); // Aktualizuj co sekundę
+updateDateTime(); // Początkowa aktualizacja
+connect(ui->backButton, &QPushButton::clicked, this, &MainWindow::backButton1_clicked);
+connect(ui->backButton_2, &QPushButton::clicked, this, &MainWindow::backButton2_clicked);
+connect(ui->backButton_3, &QPushButton::clicked, this, &MainWindow::backButton3_clicked);
+// Usuwamy tę linię:
+// connect(ui->createButton, &QPushButton::clicked, this, &MainWindow::createButton_clicked);
+}
 }
 
 /**
@@ -62,24 +64,23 @@ void MainWindow::setupConnections()
     // Połącz przycisk Expenses z pokazywaniem wydatków
     connect(ui->buttonExpences, &QPushButton::clicked, this, [this]() {
         ui->StackedWidgetBalancesOrExpences->setCurrentIndex(1);
-        //loadExpenses();
     });
+
     connect(ui->buttonBalances, &QPushButton::clicked, this, [this]() {
         ui->StackedWidgetBalancesOrExpences->setCurrentIndex(0);
     });
+
+    // Zmiana: używamy createButton do dodawania grup
+    connect(ui->createButton, &QPushButton::clicked, this, &MainWindow::handleAddGroupButton);
 
     Database& db = Database::getInstance();
     connect(&db, &Database::groupsChanged, this, &MainWindow::onGroupsChanged);
     connect(&db, &Database::expensesChanged, this, &MainWindow::onExpensesChanged);
     connect(&db, &Database::expenseDetailsChanged, this, &MainWindow::onExpenseDetailsChanged);
-    connect(ui->createButton, &QPushButton::clicked,
-            this, &MainWindow::handleAddExpenseButton);
 
     connect(ui->backButton_3, &QPushButton::clicked, this, &MainWindow::handleBackFromDetails);
 
-
 }
-
 /**
  * @brief Slot obsługujący powrót do strony z grupami
  */
@@ -215,20 +216,21 @@ void MainWindow::handleSignInButton()
         msgBox->exec();
         delete msgBox;
         return;
+    }
 
     Database& db = Database::getInstance();
     if (db.validateUser(username)) {
         currentUser = username;
-        currentUserId = db.getUserId(username);  // Pobierz ID użytkownika
+        currentUserId = db.getUserId(username);
 
         if (currentUserId == -1) {
             QMessageBox* msgBox = createStyledMessageBox(QMessageBox::Warning,
                                                          "Błąd logowania", "Nie można pobrać ID użytkownika");
             msgBox->exec();
             delete msgBox;
-        }
         } else {
-            QMessageBox::warning(this, "Login Error", "Could not get user ID");
+            loadUserGroups();
+            ui->stackedWidget->setCurrentIndex(1);  // Dodane: przejście do widoku grup
         }
     } else {
         QMessageBox* msgBox = createStyledMessageBox(QMessageBox::Warning,
