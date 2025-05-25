@@ -195,7 +195,7 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName("MainWindow");
-        MainWindow->resize(329, 600);
+        MainWindow->resize(334, 600);
         MainWindow->setMinimumSize(QSize(0, 500));
         MainWindow->setStyleSheet(QString::fromUtf8("\n"
 "background-color: #FFFFFF;"));
@@ -360,7 +360,7 @@ public:
         scrollArea->setAlignment(Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignTop);
         scrollAreaWidgetContents = new QWidget();
         scrollAreaWidgetContents->setObjectName("scrollAreaWidgetContents");
-        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 303, 485));
+        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 118, 126));
         scrollAreaWidgetContents->setLayoutDirection(Qt::LayoutDirection::LeftToRight);
         scrollAreaWidgetContents->setStyleSheet(QString::fromUtf8("QScrollArea { border: none; }"));
         verticalLayout_6 = new QVBoxLayout(scrollAreaWidgetContents);
@@ -612,7 +612,7 @@ public:
         scrollArea_4->setWidgetResizable(true);
         scrollAreaWidgetContents_4 = new QWidget();
         scrollAreaWidgetContents_4->setObjectName("scrollAreaWidgetContents_4");
-        scrollAreaWidgetContents_4->setGeometry(QRect(0, 0, 291, 416));
+        scrollAreaWidgetContents_4->setGeometry(QRect(0, 0, 278, 365));
         verticalLayout_12 = new QVBoxLayout(scrollAreaWidgetContents_4);
         verticalLayout_12->setObjectName("verticalLayout_12");
         widget_3 = new QWidget(scrollAreaWidgetContents_4);
@@ -1064,7 +1064,7 @@ public:
         expenseParticipantsScrollArea->setWidgetResizable(true);
         scroll = new QWidget();
         scroll->setObjectName("scroll");
-        scroll->setGeometry(QRect(0, -36, 281, 146));
+        scroll->setGeometry(QRect(0, 0, 264, 174));
         verticalLayout_15 = new QVBoxLayout(scroll);
         verticalLayout_15->setObjectName("verticalLayout_15");
         widget_11 = new QWidget(scroll);
@@ -1352,7 +1352,7 @@ public:
         scrollArea_5->setWidgetResizable(true);
         scrollAreaWidgetContents_5 = new QWidget();
         scrollAreaWidgetContents_5->setObjectName("scrollAreaWidgetContents_5");
-        scrollAreaWidgetContents_5->setGeometry(QRect(0, 0, 303, 182));
+        scrollAreaWidgetContents_5->setGeometry(QRect(0, 0, 159, 135));
         verticalLayout_17 = new QVBoxLayout(scrollAreaWidgetContents_5);
         verticalLayout_17->setObjectName("verticalLayout_17");
         widget_16 = new QWidget(scrollAreaWidgetContents_5);
@@ -1568,7 +1568,7 @@ public:
         scrollArea_2->setWidgetResizable(true);
         scrollAreaWidgetContents_2 = new QWidget();
         scrollAreaWidgetContents_2->setObjectName("scrollAreaWidgetContents_2");
-        scrollAreaWidgetContents_2->setGeometry(QRect(0, 0, 291, 448));
+        scrollAreaWidgetContents_2->setGeometry(QRect(0, 0, 278, 413));
         verticalLayout_8 = new QVBoxLayout(scrollAreaWidgetContents_2);
         verticalLayout_8->setObjectName("verticalLayout_8");
         dataBalance1 = new QLabel(scrollAreaWidgetContents_2);
@@ -1612,7 +1612,7 @@ public:
         scrollArea_3->setWidgetResizable(true);
         scrollAreaWidgetContents_3 = new QWidget();
         scrollAreaWidgetContents_3->setObjectName("scrollAreaWidgetContents_3");
-        scrollAreaWidgetContents_3->setGeometry(QRect(0, 0, 291, 448));
+        scrollAreaWidgetContents_3->setGeometry(QRect(0, 0, 278, 413));
         verticalLayout_9 = new QVBoxLayout(scrollAreaWidgetContents_3);
         verticalLayout_9->setObjectName("verticalLayout_9");
         dataExpense1 = new QLabel(scrollAreaWidgetContents_3);
@@ -1658,9 +1658,9 @@ public:
 
         retranslateUi(MainWindow);
 
-        stackedWidget->setCurrentIndex(3);
+        stackedWidget->setCurrentIndex(5);
         createButton->setDefault(false);
-        StackedWidgetBalancesOrExpences->setCurrentIndex(1);
+        StackedWidgetBalancesOrExpences->setCurrentIndex(0);
 
 
         QMetaObject::connectSlotsByName(MainWindow);

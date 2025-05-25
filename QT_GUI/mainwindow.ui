@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>329</width>
+    <width>334</width>
     <height>600</height>
    </rect>
   </property>
@@ -38,7 +38,7 @@ background-color: #FFFFFF;</string>
        <enum>Qt::LayoutDirection::LeftToRight</enum>
       </property>
       <property name="currentIndex">
-       <number>3</number>
+       <number>5</number>
       </property>
       <widget class="QWidget" name="welcomePage">
        <property name="styleSheet">
@@ -310,8 +310,8 @@ QScrollArea { border: none; }</string>
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>303</width>
-             <height>485</height>
+             <width>118</width>
+             <height>126</height>
             </rect>
            </property>
            <property name="accessibleName">
@@ -665,8 +665,8 @@ color: #000000;font-size: 15pt;</string>
                <rect>
                 <x>0</x>
                 <y>0</y>
-                <width>291</width>
-                <height>416</height>
+                <width>278</width>
+                <height>365</height>
                </rect>
               </property>
               <layout class="QVBoxLayout" name="verticalLayout_12">
@@ -1286,9 +1286,9 @@ QPushButton:pressed {
               <property name="geometry">
                <rect>
                 <x>0</x>
-                <y>-36</y>
-                <width>281</width>
-                <height>146</height>
+                <y>0</y>
+                <width>264</width>
+                <height>174</height>
                </rect>
               </property>
               <layout class="QVBoxLayout" name="verticalLayout_15">
@@ -1654,8 +1654,8 @@ color: #000000;font-size: 15pt;</string>
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>303</width>
-             <height>182</height>
+             <width>159</width>
+             <height>135</height>
             </rect>
            </property>
            <layout class="QVBoxLayout" name="verticalLayout_17">
@@ -1931,7 +1931,7 @@ QPushButton:pressed {
         <item>
          <widget class="QStackedWidget" name="StackedWidgetBalancesOrExpences">
           <property name="currentIndex">
-           <number>1</number>
+           <number>0</number>
           </property>
           <widget class="QWidget" name="balancesPage">
            <property name="styleSheet">
@@ -1948,8 +1948,8 @@ QPushButton:pressed {
                 <rect>
                  <x>0</x>
                  <y>0</y>
-                 <width>291</width>
-                 <height>448</height>
+                 <width>278</width>
+                 <height>413</height>
                 </rect>
                </property>
                <layout class="QVBoxLayout" name="verticalLayout_8">
@@ -2021,8 +2021,8 @@ QPushButton:pressed {
                 <rect>
                  <x>0</x>
                  <y>0</y>
-                 <width>291</width>
-                 <height>448</height>
+                 <width>278</width>
+                 <height>413</height>
                 </rect>
                </property>
                <layout class="QVBoxLayout" name="verticalLayout_9">

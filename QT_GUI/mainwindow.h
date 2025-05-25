@@ -20,6 +20,8 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
     void loadGroups();
+    int currentExpenseId;
+
 
 
 private slots:
@@ -64,7 +66,6 @@ private:
         bool isPaid;
     };
 };
-int currentExpenseId;
 
 
 #endif // MAINWINDOW_H

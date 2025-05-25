@@ -435,13 +435,60 @@ void MainWindow::handleBackFromDetails()
 
 
 void MainWindow::loadGroups() {
-    ui->groupsComboBox->clear();  // lub inna kontrolka
-    QSqlQuery query;
-    if (query.exec("SELECT name FROM groups")) {
-        while (query.next()) {
-            QString name = query.value(0).toString();
-            ui->groupsComboBox->addItem(name);
+    QWidget* scrollContent = ui->scrollAreaWidgetContents;
+    QVBoxLayout* layout = qobject_cast<QVBoxLayout*>(scrollContent->layout());
+
+    // Wyczyść istniejące przyciski
+    QLayoutItem* item;
+    while ((item = layout->takeAt(0)) != nullptr) {
+        if (QWidget* widget = item->widget()) {
+            widget->deleteLater();
         }
+        delete item;
+    }
+
+    // Pobierz grupy z bazy danych
+    Database& db = Database::getInstance();
+    QSqlQuery query(db.getDatabase());
+
+    if (query.exec("SELECT id, name FROM groups")) {
+        while (query.next()) {
+            int groupId = query.value(0).toInt();
+            QString groupName = query.value(1).toString();
+
+            // Utwórz przycisk dla grupy
+            QPushButton* button = new QPushButton(groupName, scrollContent);
+            button->setMinimumHeight(30);
+            button->setMaximumHeight(50);
+            button->setStyleSheet(
+                "QPushButton {"
+                "    min-width: 100px;"
+                "    min-height: 30px;"
+                "    max-height: 30px;"
+                "    background-color: #4169E1;"
+                "    border-radius: 10px;"
+                "    color: white;"
+                "    font-size: 14pt;"
+                "    font-weight: bold;"
+                "}"
+                "QPushButton:hover {"
+                "    background-color: #5a7ee5;"
+                "}"
+                "QPushButton:pressed {"
+                "    background-color: #0d1b3f;"
+                "}"
+                );
+
+            // Połącz przycisk z handlerem
+            connect(button, &QPushButton::clicked, this, [this, groupId, groupName]() {
+                handleGroupSelection(groupId, groupName);
+            });
+
+            layout->addWidget(button);
+        }
+
+        // Dodaj spacer na końcu
+        layout->addStretch();
     } else {
         qDebug() << "Błąd podczas ładowania grup:" << query.lastError().text();
     }
