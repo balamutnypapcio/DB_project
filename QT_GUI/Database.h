@@ -67,6 +67,7 @@ private:
     const QString DATABASE_HOST = "localhost";
     const QString DATABASE_USER = "admin";
     const QString DATABASE_PASSWORD = "123";
+    int currentUserId = -1;
 
     void notifyGroupsChanged();
     void notifyExpensesChanged(int groupId);

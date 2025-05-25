@@ -27,7 +27,6 @@ private slots:
     void handleReturnButton();
     void loadUserGroups();
     void loadExpenses();
-    void handleExpenseClick(int expenseId);
     void onGroupsChanged();
     void onExpensesChanged(int groupId);
     void onExpenseDetailsChanged(int expenseId);
@@ -43,6 +42,8 @@ private slots:
     void createButton_clicked();
     void handleAddExpenseButton();
     void loadExpenseDetails(int expenseId);
+    void handleExpenseClick(int expenseId);
+    void handleBackFromDetails();
 
 private:
 

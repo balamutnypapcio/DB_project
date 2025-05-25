@@ -70,8 +70,11 @@ void MainWindow::setupConnections()
     connect(&db, &Database::groupsChanged, this, &MainWindow::onGroupsChanged);
     connect(&db, &Database::expensesChanged, this, &MainWindow::onExpensesChanged);
     connect(&db, &Database::expenseDetailsChanged, this, &MainWindow::onExpenseDetailsChanged);
-    connect(ui->addExpenseButton, &QPushButton::clicked,
+    connect(ui->createButton, &QPushButton::clicked,
             this, &MainWindow::handleAddExpenseButton);
+
+    connect(ui->backButton_3, &QPushButton::clicked, this, &MainWindow::handleBackFromDetails);
+
 
 }
 
@@ -333,13 +336,21 @@ void MainWindow::loadExpenses()
  * Funkcja wywoływana po kliknięciu przycisku wydatku, obecnie tylko loguje
  * informację o kliknięciu w konsoli debugowania.
  */
+
+// W mainwindow.cpp zostawiamy tylko jedną implementację:
 void MainWindow::handleExpenseClick(int expenseId)
 {
-    ui->stackedWidget->setCurrentIndex(4);  // Zakładam, że strona szczegółów ma indeks 6
+    Database& db = Database::getInstance();
+    auto expenseData = db.getExpenseDetails(expenseId);
 
-    qDebug() << "Showing details for expense with ID:" << expenseId;
+    // Aktualizacja UI
+    ui->expsenseNameLabel->setText("Name: " + expenseData.description);
+    ui->expenseNameTextEdit->setPlainText(QString::number(expenseData.amount, 'f', 2) + " PLN");
+    ui->createExpenseLabel->setText("Date: " + expenseData.date.toString("yyyy-MM-dd hh:mm"));
+
+    // Przełączenie widoku
+    ui->stackedWidget->setCurrentIndex(4);
 }
-
 
 void MainWindow::onGroupsChanged()
 {
@@ -360,19 +371,6 @@ void MainWindow::onExpenseDetailsChanged(int expenseId)
     // Odśwież szczegóły wydatku jeśli jest aktualnie wyświetlany
     if (currentExpenseId == expenseId) {
         loadExpenseDetails(expenseId);
-    }
-}
-
-void MainWindow::handleAddExpenseButton()
-{
-    AddExpenseDialog dialog(this);
-    if (dialog.exec() == QDialog::Accepted) {
-        Database& db = Database::getInstance();
-        if (db.addExpense(currentGroupId, dialog.getDescription(), dialog.getAmount())) {
-            // Nie musimy ręcznie odświeżać - sygnał expensesChanged zrobi to za nas
-        } else {
-            QMessageBox::warning(this, "Error", "Failed to add expense");
-        }
     }
 }
 
@@ -410,16 +408,25 @@ void MainWindow::handleAddExpenseButton()
     }
 }
 
+
+
 void MainWindow::loadExpenseDetails(int expenseId)
 {
     Database& db = Database::getInstance();
     auto expenseData = db.getExpenseDetails(expenseId);
     auto participants = db.getExpenseParticipants(expenseId);
 
-    // TODO: Zaktualizuj UI z detalami wydatku
-    // Na przykład:
-    ui->labelExpenseDescription->setText(expenseData.description);
-    ui->labelExpenseAmount->setText(QString::number(expenseData.amount, 'f', 2) + " PLN");
-    ui->labelExpenseDate->setText(expenseData.date.toString("yyyy-MM-dd hh:mm"));
-    ui->labelPaidBy->setText(expenseData.paidByUsername);
+    // Ustawiamy wartości w UI używając istniejących nazw elementów
+    ui->expsenseNameLabel->setText("Name: " + expenseData.description);
+    ui->expenseNameTextEdit->setPlainText(QString::number(expenseData.amount, 'f', 2) + " PLN");
+    ui->createExpenseLabel->setText("Date: " + expenseData.date.toString("yyyy-MM-dd hh:mm"));
+
+    // Przełączamy widok
+    ui->stackedWidget->setCurrentIndex(4);
+}
+
+
+void MainWindow::handleBackFromDetails()
+{
+    ui->stackedWidget->setCurrentWidget(ui->expensesPage);
 }
