@@ -47,6 +47,7 @@
   /home/maks/Qt/6.9.0/gcc_64/include/QtCore/qglobalstatic.h \
   /home/maks/Qt/6.9.0/gcc_64/include/QtCore/qhash.h \
   /home/maks/Qt/6.9.0/gcc_64/include/QtCore/qhashfunctions.h \
+  /home/maks/Qt/6.9.0/gcc_64/include/QtCore/qiodevice.h \
   /home/maks/Qt/6.9.0/gcc_64/include/QtCore/qiodevicebase.h \
   /home/maks/Qt/6.9.0/gcc_64/include/QtCore/qiterable.h \
   /home/maks/Qt/6.9.0/gcc_64/include/QtCore/qiterator.h \
@@ -143,6 +144,7 @@
   /home/maks/Qt/6.9.0/gcc_64/include/QtGui/qpaintdevice.h \
   /home/maks/Qt/6.9.0/gcc_64/include/QtGui/qpalette.h \
   /home/maks/Qt/6.9.0/gcc_64/include/QtGui/qpen.h \
+  /home/maks/Qt/6.9.0/gcc_64/include/QtGui/qpicture.h \
   /home/maks/Qt/6.9.0/gcc_64/include/QtGui/qpixelformat.h \
   /home/maks/Qt/6.9.0/gcc_64/include/QtGui/qpixmap.h \
   /home/maks/Qt/6.9.0/gcc_64/include/QtGui/qpolygon.h \
@@ -162,7 +164,9 @@
   /home/maks/Qt/6.9.0/gcc_64/include/QtWidgets/QDialog \
   /home/maks/Qt/6.9.0/gcc_64/include/QtWidgets/QDialogButtonBox \
   /home/maks/Qt/6.9.0/gcc_64/include/QtWidgets/QDoubleSpinBox \
+  /home/maks/Qt/6.9.0/gcc_64/include/QtWidgets/QLabel \
   /home/maks/Qt/6.9.0/gcc_64/include/QtWidgets/QLineEdit \
+  /home/maks/Qt/6.9.0/gcc_64/include/QtWidgets/QMessageBox \
   /home/maks/Qt/6.9.0/gcc_64/include/QtWidgets/QVBoxLayout \
   /home/maks/Qt/6.9.0/gcc_64/include/QtWidgets/qabstractspinbox.h \
   /home/maks/Qt/6.9.0/gcc_64/include/QtWidgets/qboxlayout.h \
@@ -170,9 +174,11 @@
   /home/maks/Qt/6.9.0/gcc_64/include/QtWidgets/qdialogbuttonbox.h \
   /home/maks/Qt/6.9.0/gcc_64/include/QtWidgets/qframe.h \
   /home/maks/Qt/6.9.0/gcc_64/include/QtWidgets/qgridlayout.h \
+  /home/maks/Qt/6.9.0/gcc_64/include/QtWidgets/qlabel.h \
   /home/maks/Qt/6.9.0/gcc_64/include/QtWidgets/qlayout.h \
   /home/maks/Qt/6.9.0/gcc_64/include/QtWidgets/qlayoutitem.h \
   /home/maks/Qt/6.9.0/gcc_64/include/QtWidgets/qlineedit.h \
+  /home/maks/Qt/6.9.0/gcc_64/include/QtWidgets/qmessagebox.h \
   /home/maks/Qt/6.9.0/gcc_64/include/QtWidgets/qsizepolicy.h \
   /home/maks/Qt/6.9.0/gcc_64/include/QtWidgets/qspinbox.h \
   /home/maks/Qt/6.9.0/gcc_64/include/QtWidgets/qtwidgets-config.h \

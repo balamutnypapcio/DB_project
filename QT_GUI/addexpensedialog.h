@@ -6,6 +6,8 @@
 #include <QDoubleSpinBox>
 #include <QDialogButtonBox>
 #include <QVBoxLayout>
+#include <QLabel>
+#include <QMessageBox>
 
 class AddExpenseDialog : public QDialog
 {
@@ -19,6 +21,14 @@ public:
 private:
     QLineEdit *descriptionEdit;
     QDoubleSpinBox *amountSpinBox;
+
+    // Metoda pomocnicza do tworzenia styled message boxów
+    QMessageBox* createStyledMessageBox(QMessageBox::Icon icon,
+                                        const QString& title,
+                                        const QString& text);
+
+    void setupUI();
+    void setupStyles();
 };
 
 #endif // ADDEXPENSEDIALOG_H

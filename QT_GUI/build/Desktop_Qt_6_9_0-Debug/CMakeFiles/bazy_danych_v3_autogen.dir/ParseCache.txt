@@ -196,6 +196,7 @@
  mdp:/home/maks/Qt/6.9.0/gcc_64/include/QtWidgets/QLabel
  mdp:/home/maks/Qt/6.9.0/gcc_64/include/QtWidgets/QLineEdit
  mdp:/home/maks/Qt/6.9.0/gcc_64/include/QtWidgets/QMainWindow
+ mdp:/home/maks/Qt/6.9.0/gcc_64/include/QtWidgets/QMessageBox
  mdp:/home/maks/Qt/6.9.0/gcc_64/include/QtWidgets/QPushButton
  mdp:/home/maks/Qt/6.9.0/gcc_64/include/QtWidgets/QVBoxLayout
  mdp:/home/maks/Qt/6.9.0/gcc_64/include/QtWidgets/qabstractbutton.h
@@ -210,6 +211,7 @@
  mdp:/home/maks/Qt/6.9.0/gcc_64/include/QtWidgets/qlayoutitem.h
  mdp:/home/maks/Qt/6.9.0/gcc_64/include/QtWidgets/qlineedit.h
  mdp:/home/maks/Qt/6.9.0/gcc_64/include/QtWidgets/qmainwindow.h
+ mdp:/home/maks/Qt/6.9.0/gcc_64/include/QtWidgets/qmessagebox.h
  mdp:/home/maks/Qt/6.9.0/gcc_64/include/QtWidgets/qpushbutton.h
  mdp:/home/maks/Qt/6.9.0/gcc_64/include/QtWidgets/qsizepolicy.h
  mdp:/home/maks/Qt/6.9.0/gcc_64/include/QtWidgets/qspinbox.h
@@ -971,6 +973,7 @@
  mdp:/home/maks/Qt/6.9.0/gcc_64/include/QtCore/qglobalstatic.h
  mdp:/home/maks/Qt/6.9.0/gcc_64/include/QtCore/qhash.h
  mdp:/home/maks/Qt/6.9.0/gcc_64/include/QtCore/qhashfunctions.h
+ mdp:/home/maks/Qt/6.9.0/gcc_64/include/QtCore/qiodevice.h
  mdp:/home/maks/Qt/6.9.0/gcc_64/include/QtCore/qiodevicebase.h
  mdp:/home/maks/Qt/6.9.0/gcc_64/include/QtCore/qiterable.h
  mdp:/home/maks/Qt/6.9.0/gcc_64/include/QtCore/qiterator.h
@@ -1067,6 +1070,7 @@
  mdp:/home/maks/Qt/6.9.0/gcc_64/include/QtGui/qpaintdevice.h
  mdp:/home/maks/Qt/6.9.0/gcc_64/include/QtGui/qpalette.h
  mdp:/home/maks/Qt/6.9.0/gcc_64/include/QtGui/qpen.h
+ mdp:/home/maks/Qt/6.9.0/gcc_64/include/QtGui/qpicture.h
  mdp:/home/maks/Qt/6.9.0/gcc_64/include/QtGui/qpixelformat.h
  mdp:/home/maks/Qt/6.9.0/gcc_64/include/QtGui/qpixmap.h
  mdp:/home/maks/Qt/6.9.0/gcc_64/include/QtGui/qpolygon.h
@@ -1086,7 +1090,9 @@
  mdp:/home/maks/Qt/6.9.0/gcc_64/include/QtWidgets/QDialog
  mdp:/home/maks/Qt/6.9.0/gcc_64/include/QtWidgets/QDialogButtonBox
  mdp:/home/maks/Qt/6.9.0/gcc_64/include/QtWidgets/QDoubleSpinBox
+ mdp:/home/maks/Qt/6.9.0/gcc_64/include/QtWidgets/QLabel
  mdp:/home/maks/Qt/6.9.0/gcc_64/include/QtWidgets/QLineEdit
+ mdp:/home/maks/Qt/6.9.0/gcc_64/include/QtWidgets/QMessageBox
  mdp:/home/maks/Qt/6.9.0/gcc_64/include/QtWidgets/QVBoxLayout
  mdp:/home/maks/Qt/6.9.0/gcc_64/include/QtWidgets/qabstractspinbox.h
  mdp:/home/maks/Qt/6.9.0/gcc_64/include/QtWidgets/qboxlayout.h
@@ -1094,9 +1100,11 @@
  mdp:/home/maks/Qt/6.9.0/gcc_64/include/QtWidgets/qdialogbuttonbox.h
  mdp:/home/maks/Qt/6.9.0/gcc_64/include/QtWidgets/qframe.h
  mdp:/home/maks/Qt/6.9.0/gcc_64/include/QtWidgets/qgridlayout.h
+ mdp:/home/maks/Qt/6.9.0/gcc_64/include/QtWidgets/qlabel.h
  mdp:/home/maks/Qt/6.9.0/gcc_64/include/QtWidgets/qlayout.h
  mdp:/home/maks/Qt/6.9.0/gcc_64/include/QtWidgets/qlayoutitem.h
  mdp:/home/maks/Qt/6.9.0/gcc_64/include/QtWidgets/qlineedit.h
+ mdp:/home/maks/Qt/6.9.0/gcc_64/include/QtWidgets/qmessagebox.h
  mdp:/home/maks/Qt/6.9.0/gcc_64/include/QtWidgets/qsizepolicy.h
  mdp:/home/maks/Qt/6.9.0/gcc_64/include/QtWidgets/qspinbox.h
  mdp:/home/maks/Qt/6.9.0/gcc_64/include/QtWidgets/qtwidgets-config.h
