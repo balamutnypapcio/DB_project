@@ -409,3 +409,17 @@ void MainWindow::handleAddExpenseButton()
         }
     }
 }
+
+void MainWindow::loadExpenseDetails(int expenseId)
+{
+    Database& db = Database::getInstance();
+    auto expenseData = db.getExpenseDetails(expenseId);
+    auto participants = db.getExpenseParticipants(expenseId);
+
+    // TODO: Zaktualizuj UI z detalami wydatku
+    // Na przykład:
+    ui->labelExpenseDescription->setText(expenseData.description);
+    ui->labelExpenseAmount->setText(QString::number(expenseData.amount, 'f', 2) + " PLN");
+    ui->labelExpenseDate->setText(expenseData.date.toString("yyyy-MM-dd hh:mm"));
+    ui->labelPaidBy->setText(expenseData.paidByUsername);
+}

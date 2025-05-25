@@ -1,18 +1,15 @@
-/home/maks/semestr_6/BD/DB_project/QT_GUI/build/Desktop_Qt_6_9_0-Debug/bazy_danych_v3_autogen/EWIEGA46WW/moc_mainwindow.cpp: /home/maks/semestr_6/BD/DB_project/QT_GUI/mainwindow.h \
+/home/maks/semestr_6/BD/DB_project/QT_GUI/build/Desktop_Qt_6_9_0-Debug/bazy_danych_v3_autogen/EWIEGA46WW/moc_Database.cpp: /home/maks/semestr_6/BD/DB_project/QT_GUI/Database.h \
   /home/maks/semestr_6/BD/DB_project/QT_GUI/build/Desktop_Qt_6_9_0-Debug/bazy_danych_v3_autogen/moc_predefs.h \
   /home/maks/Qt/6.9.0/gcc_64/include/QtCore/QDateTime \
   /home/maks/Qt/6.9.0/gcc_64/include/QtCore/QDebug \
   /home/maks/Qt/6.9.0/gcc_64/include/QtCore/QObject \
   /home/maks/Qt/6.9.0/gcc_64/include/QtCore/QString \
-  /home/maks/Qt/6.9.0/gcc_64/include/QtCore/QTimer \
   /home/maks/Qt/6.9.0/gcc_64/include/QtCore/q17memory.h \
   /home/maks/Qt/6.9.0/gcc_64/include/QtCore/q20functional.h \
-  /home/maks/Qt/6.9.0/gcc_64/include/QtCore/q20iterator.h \
   /home/maks/Qt/6.9.0/gcc_64/include/QtCore/q20memory.h \
   /home/maks/Qt/6.9.0/gcc_64/include/QtCore/q20type_traits.h \
   /home/maks/Qt/6.9.0/gcc_64/include/QtCore/q20utility.h \
   /home/maks/Qt/6.9.0/gcc_64/include/QtCore/q23utility.h \
-  /home/maks/Qt/6.9.0/gcc_64/include/QtCore/qabstracteventdispatcher.h \
   /home/maks/Qt/6.9.0/gcc_64/include/QtCore/qalgorithms.h \
   /home/maks/Qt/6.9.0/gcc_64/include/QtCore/qanystringview.h \
   /home/maks/Qt/6.9.0/gcc_64/include/QtCore/qarraydata.h \
@@ -22,7 +19,6 @@
   /home/maks/Qt/6.9.0/gcc_64/include/QtCore/qatomic.h \
   /home/maks/Qt/6.9.0/gcc_64/include/QtCore/qatomic_cxx11.h \
   /home/maks/Qt/6.9.0/gcc_64/include/QtCore/qbasicatomic.h \
-  /home/maks/Qt/6.9.0/gcc_64/include/QtCore/qbasictimer.h \
   /home/maks/Qt/6.9.0/gcc_64/include/QtCore/qbindingstorage.h \
   /home/maks/Qt/6.9.0/gcc_64/include/QtCore/qbytearray.h \
   /home/maks/Qt/6.9.0/gcc_64/include/QtCore/qbytearrayalgorithms.h \
@@ -43,11 +39,7 @@
   /home/maks/Qt/6.9.0/gcc_64/include/QtCore/qdarwinhelpers.h \
   /home/maks/Qt/6.9.0/gcc_64/include/QtCore/qdatastream.h \
   /home/maks/Qt/6.9.0/gcc_64/include/QtCore/qdatetime.h \
-  /home/maks/Qt/6.9.0/gcc_64/include/QtCore/qdeadlinetimer.h \
   /home/maks/Qt/6.9.0/gcc_64/include/QtCore/qdebug.h \
-  /home/maks/Qt/6.9.0/gcc_64/include/QtCore/qelapsedtimer.h \
-  /home/maks/Qt/6.9.0/gcc_64/include/QtCore/qendian.h \
-  /home/maks/Qt/6.9.0/gcc_64/include/QtCore/qeventloop.h \
   /home/maks/Qt/6.9.0/gcc_64/include/QtCore/qexceptionhandling.h \
   /home/maks/Qt/6.9.0/gcc_64/include/QtCore/qflags.h \
   /home/maks/Qt/6.9.0/gcc_64/include/QtCore/qfloat16.h \
@@ -59,18 +51,15 @@
   /home/maks/Qt/6.9.0/gcc_64/include/QtCore/qglobalstatic.h \
   /home/maks/Qt/6.9.0/gcc_64/include/QtCore/qhash.h \
   /home/maks/Qt/6.9.0/gcc_64/include/QtCore/qhashfunctions.h \
-  /home/maks/Qt/6.9.0/gcc_64/include/QtCore/qiodevice.h \
   /home/maks/Qt/6.9.0/gcc_64/include/QtCore/qiodevicebase.h \
   /home/maks/Qt/6.9.0/gcc_64/include/QtCore/qiterable.h \
   /home/maks/Qt/6.9.0/gcc_64/include/QtCore/qiterator.h \
   /home/maks/Qt/6.9.0/gcc_64/include/QtCore/qlatin1stringview.h \
-  /home/maks/Qt/6.9.0/gcc_64/include/QtCore/qline.h \
   /home/maks/Qt/6.9.0/gcc_64/include/QtCore/qlist.h \
   /home/maks/Qt/6.9.0/gcc_64/include/QtCore/qlocale.h \
   /home/maks/Qt/6.9.0/gcc_64/include/QtCore/qlogging.h \
   /home/maks/Qt/6.9.0/gcc_64/include/QtCore/qmalloc.h \
   /home/maks/Qt/6.9.0/gcc_64/include/QtCore/qmap.h \
-  /home/maks/Qt/6.9.0/gcc_64/include/QtCore/qmargins.h \
   /home/maks/Qt/6.9.0/gcc_64/include/QtCore/qmath.h \
   /home/maks/Qt/6.9.0/gcc_64/include/QtCore/qmetacontainer.h \
   /home/maks/Qt/6.9.0/gcc_64/include/QtCore/qmetaobject.h \
@@ -84,11 +73,8 @@
   /home/maks/Qt/6.9.0/gcc_64/include/QtCore/qobjectdefs_impl.h \
   /home/maks/Qt/6.9.0/gcc_64/include/QtCore/qoverload.h \
   /home/maks/Qt/6.9.0/gcc_64/include/QtCore/qpair.h \
-  /home/maks/Qt/6.9.0/gcc_64/include/QtCore/qpoint.h \
   /home/maks/Qt/6.9.0/gcc_64/include/QtCore/qprocessordetection.h \
-  /home/maks/Qt/6.9.0/gcc_64/include/QtCore/qrect.h \
   /home/maks/Qt/6.9.0/gcc_64/include/QtCore/qrefcount.h \
-  /home/maks/Qt/6.9.0/gcc_64/include/QtCore/qregularexpression.h \
   /home/maks/Qt/6.9.0/gcc_64/include/QtCore/qscopedpointer.h \
   /home/maks/Qt/6.9.0/gcc_64/include/QtCore/qscopeguard.h \
   /home/maks/Qt/6.9.0/gcc_64/include/QtCore/qset.h \
@@ -96,8 +82,6 @@
   /home/maks/Qt/6.9.0/gcc_64/include/QtCore/qshareddata_impl.h \
   /home/maks/Qt/6.9.0/gcc_64/include/QtCore/qsharedpointer.h \
   /home/maks/Qt/6.9.0/gcc_64/include/QtCore/qsharedpointer_impl.h \
-  /home/maks/Qt/6.9.0/gcc_64/include/QtCore/qsize.h \
-  /home/maks/Qt/6.9.0/gcc_64/include/QtCore/qspan.h \
   /home/maks/Qt/6.9.0/gcc_64/include/QtCore/qstdlibdetection.h \
   /home/maks/Qt/6.9.0/gcc_64/include/QtCore/qstring.h \
   /home/maks/Qt/6.9.0/gcc_64/include/QtCore/qstringalgorithms.h \
@@ -125,7 +109,6 @@
   /home/maks/Qt/6.9.0/gcc_64/include/QtCore/qtenvironmentvariables.h \
   /home/maks/Qt/6.9.0/gcc_64/include/QtCore/qtextstream.h \
   /home/maks/Qt/6.9.0/gcc_64/include/QtCore/qtformat_impl.h \
-  /home/maks/Qt/6.9.0/gcc_64/include/QtCore/qtimer.h \
   /home/maks/Qt/6.9.0/gcc_64/include/QtCore/qtmetamacros.h \
   /home/maks/Qt/6.9.0/gcc_64/include/QtCore/qtnoop.h \
   /home/maks/Qt/6.9.0/gcc_64/include/QtCore/qtpreprocessorsupport.h \
@@ -136,45 +119,12 @@
   /home/maks/Qt/6.9.0/gcc_64/include/QtCore/qtversionchecks.h \
   /home/maks/Qt/6.9.0/gcc_64/include/QtCore/qtypeinfo.h \
   /home/maks/Qt/6.9.0/gcc_64/include/QtCore/qtypes.h \
-  /home/maks/Qt/6.9.0/gcc_64/include/QtCore/qurl.h \
   /home/maks/Qt/6.9.0/gcc_64/include/QtCore/qutf8stringview.h \
   /home/maks/Qt/6.9.0/gcc_64/include/QtCore/qvariant.h \
   /home/maks/Qt/6.9.0/gcc_64/include/QtCore/qvarlengtharray.h \
   /home/maks/Qt/6.9.0/gcc_64/include/QtCore/qversiontagging.h \
   /home/maks/Qt/6.9.0/gcc_64/include/QtCore/qxptype_traits.h \
   /home/maks/Qt/6.9.0/gcc_64/include/QtCore/qyieldcpu.h \
-  /home/maks/Qt/6.9.0/gcc_64/include/QtGui/qaction.h \
-  /home/maks/Qt/6.9.0/gcc_64/include/QtGui/qbitmap.h \
-  /home/maks/Qt/6.9.0/gcc_64/include/QtGui/qbrush.h \
-  /home/maks/Qt/6.9.0/gcc_64/include/QtGui/qcolor.h \
-  /home/maks/Qt/6.9.0/gcc_64/include/QtGui/qcursor.h \
-  /home/maks/Qt/6.9.0/gcc_64/include/QtGui/qfont.h \
-  /home/maks/Qt/6.9.0/gcc_64/include/QtGui/qfontinfo.h \
-  /home/maks/Qt/6.9.0/gcc_64/include/QtGui/qfontmetrics.h \
-  /home/maks/Qt/6.9.0/gcc_64/include/QtGui/qfontvariableaxis.h \
-  /home/maks/Qt/6.9.0/gcc_64/include/QtGui/qicon.h \
-  /home/maks/Qt/6.9.0/gcc_64/include/QtGui/qimage.h \
-  /home/maks/Qt/6.9.0/gcc_64/include/QtGui/qkeysequence.h \
-  /home/maks/Qt/6.9.0/gcc_64/include/QtGui/qpaintdevice.h \
-  /home/maks/Qt/6.9.0/gcc_64/include/QtGui/qpalette.h \
-  /home/maks/Qt/6.9.0/gcc_64/include/QtGui/qpen.h \
-  /home/maks/Qt/6.9.0/gcc_64/include/QtGui/qpicture.h \
-  /home/maks/Qt/6.9.0/gcc_64/include/QtGui/qpixelformat.h \
-  /home/maks/Qt/6.9.0/gcc_64/include/QtGui/qpixmap.h \
-  /home/maks/Qt/6.9.0/gcc_64/include/QtGui/qpolygon.h \
-  /home/maks/Qt/6.9.0/gcc_64/include/QtGui/qregion.h \
-  /home/maks/Qt/6.9.0/gcc_64/include/QtGui/qrgb.h \
-  /home/maks/Qt/6.9.0/gcc_64/include/QtGui/qrgba64.h \
-  /home/maks/Qt/6.9.0/gcc_64/include/QtGui/qtextcursor.h \
-  /home/maks/Qt/6.9.0/gcc_64/include/QtGui/qtextdocument.h \
-  /home/maks/Qt/6.9.0/gcc_64/include/QtGui/qtextformat.h \
-  /home/maks/Qt/6.9.0/gcc_64/include/QtGui/qtextoption.h \
-  /home/maks/Qt/6.9.0/gcc_64/include/QtGui/qtgui-config.h \
-  /home/maks/Qt/6.9.0/gcc_64/include/QtGui/qtguiexports.h \
-  /home/maks/Qt/6.9.0/gcc_64/include/QtGui/qtguiglobal.h \
-  /home/maks/Qt/6.9.0/gcc_64/include/QtGui/qtransform.h \
-  /home/maks/Qt/6.9.0/gcc_64/include/QtGui/qvalidator.h \
-  /home/maks/Qt/6.9.0/gcc_64/include/QtGui/qwindowdefs.h \
   /home/maks/Qt/6.9.0/gcc_64/include/QtSql/QSqlDatabase \
   /home/maks/Qt/6.9.0/gcc_64/include/QtSql/QSqlError \
   /home/maks/Qt/6.9.0/gcc_64/include/QtSql/QSqlQuery \
@@ -184,38 +134,6 @@
   /home/maks/Qt/6.9.0/gcc_64/include/QtSql/qtsql-config.h \
   /home/maks/Qt/6.9.0/gcc_64/include/QtSql/qtsqlexports.h \
   /home/maks/Qt/6.9.0/gcc_64/include/QtSql/qtsqlglobal.h \
-  /home/maks/Qt/6.9.0/gcc_64/include/QtWidgets/QDialog \
-  /home/maks/Qt/6.9.0/gcc_64/include/QtWidgets/QDialogButtonBox \
-  /home/maks/Qt/6.9.0/gcc_64/include/QtWidgets/QDoubleSpinBox \
-  /home/maks/Qt/6.9.0/gcc_64/include/QtWidgets/QHBoxLayout \
-  /home/maks/Qt/6.9.0/gcc_64/include/QtWidgets/QLabel \
-  /home/maks/Qt/6.9.0/gcc_64/include/QtWidgets/QLineEdit \
-  /home/maks/Qt/6.9.0/gcc_64/include/QtWidgets/QMainWindow \
-  /home/maks/Qt/6.9.0/gcc_64/include/QtWidgets/QPushButton \
-  /home/maks/Qt/6.9.0/gcc_64/include/QtWidgets/QVBoxLayout \
-  /home/maks/Qt/6.9.0/gcc_64/include/QtWidgets/qabstractbutton.h \
-  /home/maks/Qt/6.9.0/gcc_64/include/QtWidgets/qabstractspinbox.h \
-  /home/maks/Qt/6.9.0/gcc_64/include/QtWidgets/qboxlayout.h \
-  /home/maks/Qt/6.9.0/gcc_64/include/QtWidgets/qdialog.h \
-  /home/maks/Qt/6.9.0/gcc_64/include/QtWidgets/qdialogbuttonbox.h \
-  /home/maks/Qt/6.9.0/gcc_64/include/QtWidgets/qframe.h \
-  /home/maks/Qt/6.9.0/gcc_64/include/QtWidgets/qgridlayout.h \
-  /home/maks/Qt/6.9.0/gcc_64/include/QtWidgets/qlabel.h \
-  /home/maks/Qt/6.9.0/gcc_64/include/QtWidgets/qlayout.h \
-  /home/maks/Qt/6.9.0/gcc_64/include/QtWidgets/qlayoutitem.h \
-  /home/maks/Qt/6.9.0/gcc_64/include/QtWidgets/qlineedit.h \
-  /home/maks/Qt/6.9.0/gcc_64/include/QtWidgets/qmainwindow.h \
-  /home/maks/Qt/6.9.0/gcc_64/include/QtWidgets/qpushbutton.h \
-  /home/maks/Qt/6.9.0/gcc_64/include/QtWidgets/qsizepolicy.h \
-  /home/maks/Qt/6.9.0/gcc_64/include/QtWidgets/qspinbox.h \
-  /home/maks/Qt/6.9.0/gcc_64/include/QtWidgets/qtabwidget.h \
-  /home/maks/Qt/6.9.0/gcc_64/include/QtWidgets/qtwidgets-config.h \
-  /home/maks/Qt/6.9.0/gcc_64/include/QtWidgets/qtwidgetsexports.h \
-  /home/maks/Qt/6.9.0/gcc_64/include/QtWidgets/qtwidgetsglobal.h \
-  /home/maks/Qt/6.9.0/gcc_64/include/QtWidgets/qwidget.h \
-  /home/maks/semestr_6/BD/DB_project/QT_GUI/Database.h \
-  /home/maks/semestr_6/BD/DB_project/QT_GUI/addexpensedialog.h \
-  /home/maks/semestr_6/BD/DB_project/QT_GUI/expensebutton.h \
   /usr/include/alloca.h \
   /usr/include/asm-generic/errno-base.h \
   /usr/include/asm-generic/errno.h \
@@ -307,7 +225,6 @@
   /usr/include/c++/11/bits/unordered_set.h \
   /usr/include/c++/11/bits/uses_allocator.h \
   /usr/include/c++/11/bits/vector.tcc \
-  /usr/include/c++/11/cassert \
   /usr/include/c++/11/cctype \
   /usr/include/c++/11/cerrno \
   /usr/include/c++/11/chrono \

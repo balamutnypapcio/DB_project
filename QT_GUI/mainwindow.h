@@ -42,6 +42,7 @@ private slots:
     void backButton3_clicked();
     void createButton_clicked();
     void handleAddExpenseButton();
+    void loadExpenseDetails(int expenseId);
 
 private:
 

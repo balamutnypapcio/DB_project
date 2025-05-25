@@ -1,0 +1,2 @@
+set(__QT_DEPLOY_TARGET_bazy_danych_v3_FILE /home/maks/semestr_6/BD/DB_project/QT_GUI/build/Desktop_Qt_6_9_0-Debug/bazy_danych_v3)
+set(__QT_DEPLOY_TARGET_bazy_danych_v3_TYPE EXECUTABLE)

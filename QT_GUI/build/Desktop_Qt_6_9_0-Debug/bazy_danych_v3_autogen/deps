@@ -1,6 +1,7 @@
 bazy_danych_v3_autogen/timestamp: \
 	/home/maks/Qt/6.9.0/gcc_64/include/QtCore/QDateTime \
 	/home/maks/Qt/6.9.0/gcc_64/include/QtCore/QDebug \
+	/home/maks/Qt/6.9.0/gcc_64/include/QtCore/QObject \
 	/home/maks/Qt/6.9.0/gcc_64/include/QtCore/QString \
 	/home/maks/Qt/6.9.0/gcc_64/include/QtCore/QTimer \
 	/home/maks/Qt/6.9.0/gcc_64/include/QtCore/q17memory.h \
@@ -507,47 +508,14 @@ bazy_danych_v3_autogen/timestamp: \
 	/home/maks/Qt/6.9.0/gcc_64/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsTargets-relwithdebinfo.cmake \
 	/home/maks/Qt/6.9.0/gcc_64/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsTargets.cmake \
 	/home/maks/Qt/6.9.0/gcc_64/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsVersionlessTargets.cmake \
-	/home/maks/Qt/Tools/CMake/share/cmake-3.30/Modules/CMakeCXXInformation.cmake \
-	/home/maks/Qt/Tools/CMake/share/cmake-3.30/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake \
-	/home/maks/Qt/Tools/CMake/share/cmake-3.30/Modules/CMakeCommonLanguageInclude.cmake \
-	/home/maks/Qt/Tools/CMake/share/cmake-3.30/Modules/CMakeFindDependencyMacro.cmake \
-	/home/maks/Qt/Tools/CMake/share/cmake-3.30/Modules/CMakeGenericSystem.cmake \
-	/home/maks/Qt/Tools/CMake/share/cmake-3.30/Modules/CMakeInitializeConfigs.cmake \
-	/home/maks/Qt/Tools/CMake/share/cmake-3.30/Modules/CMakeLanguageInformation.cmake \
-	/home/maks/Qt/Tools/CMake/share/cmake-3.30/Modules/CMakeSystemSpecificInformation.cmake \
-	/home/maks/Qt/Tools/CMake/share/cmake-3.30/Modules/CMakeSystemSpecificInitialize.cmake \
-	/home/maks/Qt/Tools/CMake/share/cmake-3.30/Modules/CheckCXXCompilerFlag.cmake \
-	/home/maks/Qt/Tools/CMake/share/cmake-3.30/Modules/CheckCXXSourceCompiles.cmake \
-	/home/maks/Qt/Tools/CMake/share/cmake-3.30/Modules/CheckIncludeFileCXX.cmake \
-	/home/maks/Qt/Tools/CMake/share/cmake-3.30/Modules/CheckLibraryExists.cmake \
-	/home/maks/Qt/Tools/CMake/share/cmake-3.30/Modules/Compiler/CMakeCommonCompilerMacros.cmake \
-	/home/maks/Qt/Tools/CMake/share/cmake-3.30/Modules/Compiler/GNU-CXX.cmake \
-	/home/maks/Qt/Tools/CMake/share/cmake-3.30/Modules/Compiler/GNU.cmake \
-	/home/maks/Qt/Tools/CMake/share/cmake-3.30/Modules/FeatureSummary.cmake \
-	/home/maks/Qt/Tools/CMake/share/cmake-3.30/Modules/FindOpenGL.cmake \
-	/home/maks/Qt/Tools/CMake/share/cmake-3.30/Modules/FindPackageHandleStandardArgs.cmake \
-	/home/maks/Qt/Tools/CMake/share/cmake-3.30/Modules/FindPackageMessage.cmake \
-	/home/maks/Qt/Tools/CMake/share/cmake-3.30/Modules/FindPkgConfig.cmake \
-	/home/maks/Qt/Tools/CMake/share/cmake-3.30/Modules/FindThreads.cmake \
-	/home/maks/Qt/Tools/CMake/share/cmake-3.30/Modules/FindVulkan.cmake \
-	/home/maks/Qt/Tools/CMake/share/cmake-3.30/Modules/GNUInstallDirs.cmake \
-	/home/maks/Qt/Tools/CMake/share/cmake-3.30/Modules/Internal/CheckCompilerFlag.cmake \
-	/home/maks/Qt/Tools/CMake/share/cmake-3.30/Modules/Internal/CheckFlagCommonConfig.cmake \
-	/home/maks/Qt/Tools/CMake/share/cmake-3.30/Modules/Internal/CheckSourceCompiles.cmake \
-	/home/maks/Qt/Tools/CMake/share/cmake-3.30/Modules/MacroAddFileDependencies.cmake \
-	/home/maks/Qt/Tools/CMake/share/cmake-3.30/Modules/Platform/Linux-GNU-CXX.cmake \
-	/home/maks/Qt/Tools/CMake/share/cmake-3.30/Modules/Platform/Linux-GNU.cmake \
-	/home/maks/Qt/Tools/CMake/share/cmake-3.30/Modules/Platform/Linux-Initialize.cmake \
-	/home/maks/Qt/Tools/CMake/share/cmake-3.30/Modules/Platform/Linux.cmake \
-	/home/maks/Qt/Tools/CMake/share/cmake-3.30/Modules/Platform/UnixPaths.cmake \
 	/home/maks/semestr_6/BD/DB_project/QT_GUI/CMakeLists.txt \
 	/home/maks/semestr_6/BD/DB_project/QT_GUI/Database.cpp \
 	/home/maks/semestr_6/BD/DB_project/QT_GUI/Database.h \
 	/home/maks/semestr_6/BD/DB_project/QT_GUI/addexpensedialog.cpp \
 	/home/maks/semestr_6/BD/DB_project/QT_GUI/addexpensedialog.h \
 	/home/maks/semestr_6/BD/DB_project/QT_GUI/build/Desktop_Qt_6_9_0-Debug/.qtc/package-manager/auto-setup.cmake \
-	/home/maks/semestr_6/BD/DB_project/QT_GUI/build/Desktop_Qt_6_9_0-Debug/CMakeFiles/3.30.5/CMakeCXXCompiler.cmake \
-	/home/maks/semestr_6/BD/DB_project/QT_GUI/build/Desktop_Qt_6_9_0-Debug/CMakeFiles/3.30.5/CMakeSystem.cmake \
+	/home/maks/semestr_6/BD/DB_project/QT_GUI/build/Desktop_Qt_6_9_0-Debug/CMakeFiles/3.22.1/CMakeCXXCompiler.cmake \
+	/home/maks/semestr_6/BD/DB_project/QT_GUI/build/Desktop_Qt_6_9_0-Debug/CMakeFiles/3.22.1/CMakeSystem.cmake \
 	/home/maks/semestr_6/BD/DB_project/QT_GUI/build/Desktop_Qt_6_9_0-Debug/bazy_danych_v3_autogen/moc_predefs.h \
 	/home/maks/semestr_6/BD/DB_project/QT_GUI/expensebutton.h \
 	/home/maks/semestr_6/BD/DB_project/QT_GUI/group.cpp \
@@ -814,5 +782,36 @@ bazy_danych_v3_autogen/timestamp: \
 	/usr/lib/gcc/x86_64-linux-gnu/11/include/stdarg.h \
 	/usr/lib/gcc/x86_64-linux-gnu/11/include/stdbool.h \
 	/usr/lib/gcc/x86_64-linux-gnu/11/include/stddef.h \
+	/usr/share/cmake-3.22/Modules/CMakeCXXInformation.cmake \
+	/usr/share/cmake-3.22/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake \
+	/usr/share/cmake-3.22/Modules/CMakeCommonLanguageInclude.cmake \
+	/usr/share/cmake-3.22/Modules/CMakeFindDependencyMacro.cmake \
+	/usr/share/cmake-3.22/Modules/CMakeGenericSystem.cmake \
+	/usr/share/cmake-3.22/Modules/CMakeInitializeConfigs.cmake \
+	/usr/share/cmake-3.22/Modules/CMakeLanguageInformation.cmake \
+	/usr/share/cmake-3.22/Modules/CMakeSystemSpecificInformation.cmake \
+	/usr/share/cmake-3.22/Modules/CMakeSystemSpecificInitialize.cmake \
+	/usr/share/cmake-3.22/Modules/CheckCXXCompilerFlag.cmake \
+	/usr/share/cmake-3.22/Modules/CheckCXXSourceCompiles.cmake \
+	/usr/share/cmake-3.22/Modules/CheckIncludeFileCXX.cmake \
+	/usr/share/cmake-3.22/Modules/CheckLibraryExists.cmake \
+	/usr/share/cmake-3.22/Modules/Compiler/CMakeCommonCompilerMacros.cmake \
+	/usr/share/cmake-3.22/Modules/Compiler/GNU-CXX.cmake \
+	/usr/share/cmake-3.22/Modules/Compiler/GNU.cmake \
+	/usr/share/cmake-3.22/Modules/FeatureSummary.cmake \
+	/usr/share/cmake-3.22/Modules/FindOpenGL.cmake \
+	/usr/share/cmake-3.22/Modules/FindPackageHandleStandardArgs.cmake \
+	/usr/share/cmake-3.22/Modules/FindPackageMessage.cmake \
+	/usr/share/cmake-3.22/Modules/FindPkgConfig.cmake \
+	/usr/share/cmake-3.22/Modules/FindThreads.cmake \
+	/usr/share/cmake-3.22/Modules/FindVulkan.cmake \
+	/usr/share/cmake-3.22/Modules/GNUInstallDirs.cmake \
+	/usr/share/cmake-3.22/Modules/Internal/CheckCompilerFlag.cmake \
+	/usr/share/cmake-3.22/Modules/Internal/CheckSourceCompiles.cmake \
+	/usr/share/cmake-3.22/Modules/MacroAddFileDependencies.cmake \
+	/usr/share/cmake-3.22/Modules/Platform/Linux-GNU-CXX.cmake \
+	/usr/share/cmake-3.22/Modules/Platform/Linux-GNU.cmake \
+	/usr/share/cmake-3.22/Modules/Platform/Linux.cmake \
+	/usr/share/cmake-3.22/Modules/Platform/UnixPaths.cmake \
 	/home/maks/semestr_6/BD/DB_project/QT_GUI/mainwindow.ui \
-	/home/maks/Qt/Tools/CMake/bin/cmake
+	/usr/bin/cmake

@@ -6,10 +6,11 @@
 #include <QString>
 #include <QDebug>
 #include <QDateTime>
+#include <QObject>
 
-class Database
+class Database : public QObject
 {
-
+   Q_OBJECT
 signals:
     void groupsChanged();              // Sygnał emitowany gdy zmienią się grupy
     void expensesChanged(int groupId); // Sygnał emitowany gdy zmienią się wydatki w grupie
@@ -19,6 +20,9 @@ public:
     static Database& getInstance();
     bool isConnected() const;
     QSqlDatabase getDatabase() const;
+    int getCurrentUserId() const { return currentUserId; }
+
+
     // Metoda do wykonywania zapytań
     QSqlQuery executeQuery(const QString& queryStr);
     QVector<QPair<int, QString>> getUserGroups(int userId);

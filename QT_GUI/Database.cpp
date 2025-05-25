@@ -1,6 +1,9 @@
 #include "Database.h"
 
-Database::Database() : connected(false)
+Database::Database()
+    : QObject(nullptr)  // Dodaj inicjalizację QObject
+    , connected(false)
+    , currentUserId(-1)
 {
     connected = connectToDatabase();
 }

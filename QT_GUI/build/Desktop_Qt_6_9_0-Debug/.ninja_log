@@ -1,0 +1,13 @@
+# ninja log v6
+3	1011	1748200816369627648	bazy_danych_v3_autogen/timestamp	23851d2756e773b4
+3	1011	1748200816369627648	bazy_danych_v3_autogen/mocs_compilation.cpp	23851d2756e773b4
+1012	7450	1748200816384627630	CMakeFiles/bazy_danych_v3.dir/bazy_danych_v3_autogen/mocs_compilation.cpp.o	d9c3de6f81078b46
+3	1011	1748200816369627648	/home/maks/semestr_6/BD/DB_project/QT_GUI/build/Desktop_Qt_6_9_0-Debug/bazy_danych_v3_autogen/timestamp	23851d2756e773b4
+3	1011	1748200816369627648	/home/maks/semestr_6/BD/DB_project/QT_GUI/build/Desktop_Qt_6_9_0-Debug/bazy_danych_v3_autogen/mocs_compilation.cpp	23851d2756e773b4
+1013	3351	1748200816385627628	CMakeFiles/bazy_danych_v3.dir/group.cpp.o	506f137441c6e40c
+1014	8423	1748200816386627627	CMakeFiles/bazy_danych_v3.dir/addexpensedialog.cpp.o	a592286ac8cc6282
+1012	7708	1748200816384627630	CMakeFiles/bazy_danych_v3.dir/main.cpp.o	e67d789acb1c454e
+13	730	1748201347049946239	bazy_danych_v3_autogen/timestamp	23851d2756e773b4
+13	730	1748201347049946239	bazy_danych_v3_autogen/mocs_compilation.cpp	23851d2756e773b4
+13	730	1748201347049946239	/home/maks/semestr_6/BD/DB_project/QT_GUI/build/Desktop_Qt_6_9_0-Debug/bazy_danych_v3_autogen/timestamp	23851d2756e773b4
+13	730	1748201347049946239	/home/maks/semestr_6/BD/DB_project/QT_GUI/build/Desktop_Qt_6_9_0-Debug/bazy_danych_v3_autogen/mocs_compilation.cpp	23851d2756e773b4
