@@ -19,6 +19,8 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
+    void loadGroups();
+
 
 private slots:
     void handleSignInButton();
@@ -62,5 +64,7 @@ private:
         bool isPaid;
     };
 };
+int currentExpenseId;
+
 
 #endif // MAINWINDOW_H

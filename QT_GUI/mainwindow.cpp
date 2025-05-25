@@ -4,6 +4,8 @@
 #include <QMessageBox>
 #include <QDateTime>
 #include <QTimer>
+#include <QInputDialog>
+
 
                                                                                            /**
  * @brief Konstruktor klasy MainWindow
@@ -428,5 +430,19 @@ void MainWindow::loadExpenseDetails(int expenseId)
 
 void MainWindow::handleBackFromDetails()
 {
-    ui->stackedWidget->setCurrentWidget(ui->expensesPage);
+    ui->stackedWidget->setCurrentWidget(ui->expencesPage);
+}
+
+
+void MainWindow::loadGroups() {
+    ui->groupsComboBox->clear();  // lub inna kontrolka
+    QSqlQuery query;
+    if (query.exec("SELECT name FROM groups")) {
+        while (query.next()) {
+            QString name = query.value(0).toString();
+            ui->groupsComboBox->addItem(name);
+        }
+    } else {
+        qDebug() << "Błąd podczas ładowania grup:" << query.lastError().text();
+    }
 }
