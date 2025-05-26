@@ -34,7 +34,6 @@ private slots:
     void onGroupsChanged();
     void onExpensesChanged(int groupId);
     void onExpenseDetailsChanged(int expenseId);
-    void handleAddMemberButton();
     // void handleRemoveMember(const QString& username);
 
 private slots:
@@ -73,4 +72,5 @@ private:
                                         const QString& title,
                                         const QString& text,
                                         QMessageBox::StandardButtons buttons = QMessageBox::Ok);
+};
 #endif // MAINWINDOW_H

@@ -558,61 +558,6 @@ void MainWindow::loadGroups() {
         qDebug() << "Błąd podczas ładowania grup:" << query.lastError().text();
     }
 }
-void MainWindow::handleAddMemberButton()
-{
-    connect(addButton, &QPushButton::clicked, this, [this, newUserInput]() {
-        QString username = newUserInput->toPlainText().trimmed();
-        if (username.isEmpty()) {
-            QMessageBox* msgBox = createStyledMessageBox(
-                QMessageBox::Warning,
-                "Błąd",
-                "Proszę wprowadzić nazwę użytkownika"
-                );
-            msgBox->exec();
-            delete msgBox;
-            return;
-        }
-
-        Database& db = Database::getInstance();
-        if (!db.userExists(username)) {
-            // Jeśli użytkownik nie istnieje, zapytaj czy chcemy go utworzyć
-            QMessageBox* confirmBox = createStyledMessageBox(
-                QMessageBox::Question,
-                "Nowy użytkownik",
-                "Użytkownik nie istnieje. Czy chcesz utworzyć nowego użytkownika o nazwie " + username + "?",
-                QMessageBox::Yes | QMessageBox::No
-                );
-
-            if (confirmBox->exec() == QMessageBox::Yes) {
-                if (db.addUser(username)) {
-                    // Jeśli udało się dodać użytkownika, dodaj go do grupy
-                    if (!currentGroupMembers.contains(username)) {
-                        currentGroupMembers.append(username);
-                        updateGroupMembersList();
-                        newUserInput->clear();
-                    }
-                } else {
-                    QMessageBox* errorBox = createStyledMessageBox(
-                        QMessageBox::Warning,
-                        "Błąd",
-                        "Nie udało się utworzyć użytkownika. Sprawdź połączenie z bazą danych."
-                        );
-                    errorBox->exec();
-                    delete errorBox;
-                }
-            }
-            delete confirmBox;
-        } else {
-            // Jeśli użytkownik istnieje, dodaj go do grupy
-            if (!currentGroupMembers.contains(username)) {
-                currentGroupMembers.append(username);
-                updateGroupMembersList();
-                newUserInput->clear();
-            }
-        }
-    });
-} // Dodany brakujący nawias zamykający metodę
-
 
 
 
