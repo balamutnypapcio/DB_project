@@ -15,30 +15,26 @@
  * Inicjalizuje interfejs użytkownika, konfiguruje połączenia sygnałów i slotów,
  * ustawia początkowy widok na ekran logowania oraz inicjalizuje timer do aktualizacji czasu.
  */
+
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
     , dateTimeTimer(new QTimer(this))
-{
-{
-ui->setupUi(this);
-setupConnections();
+{   // Usuwamy podwójny nawias klamrowy
+    ui->setupUi(this);
+    setupConnections();
 
-// Rozpocznij od strony logowania
-ui->stackedWidget->setCurrentIndex(0);
+    // Rozpocznij od strony logowania
+    ui->stackedWidget->setCurrentIndex(0);
 
-// Konfiguracja timera dla aktualizacji daty/czasu
-connect(dateTimeTimer, &QTimer::timeout, this, &MainWindow::updateDateTime);
-dateTimeTimer->start(1000); // Aktualizuj co sekundę
-updateDateTime(); // Początkowa aktualizacja
-connect(ui->backButton, &QPushButton::clicked, this, &MainWindow::backButton1_clicked);
-connect(ui->backButton_2, &QPushButton::clicked, this, &MainWindow::backButton2_clicked);
-connect(ui->backButton_3, &QPushButton::clicked, this, &MainWindow::backButton3_clicked);
-// Usuwamy tę linię:
-// connect(ui->createButton, &QPushButton::clicked, this, &MainWindow::createButton_clicked);
+    // Konfiguracja timera dla aktualizacji daty/czasu
+    connect(dateTimeTimer, &QTimer::timeout, this, &MainWindow::updateDateTime);
+    dateTimeTimer->start(1000); // Aktualizuj co sekundę
+    updateDateTime(); // Początkowa aktualizacja
+    connect(ui->backButton, &QPushButton::clicked, this, &MainWindow::backButton1_clicked);
+    connect(ui->backButton_2, &QPushButton::clicked, this, &MainWindow::backButton2_clicked);
+    connect(ui->backButton_3, &QPushButton::clicked, this, &MainWindow::backButton3_clicked);
 }
-}
-
 /**
  * @brief Destruktor klasy MainWindow
  *
@@ -562,43 +558,6 @@ void MainWindow::loadGroups() {
         qDebug() << "Błąd podczas ładowania grup:" << query.lastError().text();
     }
 }
-QMessageBox* MainWindow::createStyledMessageBox(QMessageBox::Icon icon,
-                                                const QString& title,
-                                                const QString& text)
-{
-    QMessageBox* msgBox = new QMessageBox(this);
-    msgBox->setIcon(icon);
-    msgBox->setWindowTitle(title);
-    msgBox->setText(text);
-    msgBox->setStyleSheet(
-        "QMessageBox {"
-        "    background-color: #FFFFFF;"
-        "}"
-        "QMessageBox QLabel {"
-        "    color: #000000;"
-        "    font-size: 12pt;"
-        "    min-width: 200px;"
-        "}"
-        "QPushButton {"
-        "    min-width: 100px;"
-        "    min-height: 30px;"
-        "    background-color: #4169E1;"
-        "    border-radius: 10px;"
-        "    color: white;"
-        "    font-size: 12pt;"
-        "    font-weight: bold;"
-        "    padding: 5px;"
-        "}"
-        "QPushButton:hover {"
-        "    background-color: #5a7ee5;"
-        "}"
-        "QPushButton:pressed {"
-        "    background-color: #0d1b3f;"
-        "}"
-        );
-    return msgBox;
-}
-
 void MainWindow::handleAddMemberButton()
 {
     connect(addButton, &QPushButton::clicked, this, [this, newUserInput]() {
@@ -652,6 +611,8 @@ void MainWindow::handleAddMemberButton()
             }
         }
     });
+} // Dodany brakujący nawias zamykający metodę
+
 
 
 

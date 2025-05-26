@@ -61,10 +61,6 @@ private:
     void setupConnections();
     void updateDateTime();
     QVector<QPair<int, QString>> userGroups;  // first: groupId, second: groupName
-    QMessageBox* createStyledMessageBox(QMessageBox::Icon icon,
-                                        const QString& title,
-                                        const QString& text);
-
     void updateGroupMembersList();
     QVector<QString> currentGroupMembers;
     struct ParticipantData {
@@ -73,11 +69,8 @@ private:
         bool isPaid;
     };
 
-
     QMessageBox* createStyledMessageBox(QMessageBox::Icon icon,
                                         const QString& title,
                                         const QString& text,
                                         QMessageBox::StandardButtons buttons = QMessageBox::Ok);
-
-
 #endif // MAINWINDOW_H
