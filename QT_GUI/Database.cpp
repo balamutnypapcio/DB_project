@@ -262,7 +262,6 @@ void Database::notifyExpenseDetailsChanged(int expenseId)
     emit expenseDetailsChanged(expenseId);
 }
 
-
 bool Database::userExists(const QString& username)
 {
     QSqlQuery query(db);
@@ -270,11 +269,16 @@ bool Database::userExists(const QString& username)
     query.bindValue(":username", username);
 
     if (!query.exec()) {
-        qDebug() << "Query Error:" << query.lastError().text();
+        qDebug() << "Query Error in userExists:" << query.lastError().text();
         return false;
     }
 
-    return query.next();
+    bool exists = query.next();
+    qDebug() << "Checking if user exists:" << username << "Result:" << exists;
+    if (exists) {
+        qDebug() << "User ID:" << query.value("id").toInt();
+    }
+    return exists;
 }
 
 bool Database::addGroupMember(int groupId, const QString& username)

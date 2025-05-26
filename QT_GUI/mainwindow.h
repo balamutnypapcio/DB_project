@@ -72,5 +72,5 @@ private:
                                         const QString& title,
                                         const QString& text,
                                         QMessageBox::StandardButtons buttons = QMessageBox::Ok);
-};
+
 #endif // MAINWINDOW_H

@@ -679,41 +679,55 @@ void MainWindow::updateGroupMembersList()
     // Podłącz przycisk dodawania
     connect(addButton, &QPushButton::clicked, this, [this, newUserInput]() {
         QString username = newUserInput->toPlainText().trimmed();
-        if (username.isEmpty()) {
-            QMessageBox* msgBox = createStyledMessageBox(
-                QMessageBox::Warning,
-                "Błąd",
-                "Proszę wprowadzić nazwę użytkownika"
-                );
-            msgBox->exec();
-            delete msgBox;
-            return;
-        }
+        qDebug() << "Attempting to add user:" << username;
 
         Database& db = Database::getInstance();
         if (!db.userExists(username)) {
-            QMessageBox* msgBox = createStyledMessageBox(
-                QMessageBox::Warning,
-                "Błąd",
-                "Użytkownik nie istnieje"
+            qDebug() << "User does not exist in database";
+            QMessageBox* confirmBox = createStyledMessageBox(
+                QMessageBox::Question,
+                "Nowy użytkownik",
+                "Użytkownik nie istnieje. Czy chcesz utworzyć nowego użytkownika o nazwie " + username + "?",
+                QMessageBox::Yes | QMessageBox::No
                 );
-            msgBox->exec();
-            delete msgBox;
-            return;
-        }
 
-        if (!currentGroupMembers.contains(username)) {
-            currentGroupMembers.append(username);
-            updateGroupMembersList();
+            if (confirmBox->exec() == QMessageBox::Yes) {
+                qDebug() << "Adding new user to database";
+                if (db.addUser(username)) {
+                    qDebug() << "Successfully added user to database";
+                    if (!currentGroupMembers.contains(username)) {
+                        currentGroupMembers.append(username);
+                        updateGroupMembersList();
+                        newUserInput->clear();
+                    }
+                } else {
+                    QMessageBox* errorBox = createStyledMessageBox(
+                        QMessageBox::Warning,
+                        "Błąd",
+                        "Nie udało się utworzyć użytkownika. Sprawdź połączenie z bazą danych."
+                        );
+                    errorBox->exec();
+                    delete errorBox;
+                }
+            }
+            delete confirmBox;
+        } else {
+            qDebug() << "User exists in database";
+            if (!currentGroupMembers.contains(username)) {
+                currentGroupMembers.append(username);
+                updateGroupMembersList();
+                newUserInput->clear();
+            }
         }
     });
-}
 
-QMessageBox* MainWindow::createStyledMessageBox(QMessageBox::Icon icon,
-                                                const QString& title,
-                                                const QString& text,
-                                                QMessageBox::StandardButtons buttons)
-{
+
+
+    QMessageBox* MainWindow::createStyledMessageBox(QMessageBox::Icon icon,
+                                                    const QString& title,
+                                                    const QString& text,
+                                                    QMessageBox::StandardButtons buttons)
+    {}
     QMessageBox* msgBox = new QMessageBox(this);
     msgBox->setIcon(icon);
     msgBox->setWindowTitle(title);

@@ -52,7 +52,7 @@ build cmake_object_order_depends_target_bazy_danych_v3: phony || bazy_danych_v3_
 build CMakeFiles/bazy_danych_v3.dir/bazy_danych_v3_autogen/mocs_compilation.cpp.o: CXX_COMPILER__bazy_danych_v3_Debug /home/maks/semestr_6/BD/DB_project/QT_GUI/build/Desktop_Qt_6_9_0-Debug/bazy_danych_v3_autogen/mocs_compilation.cpp || cmake_object_order_depends_target_bazy_danych_v3
   DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_SQL_LIB -DQT_WIDGETS_LIB
   DEP_FILE = CMakeFiles/bazy_danych_v3.dir/bazy_danych_v3_autogen/mocs_compilation.cpp.o.d
-  FLAGS = -DQT_QML_DEBUG -g -fPIC
+  FLAGS = -DQT_QML_DEBUG -g -fPIC -std=gnu++17
   INCLUDES = -I/home/maks/semestr_6/BD/DB_project/QT_GUI/build/Desktop_Qt_6_9_0-Debug/bazy_danych_v3_autogen/include -isystem /home/maks/Qt/6.9.0/gcc_64/include/QtCore -isystem /home/maks/Qt/6.9.0/gcc_64/include -isystem /home/maks/Qt/6.9.0/gcc_64/mkspecs/linux-g++ -isystem /home/maks/Qt/6.9.0/gcc_64/include/QtWidgets -isystem /home/maks/Qt/6.9.0/gcc_64/include/QtGui -isystem /home/maks/Qt/6.9.0/gcc_64/include/QtSql
   OBJECT_DIR = CMakeFiles/bazy_danych_v3.dir
   OBJECT_FILE_DIR = CMakeFiles/bazy_danych_v3.dir/bazy_danych_v3_autogen
@@ -60,7 +60,7 @@ build CMakeFiles/bazy_danych_v3.dir/bazy_danych_v3_autogen/mocs_compilation.cpp.
 build CMakeFiles/bazy_danych_v3.dir/main.cpp.o: CXX_COMPILER__bazy_danych_v3_Debug /home/maks/semestr_6/BD/DB_project/QT_GUI/main.cpp || cmake_object_order_depends_target_bazy_danych_v3
   DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_SQL_LIB -DQT_WIDGETS_LIB
   DEP_FILE = CMakeFiles/bazy_danych_v3.dir/main.cpp.o.d
-  FLAGS = -DQT_QML_DEBUG -g -fPIC
+  FLAGS = -DQT_QML_DEBUG -g -fPIC -std=gnu++17
   INCLUDES = -I/home/maks/semestr_6/BD/DB_project/QT_GUI/build/Desktop_Qt_6_9_0-Debug/bazy_danych_v3_autogen/include -isystem /home/maks/Qt/6.9.0/gcc_64/include/QtCore -isystem /home/maks/Qt/6.9.0/gcc_64/include -isystem /home/maks/Qt/6.9.0/gcc_64/mkspecs/linux-g++ -isystem /home/maks/Qt/6.9.0/gcc_64/include/QtWidgets -isystem /home/maks/Qt/6.9.0/gcc_64/include/QtGui -isystem /home/maks/Qt/6.9.0/gcc_64/include/QtSql
   OBJECT_DIR = CMakeFiles/bazy_danych_v3.dir
   OBJECT_FILE_DIR = CMakeFiles/bazy_danych_v3.dir
@@ -68,7 +68,7 @@ build CMakeFiles/bazy_danych_v3.dir/main.cpp.o: CXX_COMPILER__bazy_danych_v3_Deb
 build CMakeFiles/bazy_danych_v3.dir/mainwindow.cpp.o: CXX_COMPILER__bazy_danych_v3_Debug /home/maks/semestr_6/BD/DB_project/QT_GUI/mainwindow.cpp || cmake_object_order_depends_target_bazy_danych_v3
   DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_SQL_LIB -DQT_WIDGETS_LIB
   DEP_FILE = CMakeFiles/bazy_danych_v3.dir/mainwindow.cpp.o.d
-  FLAGS = -DQT_QML_DEBUG -g -fPIC
+  FLAGS = -DQT_QML_DEBUG -g -fPIC -std=gnu++17
   INCLUDES = -I/home/maks/semestr_6/BD/DB_project/QT_GUI/build/Desktop_Qt_6_9_0-Debug/bazy_danych_v3_autogen/include -isystem /home/maks/Qt/6.9.0/gcc_64/include/QtCore -isystem /home/maks/Qt/6.9.0/gcc_64/include -isystem /home/maks/Qt/6.9.0/gcc_64/mkspecs/linux-g++ -isystem /home/maks/Qt/6.9.0/gcc_64/include/QtWidgets -isystem /home/maks/Qt/6.9.0/gcc_64/include/QtGui -isystem /home/maks/Qt/6.9.0/gcc_64/include/QtSql
   OBJECT_DIR = CMakeFiles/bazy_danych_v3.dir
   OBJECT_FILE_DIR = CMakeFiles/bazy_danych_v3.dir
@@ -76,7 +76,7 @@ build CMakeFiles/bazy_danych_v3.dir/mainwindow.cpp.o: CXX_COMPILER__bazy_danych_
 build CMakeFiles/bazy_danych_v3.dir/group.cpp.o: CXX_COMPILER__bazy_danych_v3_Debug /home/maks/semestr_6/BD/DB_project/QT_GUI/group.cpp || cmake_object_order_depends_target_bazy_danych_v3
   DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_SQL_LIB -DQT_WIDGETS_LIB
   DEP_FILE = CMakeFiles/bazy_danych_v3.dir/group.cpp.o.d
-  FLAGS = -DQT_QML_DEBUG -g -fPIC
+  FLAGS = -DQT_QML_DEBUG -g -fPIC -std=gnu++17
   INCLUDES = -I/home/maks/semestr_6/BD/DB_project/QT_GUI/build/Desktop_Qt_6_9_0-Debug/bazy_danych_v3_autogen/include -isystem /home/maks/Qt/6.9.0/gcc_64/include/QtCore -isystem /home/maks/Qt/6.9.0/gcc_64/include -isystem /home/maks/Qt/6.9.0/gcc_64/mkspecs/linux-g++ -isystem /home/maks/Qt/6.9.0/gcc_64/include/QtWidgets -isystem /home/maks/Qt/6.9.0/gcc_64/include/QtGui -isystem /home/maks/Qt/6.9.0/gcc_64/include/QtSql
   OBJECT_DIR = CMakeFiles/bazy_danych_v3.dir
   OBJECT_FILE_DIR = CMakeFiles/bazy_danych_v3.dir
@@ -84,7 +84,7 @@ build CMakeFiles/bazy_danych_v3.dir/group.cpp.o: CXX_COMPILER__bazy_danych_v3_De
 build CMakeFiles/bazy_danych_v3.dir/Database.cpp.o: CXX_COMPILER__bazy_danych_v3_Debug /home/maks/semestr_6/BD/DB_project/QT_GUI/Database.cpp || cmake_object_order_depends_target_bazy_danych_v3
   DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_SQL_LIB -DQT_WIDGETS_LIB
   DEP_FILE = CMakeFiles/bazy_danych_v3.dir/Database.cpp.o.d
-  FLAGS = -DQT_QML_DEBUG -g -fPIC
+  FLAGS = -DQT_QML_DEBUG -g -fPIC -std=gnu++17
   INCLUDES = -I/home/maks/semestr_6/BD/DB_project/QT_GUI/build/Desktop_Qt_6_9_0-Debug/bazy_danych_v3_autogen/include -isystem /home/maks/Qt/6.9.0/gcc_64/include/QtCore -isystem /home/maks/Qt/6.9.0/gcc_64/include -isystem /home/maks/Qt/6.9.0/gcc_64/mkspecs/linux-g++ -isystem /home/maks/Qt/6.9.0/gcc_64/include/QtWidgets -isystem /home/maks/Qt/6.9.0/gcc_64/include/QtGui -isystem /home/maks/Qt/6.9.0/gcc_64/include/QtSql
   OBJECT_DIR = CMakeFiles/bazy_danych_v3.dir
   OBJECT_FILE_DIR = CMakeFiles/bazy_danych_v3.dir
@@ -92,7 +92,7 @@ build CMakeFiles/bazy_danych_v3.dir/Database.cpp.o: CXX_COMPILER__bazy_danych_v3
 build CMakeFiles/bazy_danych_v3.dir/addexpensedialog.cpp.o: CXX_COMPILER__bazy_danych_v3_Debug /home/maks/semestr_6/BD/DB_project/QT_GUI/addexpensedialog.cpp || cmake_object_order_depends_target_bazy_danych_v3
   DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_SQL_LIB -DQT_WIDGETS_LIB
   DEP_FILE = CMakeFiles/bazy_danych_v3.dir/addexpensedialog.cpp.o.d
-  FLAGS = -DQT_QML_DEBUG -g -fPIC
+  FLAGS = -DQT_QML_DEBUG -g -fPIC -std=gnu++17
   INCLUDES = -I/home/maks/semestr_6/BD/DB_project/QT_GUI/build/Desktop_Qt_6_9_0-Debug/bazy_danych_v3_autogen/include -isystem /home/maks/Qt/6.9.0/gcc_64/include/QtCore -isystem /home/maks/Qt/6.9.0/gcc_64/include -isystem /home/maks/Qt/6.9.0/gcc_64/mkspecs/linux-g++ -isystem /home/maks/Qt/6.9.0/gcc_64/include/QtWidgets -isystem /home/maks/Qt/6.9.0/gcc_64/include/QtGui -isystem /home/maks/Qt/6.9.0/gcc_64/include/QtSql
   OBJECT_DIR = CMakeFiles/bazy_danych_v3.dir
   OBJECT_FILE_DIR = CMakeFiles/bazy_danych_v3.dir
@@ -100,7 +100,7 @@ build CMakeFiles/bazy_danych_v3.dir/addexpensedialog.cpp.o: CXX_COMPILER__bazy_d
 build CMakeFiles/bazy_danych_v3.dir/addgroupdialog.cpp.o: CXX_COMPILER__bazy_danych_v3_Debug /home/maks/semestr_6/BD/DB_project/QT_GUI/addgroupdialog.cpp || cmake_object_order_depends_target_bazy_danych_v3
   DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_SQL_LIB -DQT_WIDGETS_LIB
   DEP_FILE = CMakeFiles/bazy_danych_v3.dir/addgroupdialog.cpp.o.d
-  FLAGS = -DQT_QML_DEBUG -g -fPIC
+  FLAGS = -DQT_QML_DEBUG -g -fPIC -std=gnu++17
   INCLUDES = -I/home/maks/semestr_6/BD/DB_project/QT_GUI/build/Desktop_Qt_6_9_0-Debug/bazy_danych_v3_autogen/include -isystem /home/maks/Qt/6.9.0/gcc_64/include/QtCore -isystem /home/maks/Qt/6.9.0/gcc_64/include -isystem /home/maks/Qt/6.9.0/gcc_64/mkspecs/linux-g++ -isystem /home/maks/Qt/6.9.0/gcc_64/include/QtWidgets -isystem /home/maks/Qt/6.9.0/gcc_64/include/QtGui -isystem /home/maks/Qt/6.9.0/gcc_64/include/QtSql
   OBJECT_DIR = CMakeFiles/bazy_danych_v3.dir
   OBJECT_FILE_DIR = CMakeFiles/bazy_danych_v3.dir
@@ -214,7 +214,7 @@ build bazy_danych_v3_autogen/timestamp bazy_danych_v3_autogen/mocs_compilation.c
 #############################################
 # Phony custom command for CMakeFiles/bazy_danych_v3_autogen_timestamp_deps
 
-build CMakeFiles/bazy_danych_v3_autogen_timestamp_deps | ${cmake_ninja_workdir}CMakeFiles/bazy_danych_v3_autogen_timestamp_deps: phony /home/maks/Qt/6.9.0/gcc_64/lib/libQt6Widgets.so.6.9.0 /home/maks/Qt/6.9.0/gcc_64/libexec/moc /home/maks/Qt/6.9.0/gcc_64/libexec/uic /home/maks/Qt/6.9.0/gcc_64/lib/libQt6Sql.so.6.9.0
+build CMakeFiles/bazy_danych_v3_autogen_timestamp_deps | ${cmake_ninja_workdir}CMakeFiles/bazy_danych_v3_autogen_timestamp_deps: phony /home/maks/Qt/6.9.0/gcc_64/libexec/moc /home/maks/Qt/6.9.0/gcc_64/libexec/uic /home/maks/Qt/6.9.0/gcc_64/lib/libQt6Widgets.so.6.9.0 /home/maks/Qt/6.9.0/gcc_64/lib/libQt6Sql.so.6.9.0
 
 
 #############################################

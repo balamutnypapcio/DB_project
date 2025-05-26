@@ -1,6 +1,10 @@
 cmake_minimum_required(VERSION 3.19)
 project(bazy_danych_v3 LANGUAGES CXX)
 
+# Dodane ustawienia standardu C++
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
 find_package(Qt6 6.5 COMPONENTS Core Widgets Sql QUIET)
 if (NOT Qt6_FOUND)
     find_package(Qt6 6.2 REQUIRED COMPONENTS Core Widgets Sql)
