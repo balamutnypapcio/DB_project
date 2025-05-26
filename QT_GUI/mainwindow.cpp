@@ -256,50 +256,17 @@ void MainWindow::handleSignInButton()
  */
 
 
-
 void MainWindow::handleAddGroupButton()
 {
     // Przejdź do strony tworzenia grupy
     ui->stackedWidget->setCurrentWidget(ui->createGroupPage);
 
-    // Wyczyść pole nazwy grupy i usuń stare połączenia
+    // Wyczyść pole nazwy grupy
     ui->groupNameInput->clear();
-    ui->newUsaerInput->clear(); // Zmienione z memberNameInput na newUsaerInput
     currentGroupMembers.clear();
+
+    // Odśwież listę członków
     updateGroupMembersList();
-
-    // Połącz przycisk dodawania członka
-    connect(ui->addButton, &QPushButton::clicked, this, [this]() {
-        QString username = ui->newUsaerInput->toPlainText().trimmed(); // Zmienione z memberNameInput na newUsaerInput
-        if (username.isEmpty()) {
-            QMessageBox* msgBox = createStyledMessageBox(
-                QMessageBox::Warning,
-                "Błąd",
-                "Proszę wprowadzić nazwę użytkownika"
-                );
-            msgBox->exec();
-            delete msgBox;
-            return;
-        }
-
-        Database& db = Database::getInstance();
-        if (!db.userExists(username)) {
-            QMessageBox* msgBox = createStyledMessageBox(
-                QMessageBox::Warning,
-                "Błąd",
-                "Użytkownik nie istnieje"
-                );
-            msgBox->exec();
-            delete msgBox;
-            return;
-        }
-
-        if (!currentGroupMembers.contains(username)) {
-            currentGroupMembers.append(username);
-            updateGroupMembersList();
-            ui->newUsaerInput->clear(); // Zmienione z memberNameInput na newUsaerInput
-        }
-    });
 
     // Połącz przycisk tworzenia grupy
     connect(ui->createGroupButton, &QPushButton::clicked, this, [this]() {
@@ -357,14 +324,13 @@ void MainWindow::handleAddGroupButton()
                 );
             errorBox->exec();
             delete errorBox;
+        } else {
+            // Wróć do listy grup tylko jeśli wszystko się udało
+            ui->stackedWidget->setCurrentWidget(ui->groupsPage);
+            loadUserGroups(); // Odśwież listę grup
         }
-
-        // Wróć do listy grup
-        ui->stackedWidget->setCurrentWidget(ui->groupsPage);
-        loadUserGroups(); // Odśwież listę grup
-    });
+    }, Qt::SingleShotConnection); // Użyj SingleShotConnection aby uniknąć wielokrotnego podłączenia
 }
-
 
 /**
  * @brief Obsługuje powrót do widoku listy grup
@@ -635,36 +601,59 @@ QMessageBox* MainWindow::createStyledMessageBox(QMessageBox::Icon icon,
 
 void MainWindow::handleAddMemberButton()
 {
-    QString username = ui->newUsaerInput->toPlainText().trimmed(); // Zmienione z memberNameInput na newUsaerInput
-    if (username.isEmpty()) {
-        QMessageBox* msgBox = createStyledMessageBox(
-            QMessageBox::Warning,
-            "Błąd",
-            "Proszę wprowadzić nazwę użytkownika"
-            );
-        msgBox->exec();
-        delete msgBox;
-        return;
-    }
+    connect(addButton, &QPushButton::clicked, this, [this, newUserInput]() {
+        QString username = newUserInput->toPlainText().trimmed();
+        if (username.isEmpty()) {
+            QMessageBox* msgBox = createStyledMessageBox(
+                QMessageBox::Warning,
+                "Błąd",
+                "Proszę wprowadzić nazwę użytkownika"
+                );
+            msgBox->exec();
+            delete msgBox;
+            return;
+        }
 
-    Database& db = Database::getInstance();
-    if (!db.userExists(username)) {
-        QMessageBox* msgBox = createStyledMessageBox(
-            QMessageBox::Warning,
-            "Błąd",
-            "Użytkownik nie istnieje"
-            );
-        msgBox->exec();
-        delete msgBox;
-        return;
-    }
+        Database& db = Database::getInstance();
+        if (!db.userExists(username)) {
+            // Jeśli użytkownik nie istnieje, zapytaj czy chcemy go utworzyć
+            QMessageBox* confirmBox = createStyledMessageBox(
+                QMessageBox::Question,
+                "Nowy użytkownik",
+                "Użytkownik nie istnieje. Czy chcesz utworzyć nowego użytkownika o nazwie " + username + "?",
+                QMessageBox::Yes | QMessageBox::No
+                );
 
-    if (!currentGroupMembers.contains(username)) {
-        currentGroupMembers.append(username);
-        updateGroupMembersList();
-        ui->newUsaerInput->clear(); // Zmienione z memberNameInput na newUsaerInput
-    }
-}
+            if (confirmBox->exec() == QMessageBox::Yes) {
+                if (db.addUser(username)) {
+                    // Jeśli udało się dodać użytkownika, dodaj go do grupy
+                    if (!currentGroupMembers.contains(username)) {
+                        currentGroupMembers.append(username);
+                        updateGroupMembersList();
+                        newUserInput->clear();
+                    }
+                } else {
+                    QMessageBox* errorBox = createStyledMessageBox(
+                        QMessageBox::Warning,
+                        "Błąd",
+                        "Nie udało się utworzyć użytkownika. Sprawdź połączenie z bazą danych."
+                        );
+                    errorBox->exec();
+                    delete errorBox;
+                }
+            }
+            delete confirmBox;
+        } else {
+            // Jeśli użytkownik istnieje, dodaj go do grupy
+            if (!currentGroupMembers.contains(username)) {
+                currentGroupMembers.append(username);
+                updateGroupMembersList();
+                newUserInput->clear();
+            }
+        }
+    });
+
+
 
 void MainWindow::updateGroupMembersList()
 {
@@ -672,8 +661,13 @@ void MainWindow::updateGroupMembersList()
     QWidget* membersWidget = ui->scrollAreaWidgetContents_4;
     QVBoxLayout* layout = qobject_cast<QVBoxLayout*>(membersWidget->layout());
 
-    // Usuń stare widgety
-    if (layout) {
+    // Jeśli nie ma układu, utwórz nowy
+    if (!layout) {
+        layout = new QVBoxLayout(membersWidget);
+        layout->setSpacing(10);
+        layout->setContentsMargins(10, 10, 10, 10);
+    } else {
+        // Wyczyść stary układ
         QLayoutItem* item;
         while ((item = layout->takeAt(0)) != nullptr) {
             if (QWidget* widget = item->widget()) {
@@ -681,45 +675,169 @@ void MainWindow::updateGroupMembersList()
             }
             delete item;
         }
+    }
+
+    // Dodaj widget do wprowadzania nowych członków
+    QWidget* addMemberWidget = new QWidget;
+    QHBoxLayout* addMemberLayout = new QHBoxLayout(addMemberWidget);
+    addMemberLayout->setSpacing(10);
+    addMemberLayout->setContentsMargins(0, 0, 0, 0);
+
+    // Pole tekstowe do wprowadzania nazwy użytkownika
+    QPlainTextEdit* newUserInput = new QPlainTextEdit;
+    newUserInput->setPlaceholderText("Wprowadź nazwę użytkownika");
+    newUserInput->setFixedHeight(32);
+    newUserInput->setStyleSheet(
+        "QPlainTextEdit {"
+        "   height: 30px;"
+        "   max-height: 30px;"
+        "   line-height: 30px;"
+        "   padding: 5px 8px;"
+        "   border: 1px solid #ccc;"
+        "   border-radius: 6px;"
+        "   color: black;"
+        "   background-color: white;"
+        "}"
+        );
+
+    // Przycisk dodawania
+    QPushButton* addButton = new QPushButton("+");
+    addButton->setFixedSize(30, 30);
+    addButton->setStyleSheet(ui->addButton->styleSheet());
+
+    // Dodaj elementy do layoutu
+    addMemberLayout->addWidget(newUserInput, 1); // 1 to stretch factor
+    addMemberLayout->addWidget(addButton);
+
+    // Dodaj widget do głównego layoutu
+    layout->addWidget(addMemberWidget);
+
+    // Separator
+    QFrame* line = new QFrame;
+    line->setFrameShape(QFrame::HLine);
+    line->setFrameShadow(QFrame::Sunken);
+    line->setStyleSheet("background-color: #ccc;");
+    layout->addWidget(line);
+
+    // Lista obecnych członków
+    if (!currentGroupMembers.isEmpty()) {
+        for (const QString& username : currentGroupMembers) {
+            QWidget* memberWidget = new QWidget;
+            QHBoxLayout* memberLayout = new QHBoxLayout(memberWidget);
+            memberLayout->setSpacing(10);
+            memberLayout->setContentsMargins(0, 0, 0, 0);
+
+            // Label z nazwą użytkownika
+            QLabel* nameLabel = new QLabel(username);
+            nameLabel->setStyleSheet(
+                "height: 30px;"
+                "max-height: 30px;"
+                "line-height: 30px;"
+                "padding: 0 8px;"
+                "border: 1px solid #ccc;"
+                "border-radius: 6px;"
+                "color: black;"
+                "background-color: white;"
+                );
+
+            // Przycisk usuwania
+            QPushButton* removeButton = new QPushButton("-");
+            removeButton->setFixedSize(30, 30);
+            removeButton->setStyleSheet(ui->removeButton->styleSheet());
+
+            memberLayout->addWidget(nameLabel, 1);
+            memberLayout->addWidget(removeButton);
+
+            connect(removeButton, &QPushButton::clicked, this, [this, username]() {
+                currentGroupMembers.removeOne(username);
+                updateGroupMembersList();
+            });
+
+            layout->addWidget(memberWidget);
+        }
     } else {
-        layout = new QVBoxLayout(membersWidget);
-    }
-
-    // Dodaj widget dla każdego członka
-    for (const QString& username : currentGroupMembers) {
-        QWidget* memberWidget = new QWidget;
-        QHBoxLayout* memberLayout = new QHBoxLayout(memberWidget);
-
-        // Label z nazwą użytkownika
-        QLabel* nameLabel = new QLabel(username);
-        nameLabel->setStyleSheet(
-            "height: 30px;"
-            "max-height: 30px;"
-            "line-height: 30px;"
-            "padding: 0 8px;"
-            "border: 1px solid #ccc;"
-            "border-radius: 6px;"
-            "color: black;"
+        // Dodaj informację gdy nie ma członków
+        QLabel* noMembersLabel = new QLabel("Brak członków grupy");
+        noMembersLabel->setAlignment(Qt::AlignCenter);
+        noMembersLabel->setStyleSheet(
+            "color: #666;"
+            "font-style: italic;"
+            "padding: 20px;"
             );
-
-        // Przycisk usuwania
-        QPushButton* removeButton = new QPushButton("-");
-        removeButton->setStyleSheet(ui->removeButton->styleSheet());
-        removeButton->setFixedSize(30, 30);
-
-        memberLayout->addWidget(nameLabel);
-        memberLayout->addSpacing(20);
-        memberLayout->addWidget(removeButton);
-
-        // Połącz przycisk usuwania
-        connect(removeButton, &QPushButton::clicked, this, [this, username]() {
-            currentGroupMembers.removeOne(username);
-            updateGroupMembersList();
-        });
-
-        layout->addWidget(memberWidget);
+        layout->addWidget(noMembersLabel);
     }
 
-    // Dodaj spacer na końcu
+    // Dodaj elastyczny spacer na końcu
     layout->addStretch();
+
+    // Podłącz przycisk dodawania
+    connect(addButton, &QPushButton::clicked, this, [this, newUserInput]() {
+        QString username = newUserInput->toPlainText().trimmed();
+        if (username.isEmpty()) {
+            QMessageBox* msgBox = createStyledMessageBox(
+                QMessageBox::Warning,
+                "Błąd",
+                "Proszę wprowadzić nazwę użytkownika"
+                );
+            msgBox->exec();
+            delete msgBox;
+            return;
+        }
+
+        Database& db = Database::getInstance();
+        if (!db.userExists(username)) {
+            QMessageBox* msgBox = createStyledMessageBox(
+                QMessageBox::Warning,
+                "Błąd",
+                "Użytkownik nie istnieje"
+                );
+            msgBox->exec();
+            delete msgBox;
+            return;
+        }
+
+        if (!currentGroupMembers.contains(username)) {
+            currentGroupMembers.append(username);
+            updateGroupMembersList();
+        }
+    });
+}
+
+QMessageBox* MainWindow::createStyledMessageBox(QMessageBox::Icon icon,
+                                                const QString& title,
+                                                const QString& text,
+                                                QMessageBox::StandardButtons buttons)
+{
+    QMessageBox* msgBox = new QMessageBox(this);
+    msgBox->setIcon(icon);
+    msgBox->setWindowTitle(title);
+    msgBox->setText(text);
+    msgBox->setStandardButtons(buttons);
+    msgBox->setStyleSheet(
+        "QMessageBox {"
+        "    background-color: #FFFFFF;"
+        "}"
+        "QMessageBox QLabel {"
+        "    color: #000000;"
+        "    font-size: 12pt;"
+        "    min-width: 200px;"
+        "}"
+        "QPushButton {"
+        "    min-width: 100px;"
+        "    min-height: 30px;"
+        "    background-color: #4169E1;"
+        "    border-radius: 10px;"
+        "    color: white;"
+        "    font-size: 12pt;"
+        "    font-weight: bold;"
+        "    padding: 5px;"
+        "}"
+        "QPushButton:hover {"
+        "    background-color: #5a7ee5;"
+        "}"
+        "QPushButton:pressed {"
+        "    background-color: #0d1b3f;"
+        "}"
+        );
+    return msgBox;
 }

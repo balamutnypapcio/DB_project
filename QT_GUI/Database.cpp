@@ -345,3 +345,34 @@ int Database::getLastInsertedGroupId()
     }
     return -1;
 }
+
+
+bool Database::addUser(const QString& username)
+{
+    // Najpierw sprawdź czy użytkownik już nie istnieje
+    QSqlQuery checkQuery(db);
+    checkQuery.prepare("SELECT id FROM users WHERE username = :username AND is_deleted = FALSE");
+    checkQuery.bindValue(":username", username);
+
+    if (!checkQuery.exec()) {
+        qDebug() << "Query Error (check user):" << checkQuery.lastError().text();
+        return false;
+    }
+
+    // Jeśli użytkownik już istnieje, zwróć false
+    if (checkQuery.next()) {
+        return false;
+    }
+
+    // Dodaj nowego użytkownika
+    QSqlQuery addQuery(db);
+    addQuery.prepare("INSERT INTO users (username, created_at) VALUES (:username, NOW())");
+    addQuery.bindValue(":username", username);
+
+    if (!addQuery.exec()) {
+        qDebug() << "Query Error (add user):" << addQuery.lastError().text();
+        return false;
+    }
+
+    return true;
+}

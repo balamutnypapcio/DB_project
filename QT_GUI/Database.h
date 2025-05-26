@@ -23,6 +23,8 @@ public:
     int getCurrentUserId() const { return currentUserId; }
 
 
+    bool addUser(const QString& username);
+
     // Metoda do wykonywania zapytań
     QSqlQuery executeQuery(const QString& queryStr);
     QVector<QPair<int, QString>> getUserGroups(int userId);
@@ -60,6 +62,8 @@ public:
     QVector<ExpenseData> getExpensesForGroup(int groupId);
     ExpenseData getExpenseDetails(int expenseId);
     QVector<ParticipantData> getExpenseParticipants(int expenseId);
+
+
 
 private:
     Database(); // Konstruktor prywatny (Singleton)
