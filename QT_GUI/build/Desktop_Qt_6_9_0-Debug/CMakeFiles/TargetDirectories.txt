@@ -1,0 +1,9 @@
+/home/antek/Desktop/DB/QT_GUI/build/Desktop_Qt_6_9_0-Debug/CMakeFiles/bazy_danych_v3.dir
+/home/antek/Desktop/DB/QT_GUI/build/Desktop_Qt_6_9_0-Debug/CMakeFiles/edit_cache.dir
+/home/antek/Desktop/DB/QT_GUI/build/Desktop_Qt_6_9_0-Debug/CMakeFiles/rebuild_cache.dir
+/home/antek/Desktop/DB/QT_GUI/build/Desktop_Qt_6_9_0-Debug/CMakeFiles/list_install_components.dir
+/home/antek/Desktop/DB/QT_GUI/build/Desktop_Qt_6_9_0-Debug/CMakeFiles/install.dir
+/home/antek/Desktop/DB/QT_GUI/build/Desktop_Qt_6_9_0-Debug/CMakeFiles/install/local.dir
+/home/antek/Desktop/DB/QT_GUI/build/Desktop_Qt_6_9_0-Debug/CMakeFiles/install/strip.dir
+/home/antek/Desktop/DB/QT_GUI/build/Desktop_Qt_6_9_0-Debug/CMakeFiles/bazy_danych_v3_autogen_timestamp_deps.dir
+/home/antek/Desktop/DB/QT_GUI/build/Desktop_Qt_6_9_0-Debug/CMakeFiles/bazy_danych_v3_autogen.dir
