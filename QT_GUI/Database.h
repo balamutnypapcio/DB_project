@@ -41,15 +41,22 @@ public:
         double userShare;
     };
 
+    struct balanceData{
+        QString userName;
+        double userBalance;
+    };
+
     QVector<ExpenseData> getExpensesForGroup(int groupId);
     ExpenseData getExpenseDetails(int expenseId);
     QVector<ParticipantData> getExpenseParticipants(int expenseId);
     QVector<expenseSharesData> getExpenseShares(int expenseId);
+    QVector<balanceData> getBalancesForGroup(int currentGroupId);
+    QVector<balanceData> getBalancesForMe(int currentGroupId, int currentUserId);
     void addExpenseToGroup(int groupId, QString& paidById, double amount,
                                      const QString& description, const QString& participantsShares);
     void deleteExpenseById(int expenseId);
     void deleteGroupById(int groupId);
-
+    void anonymizeUserById(int userId);
 
 
 private:

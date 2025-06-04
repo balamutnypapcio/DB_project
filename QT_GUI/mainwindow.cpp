@@ -61,10 +61,11 @@ void MainWindow::setupConnections()
     // Połącz przycisk Expenses z pokazywaniem wydatków
     connect(ui->buttonExpences, &QPushButton::clicked, this, [this]() {
         ui->StackedWidgetBalancesOrExpences->setCurrentIndex(1);
-        //loadExpenses();
+        loadExpenses();
     });
     connect(ui->buttonBalances, &QPushButton::clicked, this, [this]() {
         ui->StackedWidgetBalancesOrExpences->setCurrentIndex(0);
+        loadBalances();
     });
 }
 
@@ -272,6 +273,78 @@ void MainWindow::handleGroupSelection(int groupId, const QString& groupName)
     ui->stackedWidget->setCurrentIndex(5);  // Przejście do strony z wydatkami
 }
 
+
+
+void MainWindow::loadBalances(){
+
+    Database& db = Database::getInstance();
+
+    // Pobierz layout ze scroll area wydatków
+    QWidget* scrollContent = ui->scrollAreaBalances;
+    QVBoxLayout* layout = qobject_cast<QVBoxLayout*>(scrollContent->layout());
+
+    // Wyczyść istniejące przyciski
+    QLayoutItem* item;
+    while ((item = layout->takeAt(0)) != nullptr) {
+        if (QWidget* widget = item->widget()) {
+            widget->deleteLater();
+        }
+        delete item;
+    }
+
+    QLabel* label1 = new QLabel("You need to pay:", scrollContent);
+    label1->setStyleSheet("color: #000000;font-size: 15pt;");
+    layout->addWidget(label1);
+
+    // Pobieram ile jestem winien
+    QVector<Database::balanceData> dues = db.getBalancesForMe(currentGroupId, currentUserId);
+
+    if(dues.size() == 0){
+
+        QLabel* label = new QLabel("You are clear!", scrollContent);
+        label->setAlignment(Qt::AlignCenter); // lub Qt::AlignLeft | Qt::AlignVCenter
+
+        label->setStyleSheet(R"(
+        QLabel {
+            background-color: white;
+            border: 1px solid #cccccc;
+            border-radius: 10px;
+            padding: 6px 12px;
+            font-size: 14px;
+        }
+)");
+        layout->addWidget(label);
+    }
+
+    // Dodaj przyciski dla każdego wydatku
+    for (const auto& due : dues) {
+        BalanceButton* button = new BalanceButton(due.userName, due.userBalance, scrollContent);
+        layout->addWidget(button);
+    }
+
+    QLabel* label2 = new QLabel("Balances:", scrollContent);
+    label2->setStyleSheet("color: #000000;font-size: 15pt;");
+    layout->addWidget(label2);
+
+    // Pobierz wydatki z bazy danych
+    QVector<Database::balanceData> balances = db.getBalancesForGroup(currentGroupId);
+
+    // Dodaj przyciski dla każdego wydatku
+    for (const auto& balance : balances) {
+        BalanceButton* button = new BalanceButton(balance.userName, balance.userBalance, scrollContent);
+        layout->addWidget(button);
+    }
+
+    // Dodaj spacer na końcu
+    layout->addStretch();
+
+}
+
+
+
+
+
+
 /**
  * @brief Ładuje wydatki dla aktualnie wybranej grupy
  *
@@ -453,5 +526,30 @@ void MainWindow::on_pushButton_5_clicked()
     handleDeleteGroup();
     loadUserGroups();
     ui->stackedWidget->setCurrentWidget(ui->groupsPage);
+}
+
+
+void MainWindow::handleDeleteAccount(){
+
+    // TODO: mozna dodac jeszcze pole is_deleted w bazie danych
+    Database& db = Database::getInstance();
+    db.anonymizeUserById(currentUserId);
+
+}
+
+
+
+void MainWindow::on_buttonDeleteAccount_clicked()
+{
+    QMessageBox::StandardButton reply;
+    reply = QMessageBox::question(nullptr, "Potwierdzenie usunięcia konta.",
+                                  "Czy na pewno chcesz usunąć swoje konto?",
+                                  QMessageBox::Yes | QMessageBox::No);
+
+    if (reply == QMessageBox::Yes) {
+        handleDeleteAccount();
+        ui->stackedWidget->setCurrentWidget(ui->welcomePage);
+    }
+
 }
 

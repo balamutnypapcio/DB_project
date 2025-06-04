@@ -38,7 +38,7 @@ background-color: #FFFFFF;</string>
        <enum>Qt::LayoutDirection::LeftToRight</enum>
       </property>
       <property name="currentIndex">
-       <number>5</number>
+       <number>2</number>
       </property>
       <widget class="QWidget" name="welcomePage">
        <property name="styleSheet">
@@ -311,7 +311,7 @@ QScrollArea { border: none; }</string>
              <x>0</x>
              <y>0</y>
              <width>293</width>
-             <height>467</height>
+             <height>431</height>
             </rect>
            </property>
            <property name="accessibleName">
@@ -549,6 +549,43 @@ QPushButton:pressed {
           </property>
           <property name="default">
            <bool>false</bool>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="buttonDeleteAccount">
+          <property name="styleSheet">
+           <string notr="true">QPushButton {
+    min-width: 100px;
+    min-height: 30px;
+    max-height: 30px;
+    background-color: #D32F2F;    /* Royal Blue - jaśniejszy odcień */
+    border-radius: 10px;
+    color: white;
+    font-size: 14pt;
+    font-weight: bold;
+}
+
+QPushButton:checked {
+    min-width: 90px;              /* mniejszy rozmiar gdy aktywny */
+    max-width: 90px;
+    min-height: 90px;
+    max-height: 90px;
+    background-color: #1e3c8c;    /* ciemniejszy odcień niebieskiego */
+    border-radius: 18px;          /* proporcjonalnie mniejszy radius */
+    font-size: 12pt;              /* mniejsza czcionka */
+}
+
+QPushButton:hover {
+    background-color: #C62828;    /* jaśniejszy przy hover */
+}
+
+QPushButton:pressed {
+    background-color:  #B71C1C;    /* najciemniejszy przy wciśnięciu */
+}</string>
+          </property>
+          <property name="text">
+           <string>Delete Account</string>
           </property>
          </widget>
         </item>
@@ -1986,7 +2023,7 @@ QPushButton:pressed {
         <item>
          <widget class="QStackedWidget" name="StackedWidgetBalancesOrExpences">
           <property name="currentIndex">
-           <number>1</number>
+           <number>0</number>
           </property>
           <widget class="QWidget" name="balancesPage">
            <property name="styleSheet">
@@ -1998,50 +2035,16 @@ QPushButton:pressed {
               <property name="widgetResizable">
                <bool>true</bool>
               </property>
-              <widget class="QWidget" name="scrollAreaWidgetContents_2">
+              <widget class="QWidget" name="scrollAreaBalances">
                <property name="geometry">
                 <rect>
                  <x>0</x>
                  <y>0</y>
                  <width>275</width>
-                 <height>410</height>
+                 <height>356</height>
                 </rect>
                </property>
                <layout class="QVBoxLayout" name="verticalLayout_8">
-                <item>
-                 <widget class="QLabel" name="dataBalance1">
-                  <property name="text">
-                   <string>01.01.2001</string>
-                  </property>
-                 </widget>
-                </item>
-                <item>
-                 <widget class="QPushButton" name="balance1">
-                  <property name="text">
-                   <string>PushButton</string>
-                  </property>
-                  <property name="flat">
-                   <bool>true</bool>
-                  </property>
-                 </widget>
-                </item>
-                <item>
-                 <widget class="QLabel" name="dateBalance2">
-                  <property name="text">
-                   <string>02.02.2002</string>
-                  </property>
-                 </widget>
-                </item>
-                <item>
-                 <widget class="QPushButton" name="balance2">
-                  <property name="text">
-                   <string>PushButton</string>
-                  </property>
-                  <property name="flat">
-                   <bool>true</bool>
-                  </property>
-                 </widget>
-                </item>
                 <item>
                  <spacer name="verticalSpacer_5">
                   <property name="orientation">

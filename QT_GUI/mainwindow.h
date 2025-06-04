@@ -5,6 +5,7 @@
 #include <QTimer>
 #include "Database.h"
 #include "expensebutton.h"
+#include "balancebutton.h"
 
 
 QT_BEGIN_NAMESPACE
@@ -26,10 +27,13 @@ private slots:
     void handleReturnButton();
     void loadUserGroups();
     void loadExpenses();
+    void loadBalances();
     void handleExpenseClick(int expenseId, const QString& paidBy, double amount);
     void handleAddExpenseClick();
     void handleDeleteExpenseClick();
     void handleDeleteGroup();
+    void handleDeleteAccount();
+
 
 
 private slots:
@@ -49,6 +53,8 @@ private slots:
     void on_buttonDeleteExpense_clicked();
 
     void on_pushButton_5_clicked();
+
+    void on_buttonDeleteAccount_clicked();
 
 private:
 

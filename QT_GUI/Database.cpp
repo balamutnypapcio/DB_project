@@ -317,6 +317,115 @@ void Database::deleteGroupById(int groupId)
 }
 
 
+// TODO: mozna dodac jeszcze pole is_deleted w bazie danych
+void Database::anonymizeUserById(int userId)
+{
+    QSqlQuery query;
+
+    // Anonimizuje dane użytkownika bez potrzeby pola is_deleted
+    query.prepare(R"(
+        UPDATE users
+        SET
+            username = CONCAT('anon_user_', id),
+            email = CONCAT('anon', id, '@example.com'),
+            hashed_password = 'deleted_user'
+        WHERE id = :user_id
+    )");
+    query.bindValue(":user_id", userId);
+
+    if (!query.exec()) {
+        qDebug() << "Błąd anonimizacji danych użytkownika:" << query.lastError().text();
+        QMessageBox::critical(nullptr, "Błąd", "Nie udało się zanonimizować danych użytkownika.");
+    } else {
+        qDebug() << "Użytkownik o ID" << userId << "został pomyślnie zanonimizowany.";
+        QMessageBox::information(nullptr, "Sukces", "Użytkownik został zanonimizowany.");
+    }
+}
+
+
+
+QVector<Database::balanceData> Database::getBalancesForGroup(int currentGroupId){
+
+    QVector<balanceData> result;
+    QSqlQuery query;
+
+    query.prepare(R"(
+        SELECT
+            u.id AS user_id,
+            u.username,
+            IFNULL(SUM(e.amount * (e.paid_by = u.id)), 0) AS paid,
+            IFNULL(SUM(s.share), 0) AS share
+        FROM users u
+        JOIN group_members gm ON gm.user_id = u.id AND gm.group_id = :groupId
+        LEFT JOIN expenses e ON e.group_id = :groupId
+        LEFT JOIN expense_participants ep ON ep.expense_id = e.id AND ep.user_id = u.id
+        LEFT JOIN expense_shares s ON s.expense_id = e.id AND s.user_id = u.id
+        GROUP BY u.id
+    )");
+
+    query.bindValue(":groupId", currentGroupId);
+
+    if (!query.exec()) {
+        qDebug() << "Błąd zapytania SQL w getBalancesForGroup:" << query.lastError().text();
+        return result;
+    }
+
+    while (query.next()) {
+        QString username = query.value("username").toString();
+        double paid = query.value("paid").toDouble();
+        double share = query.value("share").toDouble();
+
+        balanceData data;
+        data.userName = username;
+        data.userBalance = paid - share;
+
+        qDebug() << "Użytkownik:" << data.userName;
+        qDebug() << "Saldo:" << data.userBalance;
+
+        result.append(data);
+    }
+
+    return result;
+
+}
+
+
+QVector<Database::balanceData> Database::getBalancesForMe(int currentGroupId, int currentUserId){
+
+    QVector<balanceData> result;
+    QSqlQuery query;
+    query.prepare(R"(
+    SELECT
+        u.username AS to_username,
+        SUM(s.share) AS amount_due
+    FROM expenses e
+    JOIN expense_shares s ON s.expense_id = e.id
+    JOIN users u ON u.id = e.paid_by
+    WHERE e.group_id = :groupId
+      AND s.user_id = :currentUserId
+      AND e.paid_by != :currentUserId
+    GROUP BY e.paid_by
+)");
+
+    query.bindValue(":groupId", currentGroupId);
+    query.bindValue(":currentUserId", currentUserId);
+
+    if (query.exec()) {
+        while (query.next()) {
+            QString toUsername = query.value("to_username").toString();
+            double amountDue = query.value("amount_due").toDouble();
+            result.append({toUsername, amountDue});
+        }
+    } else {
+        qDebug() << "Błąd w zapytaniu:" << query.lastError().text();
+    }
+
+    return result;
+
+}
+
+
+
 
 
 

@@ -55,6 +55,7 @@ public:
     QPushButton *pushButton_2;
     QSpacerItem *verticalSpacer;
     QPushButton *createButton;
+    QPushButton *buttonDeleteAccount;
     QWidget *createGroupPage;
     QVBoxLayout *verticalLayout_10;
     QWidget *widget;
@@ -175,12 +176,8 @@ public:
     QWidget *balancesPage;
     QVBoxLayout *verticalLayout;
     QScrollArea *scrollArea_2;
-    QWidget *scrollAreaWidgetContents_2;
+    QWidget *scrollAreaBalances;
     QVBoxLayout *verticalLayout_8;
-    QLabel *dataBalance1;
-    QPushButton *balance1;
-    QLabel *dateBalance2;
-    QPushButton *balance2;
     QSpacerItem *verticalSpacer_5;
     QWidget *expencesPage;
     QVBoxLayout *verticalLayout_5;
@@ -367,7 +364,7 @@ public:
         scrollArea->setAlignment(Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignTop);
         scrollAreaWidgetContents = new QWidget();
         scrollAreaWidgetContents->setObjectName("scrollAreaWidgetContents");
-        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 293, 467));
+        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 293, 431));
         scrollAreaWidgetContents->setLayoutDirection(Qt::LayoutDirection::LeftToRight);
         scrollAreaWidgetContents->setStyleSheet(QString::fromUtf8("QScrollArea { border: none; }"));
         verticalLayout_6 = new QVBoxLayout(scrollAreaWidgetContents);
@@ -526,6 +523,39 @@ public:
         createButton->setAutoDefault(false);
 
         verticalLayout_4->addWidget(createButton);
+
+        buttonDeleteAccount = new QPushButton(groupsPage);
+        buttonDeleteAccount->setObjectName("buttonDeleteAccount");
+        buttonDeleteAccount->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+"    min-width: 100px;\n"
+"    min-height: 30px;\n"
+"    max-height: 30px;\n"
+"    background-color: #D32F2F;    /* Royal Blue - ja\305\233niejszy odcie\305\204 */\n"
+"    border-radius: 10px;\n"
+"    color: white;\n"
+"    font-size: 14pt;\n"
+"    font-weight: bold;\n"
+"}\n"
+"\n"
+"QPushButton:checked {\n"
+"    min-width: 90px;              /* mniejszy rozmiar gdy aktywny */\n"
+"    max-width: 90px;\n"
+"    min-height: 90px;\n"
+"    max-height: 90px;\n"
+"    background-color: #1e3c8c;    /* ciemniejszy odcie\305\204 niebieskiego */\n"
+"    border-radius: 18px;          /* proporcjonalnie mniejszy radius */\n"
+"    font-size: 12pt;              /* mniejsza czcionka */\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: #C62828;    /* ja\305\233niejszy przy hover */\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color:  #B71C1C;    /* najciemniejszy przy wci\305\233ni\304\231ciu */\n"
+"}"));
+
+        verticalLayout_4->addWidget(buttonDeleteAccount);
 
         stackedWidget->addWidget(groupsPage);
         createGroupPage = new QWidget();
@@ -1623,38 +1653,16 @@ public:
         scrollArea_2 = new QScrollArea(balancesPage);
         scrollArea_2->setObjectName("scrollArea_2");
         scrollArea_2->setWidgetResizable(true);
-        scrollAreaWidgetContents_2 = new QWidget();
-        scrollAreaWidgetContents_2->setObjectName("scrollAreaWidgetContents_2");
-        scrollAreaWidgetContents_2->setGeometry(QRect(0, 0, 275, 410));
-        verticalLayout_8 = new QVBoxLayout(scrollAreaWidgetContents_2);
+        scrollAreaBalances = new QWidget();
+        scrollAreaBalances->setObjectName("scrollAreaBalances");
+        scrollAreaBalances->setGeometry(QRect(0, 0, 275, 356));
+        verticalLayout_8 = new QVBoxLayout(scrollAreaBalances);
         verticalLayout_8->setObjectName("verticalLayout_8");
-        dataBalance1 = new QLabel(scrollAreaWidgetContents_2);
-        dataBalance1->setObjectName("dataBalance1");
-
-        verticalLayout_8->addWidget(dataBalance1);
-
-        balance1 = new QPushButton(scrollAreaWidgetContents_2);
-        balance1->setObjectName("balance1");
-        balance1->setFlat(true);
-
-        verticalLayout_8->addWidget(balance1);
-
-        dateBalance2 = new QLabel(scrollAreaWidgetContents_2);
-        dateBalance2->setObjectName("dateBalance2");
-
-        verticalLayout_8->addWidget(dateBalance2);
-
-        balance2 = new QPushButton(scrollAreaWidgetContents_2);
-        balance2->setObjectName("balance2");
-        balance2->setFlat(true);
-
-        verticalLayout_8->addWidget(balance2);
-
         verticalSpacer_5 = new QSpacerItem(20, 40, QSizePolicy::Policy::Minimum, QSizePolicy::Policy::Expanding);
 
         verticalLayout_8->addItem(verticalSpacer_5);
 
-        scrollArea_2->setWidget(scrollAreaWidgetContents_2);
+        scrollArea_2->setWidget(scrollAreaBalances);
 
         verticalLayout->addWidget(scrollArea_2);
 
@@ -1788,9 +1796,9 @@ public:
 
         retranslateUi(MainWindow);
 
-        stackedWidget->setCurrentIndex(5);
+        stackedWidget->setCurrentIndex(2);
         createButton->setDefault(false);
-        StackedWidgetBalancesOrExpences->setCurrentIndex(1);
+        StackedWidgetBalancesOrExpences->setCurrentIndex(0);
 
 
         QMetaObject::connectSlotsByName(MainWindow);
@@ -1814,6 +1822,7 @@ public:
         pushButton_4->setText(QCoreApplication::translate("MainWindow", "Apartment Expenses", nullptr));
         pushButton_2->setText(QCoreApplication::translate("MainWindow", "Beer Night", nullptr));
         createButton->setText(QCoreApplication::translate("MainWindow", "Add Group", nullptr));
+        buttonDeleteAccount->setText(QCoreApplication::translate("MainWindow", "Delete Account", nullptr));
         pageTitle->setText(QCoreApplication::translate("MainWindow", "Create Group", nullptr));
         backButton->setText(QCoreApplication::translate("MainWindow", "BACK", nullptr));
         groupNameLabel->setText(QCoreApplication::translate("MainWindow", "Group Name", nullptr));
@@ -1859,10 +1868,6 @@ public:
         buttonReturn->setText(QCoreApplication::translate("MainWindow", "BACK", nullptr));
         buttonBalances->setText(QCoreApplication::translate("MainWindow", "Balances", nullptr));
         buttonExpences->setText(QCoreApplication::translate("MainWindow", "Expenses", nullptr));
-        dataBalance1->setText(QCoreApplication::translate("MainWindow", "01.01.2001", nullptr));
-        balance1->setText(QCoreApplication::translate("MainWindow", "PushButton", nullptr));
-        dateBalance2->setText(QCoreApplication::translate("MainWindow", "02.02.2002", nullptr));
-        balance2->setText(QCoreApplication::translate("MainWindow", "PushButton", nullptr));
         dataExpense1->setText(QCoreApplication::translate("MainWindow", "TextLabel", nullptr));
         expense1->setText(QCoreApplication::translate("MainWindow", "PushButton", nullptr));
         dataExpense2->setText(QCoreApplication::translate("MainWindow", "TextLabel", nullptr));

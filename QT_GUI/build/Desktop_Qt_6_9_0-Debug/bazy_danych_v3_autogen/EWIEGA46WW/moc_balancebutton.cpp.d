@@ -1,12 +1,5 @@
-/home/antek/Desktop/DB/QT_GUI/build/Desktop_Qt_6_9_0-Debug/bazy_danych_v3_autogen/EWIEGA46WW/moc_mainwindow.cpp: /home/antek/Desktop/DB/QT_GUI/mainwindow.h \
+/home/antek/Desktop/DB/QT_GUI/build/Desktop_Qt_6_9_0-Debug/bazy_danych_v3_autogen/EWIEGA46WW/moc_balancebutton.cpp: /home/antek/Desktop/DB/QT_GUI/balancebutton.h \
   /home/antek/Desktop/DB/QT_GUI/build/Desktop_Qt_6_9_0-Debug/bazy_danych_v3_autogen/moc_predefs.h \
-  /home/antek/Desktop/DB/QT_GUI/Database.h \
-  /home/antek/Desktop/DB/QT_GUI/balancebutton.h \
-  /home/antek/Desktop/DB/QT_GUI/expensebutton.h \
-  /home/antek/Qt/6.9.0/gcc_64/include/QtCore/QDateTime \
-  /home/antek/Qt/6.9.0/gcc_64/include/QtCore/QDebug \
-  /home/antek/Qt/6.9.0/gcc_64/include/QtCore/QString \
-  /home/antek/Qt/6.9.0/gcc_64/include/QtCore/QTimer \
   /home/antek/Qt/6.9.0/gcc_64/include/QtCore/q17memory.h \
   /home/antek/Qt/6.9.0/gcc_64/include/QtCore/q20functional.h \
   /home/antek/Qt/6.9.0/gcc_64/include/QtCore/q20iterator.h \
@@ -14,7 +7,6 @@
   /home/antek/Qt/6.9.0/gcc_64/include/QtCore/q20type_traits.h \
   /home/antek/Qt/6.9.0/gcc_64/include/QtCore/q20utility.h \
   /home/antek/Qt/6.9.0/gcc_64/include/QtCore/q23utility.h \
-  /home/antek/Qt/6.9.0/gcc_64/include/QtCore/qabstracteventdispatcher.h \
   /home/antek/Qt/6.9.0/gcc_64/include/QtCore/qalgorithms.h \
   /home/antek/Qt/6.9.0/gcc_64/include/QtCore/qanystringview.h \
   /home/antek/Qt/6.9.0/gcc_64/include/QtCore/qarraydata.h \
@@ -24,13 +16,11 @@
   /home/antek/Qt/6.9.0/gcc_64/include/QtCore/qatomic.h \
   /home/antek/Qt/6.9.0/gcc_64/include/QtCore/qatomic_cxx11.h \
   /home/antek/Qt/6.9.0/gcc_64/include/QtCore/qbasicatomic.h \
-  /home/antek/Qt/6.9.0/gcc_64/include/QtCore/qbasictimer.h \
   /home/antek/Qt/6.9.0/gcc_64/include/QtCore/qbindingstorage.h \
   /home/antek/Qt/6.9.0/gcc_64/include/QtCore/qbytearray.h \
   /home/antek/Qt/6.9.0/gcc_64/include/QtCore/qbytearrayalgorithms.h \
   /home/antek/Qt/6.9.0/gcc_64/include/QtCore/qbytearraylist.h \
   /home/antek/Qt/6.9.0/gcc_64/include/QtCore/qbytearrayview.h \
-  /home/antek/Qt/6.9.0/gcc_64/include/QtCore/qcalendar.h \
   /home/antek/Qt/6.9.0/gcc_64/include/QtCore/qchar.h \
   /home/antek/Qt/6.9.0/gcc_64/include/QtCore/qcompare.h \
   /home/antek/Qt/6.9.0/gcc_64/include/QtCore/qcompare_impl.h \
@@ -44,12 +34,8 @@
   /home/antek/Qt/6.9.0/gcc_64/include/QtCore/qcontiguouscache.h \
   /home/antek/Qt/6.9.0/gcc_64/include/QtCore/qdarwinhelpers.h \
   /home/antek/Qt/6.9.0/gcc_64/include/QtCore/qdatastream.h \
-  /home/antek/Qt/6.9.0/gcc_64/include/QtCore/qdatetime.h \
-  /home/antek/Qt/6.9.0/gcc_64/include/QtCore/qdeadlinetimer.h \
   /home/antek/Qt/6.9.0/gcc_64/include/QtCore/qdebug.h \
-  /home/antek/Qt/6.9.0/gcc_64/include/QtCore/qelapsedtimer.h \
   /home/antek/Qt/6.9.0/gcc_64/include/QtCore/qendian.h \
-  /home/antek/Qt/6.9.0/gcc_64/include/QtCore/qeventloop.h \
   /home/antek/Qt/6.9.0/gcc_64/include/QtCore/qexceptionhandling.h \
   /home/antek/Qt/6.9.0/gcc_64/include/QtCore/qflags.h \
   /home/antek/Qt/6.9.0/gcc_64/include/QtCore/qfloat16.h \
@@ -68,14 +54,12 @@
   /home/antek/Qt/6.9.0/gcc_64/include/QtCore/qlatin1stringview.h \
   /home/antek/Qt/6.9.0/gcc_64/include/QtCore/qline.h \
   /home/antek/Qt/6.9.0/gcc_64/include/QtCore/qlist.h \
-  /home/antek/Qt/6.9.0/gcc_64/include/QtCore/qlocale.h \
   /home/antek/Qt/6.9.0/gcc_64/include/QtCore/qlogging.h \
   /home/antek/Qt/6.9.0/gcc_64/include/QtCore/qmalloc.h \
   /home/antek/Qt/6.9.0/gcc_64/include/QtCore/qmap.h \
   /home/antek/Qt/6.9.0/gcc_64/include/QtCore/qmargins.h \
   /home/antek/Qt/6.9.0/gcc_64/include/QtCore/qmath.h \
   /home/antek/Qt/6.9.0/gcc_64/include/QtCore/qmetacontainer.h \
-  /home/antek/Qt/6.9.0/gcc_64/include/QtCore/qmetaobject.h \
   /home/antek/Qt/6.9.0/gcc_64/include/QtCore/qmetatype.h \
   /home/antek/Qt/6.9.0/gcc_64/include/QtCore/qminmax.h \
   /home/antek/Qt/6.9.0/gcc_64/include/QtCore/qnamespace.h \
@@ -126,7 +110,6 @@
   /home/antek/Qt/6.9.0/gcc_64/include/QtCore/qtenvironmentvariables.h \
   /home/antek/Qt/6.9.0/gcc_64/include/QtCore/qtextstream.h \
   /home/antek/Qt/6.9.0/gcc_64/include/QtCore/qtformat_impl.h \
-  /home/antek/Qt/6.9.0/gcc_64/include/QtCore/qtimer.h \
   /home/antek/Qt/6.9.0/gcc_64/include/QtCore/qtmetamacros.h \
   /home/antek/Qt/6.9.0/gcc_64/include/QtCore/qtnoop.h \
   /home/antek/Qt/6.9.0/gcc_64/include/QtCore/qtpreprocessorsupport.h \
@@ -171,20 +154,9 @@
   /home/antek/Qt/6.9.0/gcc_64/include/QtGui/qtguiglobal.h \
   /home/antek/Qt/6.9.0/gcc_64/include/QtGui/qtransform.h \
   /home/antek/Qt/6.9.0/gcc_64/include/QtGui/qwindowdefs.h \
-  /home/antek/Qt/6.9.0/gcc_64/include/QtSql/QSqlDatabase \
-  /home/antek/Qt/6.9.0/gcc_64/include/QtSql/QSqlError \
-  /home/antek/Qt/6.9.0/gcc_64/include/QtSql/QSqlQuery \
-  /home/antek/Qt/6.9.0/gcc_64/include/QtSql/qsqldatabase.h \
-  /home/antek/Qt/6.9.0/gcc_64/include/QtSql/qsqlerror.h \
-  /home/antek/Qt/6.9.0/gcc_64/include/QtSql/qsqlquery.h \
-  /home/antek/Qt/6.9.0/gcc_64/include/QtSql/qtsql-config.h \
-  /home/antek/Qt/6.9.0/gcc_64/include/QtSql/qtsqlexports.h \
-  /home/antek/Qt/6.9.0/gcc_64/include/QtSql/qtsqlglobal.h \
   /home/antek/Qt/6.9.0/gcc_64/include/QtWidgets/QHBoxLayout \
   /home/antek/Qt/6.9.0/gcc_64/include/QtWidgets/QLabel \
-  /home/antek/Qt/6.9.0/gcc_64/include/QtWidgets/QMainWindow \
   /home/antek/Qt/6.9.0/gcc_64/include/QtWidgets/QPushButton \
-  /home/antek/Qt/6.9.0/gcc_64/include/QtWidgets/QVBoxLayout \
   /home/antek/Qt/6.9.0/gcc_64/include/QtWidgets/qabstractbutton.h \
   /home/antek/Qt/6.9.0/gcc_64/include/QtWidgets/qboxlayout.h \
   /home/antek/Qt/6.9.0/gcc_64/include/QtWidgets/qframe.h \
@@ -192,10 +164,8 @@
   /home/antek/Qt/6.9.0/gcc_64/include/QtWidgets/qlabel.h \
   /home/antek/Qt/6.9.0/gcc_64/include/QtWidgets/qlayout.h \
   /home/antek/Qt/6.9.0/gcc_64/include/QtWidgets/qlayoutitem.h \
-  /home/antek/Qt/6.9.0/gcc_64/include/QtWidgets/qmainwindow.h \
   /home/antek/Qt/6.9.0/gcc_64/include/QtWidgets/qpushbutton.h \
   /home/antek/Qt/6.9.0/gcc_64/include/QtWidgets/qsizepolicy.h \
-  /home/antek/Qt/6.9.0/gcc_64/include/QtWidgets/qtabwidget.h \
   /home/antek/Qt/6.9.0/gcc_64/include/QtWidgets/qtwidgets-config.h \
   /home/antek/Qt/6.9.0/gcc_64/include/QtWidgets/qtwidgetsexports.h \
   /home/antek/Qt/6.9.0/gcc_64/include/QtWidgets/qtwidgetsglobal.h \
